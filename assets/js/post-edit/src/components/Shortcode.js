@@ -1,28 +1,25 @@
-import React from 'react';
-import ReactDom from 'react-dom';
-import ShortcodeElementWrapper from './ShortcodeElement';
 
+import {config} from '../index';
 
-
-
-
-function Shortcode(ids){
-        const editorWindow=document.querySelector('.block-library-rich-text__tinymce'),
-              text='[my-gallery ids='+ids+']',
-              wrapper=document.createElement('p'),
-              clientsId=editorWindow.id.replace('editor-',''),
+function shortcodeGutenberg(text){
+      const editorWindow=document.querySelector('.block-library-rich-text__tinymce'),
+            clientsId=editorWindow.id.replace('editor-',''),
         /*
         * Wordpress dependencies 
         * https://github.com/WordPress/gutenberg/tree/master/packages/data
         *
         */
-              {dispatch,select}=window.wp.data,
-              ShortcodeElement=ShortcodeElementWrapper();
-        ReactDom.render(<ShortcodeElement text={text} />,wrapper);
-        editorWindow.append(wrapper);
-        const post=select('core/editor').getCurrentPost();
-        dispatch('core/editor').updateBlockAttributes(clientsId,{content:post.content+'<br> '+text});
-    }
-
-
-export default Shortcode;
+            {dispatch,select}=window.wp.data,
+            post=select('core/editor').getCurrentPost();
+      dispatch('core/editor').updateBlockAttributes(clientsId,{content:post.content+'<br> '+text});
+      return editorWindow;
+}
+function shortcodeClassic (text){
+      return document.querySelector('#content_ifr').contentDocument.querySelector('#tinymce');
+}
+function shortcode(ids){
+      const editorWindow=config.editor=='gutenberg'?shortcodeGutenberg(text):config.editor=='classic'&&shortcodeClassic(text),
+            text='[my-gallery ids='+ids+']';
+      editorWindow.innerHTML+='<br> '+text;
+}
+export default shortcode;
