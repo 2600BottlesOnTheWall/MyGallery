@@ -5,9 +5,9 @@ function shortcodeGutenberg(text){
       const editorWindow=document.querySelector('.block-library-rich-text__tinymce'),
             clientsId=editorWindow.id.replace('editor-',''),
         /*
-        * Wordpress dependencies 
+        * Gutenberg Editor dependencies 
         * https://github.com/WordPress/gutenberg/tree/master/packages/data
-        *
+        * activate save post button
         */
             {dispatch,select}=window.wp.data,
             post=select('core/editor').getCurrentPost();

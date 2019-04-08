@@ -62,6 +62,7 @@ const getGalleryDetailsMediaFrame = () => {
         });
 };
 
+
         class MediaFrame extends React.Component {
             constructor(props) {
                 super(props);
