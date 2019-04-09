@@ -1,3 +1,5 @@
+!['Alt text'](banner_header.png)
+
 # MyGallery Wordpress Plugin
 
 MyGallery is a wordpress plugin that allows you to create a slider gallery anywhere in your post. You will use the standard wordpress interface to create a slider gallery, so the process should not cause difficulties.
