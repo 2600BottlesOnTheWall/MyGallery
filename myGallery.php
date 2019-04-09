@@ -2,11 +2,11 @@
 
 /*
 Plugin Name: MyGallery
-Plugin URI: https://github.com/2600BottlesOnTheWall/MyGallery
+Plugin URI: https://github.com/zalevsk1y/MyGallery
 Description: Add slider and gallery to your post fast and easy.
 Version: 1.1.2
 Author: Evgeny S.Zalevskiy <2600@ukr.net>
-Author URI: https://github.com/2600BottlesOnTheWall
+Author URI: https://github.com/zalevsk1y/
 License: MIT
  */
 ?>

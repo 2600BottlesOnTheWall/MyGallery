@@ -12,8 +12,8 @@ MyGallery is a wordpress plugin that allows you to create a slider gallery anywh
 ### Installing
 
 
-1. You can clone the GitHub repository: `https://github.com/2600BottlesOnTheWall/MyGallery.git`
-2. Or download it directly as a ZIP file: `https://github.com/2600BottlesOnTheWall/MyGallery/archive/master.zip`
+1. You can clone the GitHub repository: `https://github.com/zalevsk1y/MyGallery.git`
+2. Or download it directly as a ZIP file: `https://github.com/zalevsk1y/MyGallery/archive/master.zip`
 
 This will download the latest developer copy of MyGallery.
 
@@ -38,4 +38,4 @@ MyGallery Tutorial Classic editor
 
 ## Bugs ##
 
-If you find an issue, let us know [here](https://github.com/2600BottlesOnTheWall/MyGallery/issues?state=open)!
+If you find an issue, let us know [here](https://github.com/zalevsk1y/MyGallery/issues?state=open)!
