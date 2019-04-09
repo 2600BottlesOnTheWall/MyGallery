@@ -14,5 +14,5 @@ function my_gallery_autoload($class)
         include $path;
     }
 }
-//set_include_path(__DIR__);
+
 spl_autoload_register("my_gallery_autoload");

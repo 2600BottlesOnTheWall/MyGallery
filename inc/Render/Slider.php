@@ -7,12 +7,14 @@ namespace MyGallery\Render;
  *
  */
 
- class Slider {
-    public function __construct($templatePath){
-        if(file_exists($templatePath)){
-            $this->templatePath=$templatePath;
-        }else{
-            throw new \Exception('Wrong template file path '.$templatePath);
+class Slider
+{
+    public function __construct($templatePath)
+    {
+        if (file_exists($templatePath)) {
+            $this->templatePath = $templatePath;
+        } else {
+            throw new \Exception('Wrong template file path ' . $templatePath);
         }
     }
     /**
@@ -21,7 +23,8 @@ namespace MyGallery\Render;
      * @param [string] $attr
      * @return string
      */
-    public function render ($attr){
+    public function render($attr)
+    {
         $images = $this->getImageUrls(explode(',', $attr['ids']));
         ob_start();
         require_once $this->templatePath;
@@ -29,12 +32,12 @@ namespace MyGallery\Render;
         ob_end_clean();
         return $content;
     }
-   /**
-    * Get image urls object from IDS.
-    *
-    * @param [array] $IDs
-    * @return object
-    */
+    /**
+     * Get image urls object from IDS.
+     *
+     * @param [array] $IDs
+     * @return object
+     */
     protected function getImageUrls($IDs)
     {
         $result = array();
@@ -46,5 +49,5 @@ namespace MyGallery\Render;
         }
         return $result;
     }
-    
- }
+
+}
