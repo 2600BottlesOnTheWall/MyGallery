@@ -20,11 +20,16 @@ This will download the latest developer copy of MyGallery.
 ## How to use this plugin?
 
 Watch this short videos to learn how to use MyGallery plugin. 
+
+
+
 MyGallery Tutorial Gutenberg editor
-[![Alt text](http://img.youtube.com/vi/rW9SgwwJW6c/0.jpg)](https://www.youtube.com/watch?v=rW9SgwwJW6c) "MyGallery Tutorial Gutenberg editor"
+[![Alt text](http://img.youtube.com/vi/rW9SgwwJW6c/0.jpg)](https://www.youtube.com/watch?v=rW9SgwwJW6c) 
+
+
 
 MyGallery Tutorial Classic editor
-[![Alt text](http://img.youtube.com/vi/CwkWybGo-nI/0.jpg)](https://www.youtube.com/watch?v=CwkWybGo-nI) "MyGallery Tutorial Classic editor"
+[![Alt text](http://img.youtube.com/vi/CwkWybGo-nI/0.jpg)](https://www.youtube.com/watch?v=CwkWybGo-nI) 
 
 
 ## Bugs ##
