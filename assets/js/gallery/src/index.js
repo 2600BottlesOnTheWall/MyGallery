@@ -3,6 +3,7 @@ import baguetteBox from 'baguettebox.js';
 import lightSlider from 'lightslider';
 import 'baguettebox.js/dist/baguetteBox.css';
 import 'lightslider/dist/css/lightslider.css';
+import 'lightslider/dist/img/controls.png'
 
 window.addEventListener('load', () => {
 
