@@ -73,7 +73,6 @@ class Main
         add_action('admin_enqueue_scripts', array($this, 'enqueueAdminScripts'));
         add_action('wp_enqueue_scripts', array($this, 'enqueueStyles'));
         add_action('wp_enqueue_scripts', array($this, 'enqueueScripts'));
-        add_action('admin_footer', array($this, 'gallerySettingsTemplate'));
         add_shortcode('my-gallery', array($this, 'renderSlider'));
     }
 

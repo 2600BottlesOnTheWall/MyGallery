@@ -38,7 +38,7 @@ MyGallery Tutorial Classic editor
 [![Alt text](http://img.youtube.com/vi/CwkWybGo-nI/0.jpg)](https://www.youtube.com/watch?v=CwkWybGo-nI) 
 
 
-## Dependencies.
+## Dependencies
 
 * baguetteBox.js [https://github.com/feimosi/baguetteBox.js/](https://github.com/feimosi/baguetteBox.js/)
 * lightslider [https://github.com/sachinchoolur/lightslider](https://github.com/sachinchoolur/lightslider)
