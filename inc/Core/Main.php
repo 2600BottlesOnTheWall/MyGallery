@@ -13,8 +13,7 @@ class Main
     {
         $this->template = $templateRender;
         $this->registerActions();
-        $this->registerScripts();
-
+       
     }
 
     /**
@@ -57,7 +56,7 @@ class Main
      *
      * @return void
      */
-    private function registerScripts()
+    public function registerScripts()
     {
         wp_register_script('my_gallery', MYGALLERY_PLUGIN_URL . '/public/js/0.bundle.js', array('react', 'react-dom', 'lodash', 'media-models'), MYGALLERY_VERSION);
         wp_register_script('gallery_script', MYGALLERY_PLUGIN_URL . '/public/js/1.bundle.js', array('jquery'), MYGALLERY_VERSION);
@@ -70,6 +69,7 @@ class Main
      */
     private function registerActions()
     {
+        add_action('wp_loaded',array($this,'registerScripts'));
         add_action('admin_enqueue_scripts', array($this, 'enqueueAdminScripts'));
         add_action('wp_enqueue_scripts', array($this, 'enqueueStyles'));
         add_action('wp_enqueue_scripts', array($this, 'enqueueScripts'));
