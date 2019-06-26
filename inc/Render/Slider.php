@@ -5,7 +5,7 @@ namespace MyGallery\Render;
 /**
  * Render template for slider and gallery.
  *
- * @package Core
+ * @package Render
  * @author  Evgeniy S.Zalevskiy <2600@ukr.net>
  * @license MIT https://opensource.org/licenses/MIT
  */
