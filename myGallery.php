@@ -13,7 +13,7 @@ License: MIT
 <?php
 namespace MyGallery;
 
-include "autoload.php";
+require "autoload.php";
 
 
 define("MYGALLERY_VERSION", "1.1.3");
