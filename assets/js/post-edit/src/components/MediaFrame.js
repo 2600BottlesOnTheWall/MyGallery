@@ -12,12 +12,7 @@ const getGalleryDetailsMediaFrame = () => {
      * @class GalleryDetailsMediaFrame
      * @constructor
      */
-    return wp
-        .media
-        .view
-        .MediaFrame
-        .Post
-        .extend({
+    return wp.media.view.MediaFrame.Post.extend({
 
             /**
              * Create the default states.
@@ -25,13 +20,8 @@ const getGalleryDetailsMediaFrame = () => {
              * @return {void}
              */
             createStates: function createStates() {
-                this
-                    .states
-                    .add([
-                        new wp
-                            .media
-                            .controller
-                            .Library({
+                this.states.add([
+                        new wp.media.controller.Library({
                                 id: 'gallery',
                                 title: wp.media.view.l10n.createGalleryTitle,
                                 priority: 40,
@@ -39,22 +29,14 @@ const getGalleryDetailsMediaFrame = () => {
                                 filterable: 'uploaded',
                                 multiple: 'add',
                                 editable: false,
-                                library: wp
-                                    .media
-                                    .query(defaults({
+                                library: wp.media.query(defaults({
                                         type: 'image'
                                     }, this.options.library))
                             }),
 
-                        new wp
-                            .media
-                            .controller
-                            .GalleryEdit({library: this.options.selection, editing: this.options.editing, menu: 'gallery', displaySettings: false, multiple: true}),
+                        new wp.media.controller.GalleryEdit({library: this.options.selection, editing: this.options.editing, menu: 'gallery', displaySettings: false, multiple: true}),
 
-                        new wp
-                            .media
-                            .controller
-                            .GalleryAdd()
+                        new wp.media.controller.GalleryAdd()
                     ]);
             }
         });
