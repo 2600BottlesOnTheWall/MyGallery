@@ -1,0 +1,42 @@
+{
+  "name": "my-gallery",
+  "version": "1.1.3",
+  "private": true,
+  "dependencies": {
+    "baguettebox.js":"1.11.0",
+    "lightslider": "1.1.6"
+  },
+  "devDependencies": {
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
+    "@babel/core":"7.2.2",
+    "babel-loader": "8.0.5",
+    "babel-preset-react-app": "^7.0.1",
+    "webpack": "4.28.3",
+    "webpack-cli": "3.3.0",
+    "terser-webpack-plugin":"1.2.3",
+    "mini-css-extract-plugin":"0.5.0",
+    "optimize-css-assets-webpack-plugin":"5.0.1",
+    "css-loader":"2.1.1",
+    "image-webpack-loader":"4.6.0",
+    "file-loader":"3.0.1",
+    "path":"~0.12.7"
+
+    
+  },
+  "scripts": {
+    "build": "webpack --mode production",
+    "start":"webpack-dev-server"
+ 
+ 
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
