@@ -11,7 +11,7 @@ import ButtonClassic from "./components/ButtonClassic";
  */
 export function myGalleryGutenberg() {
     const liElement = document.createElement("li");
-    liElement.className = "editor-block-types-list__list-item";
+    liElement.className = "editor-block-types-list__list-item block-editor-block-types-list__list-item";
     ReactDOM.render(
         <MediaFrame button={ButtonGutenberg}/>, liElement);
     const menuButton = document.querySelector(".editor-inserter");

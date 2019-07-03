@@ -13,7 +13,7 @@ License: MIT
 <?php
 namespace MyGallery;
 
-require "autoload.php";
+
 
 
 define("MYGALLERY_VERSION", "1.1.3");
@@ -21,6 +21,8 @@ define("MYGALLERY_SLUG", "myGallery");
 define("MYGALLERY_NAMESPACE", __NAMESPACE__);
 define("MYGALLERY_PLUGIN_URL", plugins_url("", __FILE__));
 define("MYGALLERY_PLUGIN_DIR", plugin_dir_path(__FILE__));
+
+require "autoload.php";
 
 $modules = [];
 $modules["template"] = new Render\Slider(MYGALLERY_PLUGIN_DIR . "/templates/content-slider.php");

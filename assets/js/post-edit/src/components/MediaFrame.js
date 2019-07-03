@@ -39,7 +39,6 @@ const getGalleryDetailsMediaFrame = () => {
                                 filterable: 'uploaded',
                                 multiple: 'add',
                                 editable: false,
-
                                 library: wp
                                     .media
                                     .query(defaults({
