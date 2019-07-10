@@ -1,38 +1,39 @@
-<body>
-    <head>
-            <link rel='stylesheet' href='/css/bootstrap.css' >
-            <link rel='stylesheet' href='/css/dev-style.css' >
-            <link rel='stylesheet' href='/css/edit.css' >
-        
-        <script src='/js/add.bundle.js' type="text/javascript"></script>
-     
-    </head>
-    <html>
-        <div class="wrap" id='add-gallery-page' data-nonce='1111' data-lang='en'></div>
+<html>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <head>
+                <link rel='stylesheet' href='/css/bootstrap.css' >
+                <link rel='stylesheet' href='/css/dev-style.css' >
+         
+        </head>
+    <body>
+    
+    
+        <div class="wrap" id='add-gallery-page' data-nonce='1111' data-lang='en'>
+            
+        </div>
 
 
 
 
-<div class='container-fluid'>
-                <div class="row">
+<div class='container pl-5 pl-sm-2 pl-md-2 pl-lg-2 pl-xl-2'>
+                <div class="row py-1 py-lg-4">
                     <h1 class="wp-heading-inline">Add new gallery</h1>
                 </div>
-                <div class="row">
-                    <div class="my-gallery-content col">
-                        <div class="row">
+                <div class=" row d-sm-flex flex-column-reverse flex-sm-column-reverse flex-md-column-reverse flex-lg-row flex-xl-row pr-4 pr-sm-0">
+                    <div class="my-gallery-content col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8  ">
+                        <div class="row ">
                             <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <label class="input-group-text" for="inputGroupSelect01">Options</label>
-                                </div>
+                                
                                 <select class="custom-select" id="inputGroupSelect01">
-                                    <option selected>Choose...</option>
+                                    <option selected="">Choose...</option>
                                     <option value="1">One</option>
                                     <option value="2">Two</option>
                                     <option value="3">Three</option>
                                 </select>
+    <button type="button" class="btn btn-primary ml-2">Get</button>
                             </div>
                         </div>
-                        <div class="row mt-5">
+                        <div class="row mt-2 mt-md-2">
                                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                                         <li class="nav-item">
                                           <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Select Image</a>
@@ -47,30 +48,90 @@
                                         <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
                                 </div>
                         </div>
-                        <div class="row mt-5">
-                            <div class="col-3 p-0">
-                                    <ul class="gallery-side-tabs" >
-                                            <li class="side-tabs-item">
-                                              <a class="" >Select Image</a>
+                        <div class="row mt-5  tab-content p-0 bg-transparent border-left-0" ">
+                            <nav class="flex-row p-0  col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3">
+                                    <ul class="gallery-side-tabs  nav nav-tabs border-0 d-flex d-sm-flex d-md-flex d-lg-block  d-xl-block " >
+                                            <li class="nav-item col-3 col-sm-3 col-md-3 col-lg-12 col-lg-12 p-0 align-items-end d-flex ">
+                                              <a class="nav-link w-100 active border border-top-0 border-right-0 border-left-0" >Select Image</a>
                                             </li>
-                                            <li class="side-tabs-item">
-                                              <a class="" >External Source</a>
+                                            <li class="nav-item  col-3 col-sm-3 col-md-3 col-lg-12 col-lg-12 p-0 align-items-end d-flex ">
+                                              <a class="nav-link w-100 border border-top-0 border-left-0 " >External Source</a>
                                             </li>
+                                            <li class="nav-item col-3 col-sm-3 col-md-3 col-lg-12 col-lg-12 p-0 align-items-end d-flex ">
+                                                <a class="nav-link w-100  border border-top-0 border-left-0 " >Source</a>
+                                              </li>
                                     </ul>
+                            </nav>
+                            <div class=" row m-0 pl-2 pt-2 bg-white h-100 d-flex justify-content-center flex-column  col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9">
+                             <h6 class="text-nowrap d-flex h-25 ml-2 ">Gallery view</h6>
+                             <p class="text-nowrap d-flex h-25 w-auto  ml-2 mr-2 border-bottom
+                             pb-3 ">Mather fucking last one a view</p>
+                              <ul class="  list-unstyled d-flex flex-wrap justify-content-start  pt-2 pb-2    mb-0">
+                                <li class="bg-light  text-center p-0 m-2">
+                                      <img src="/img/banner_header_small2.png" alt="">
+                                      <div class="text-center border bg-light">
+                                          <span>img name</span>
+                                      </div>
+                                </li>
+                                <li class="bg-light  text-center p-0 m-2">
+                                    <img src="/img/banner_header_small2.png" alt="">
+                                    <div class="text-center border bg-light">
+                                        <span>img name</span>
+                                    </div>
+                              </li>
+                              <li class="bg-light  text-center p-0 m-2">
+                                <img src="/img/banner_header_small2.png" alt="">
+                                <div class="text-center border bg-light">
+                                    <span>img name</span>
+                                </div>
+                          </li>
+                          <li class="bg-light  text-center p-0 m-2">
+                            <img src="/img/banner_header_small2.png" alt="">
+                            <div class="text-center border bg-light">
+                                <span>img name</span>
                             </div>
-                            <div class="col-9 p-0">
-                              <div class="tab-content" >
-                                <div class="" >...</div>
+                      </li>
+                      <li class="bg-light  text-center p-0 m-2">
+                        <img src="/img/banner_header_small2.png" alt="">
+                        <div class="text-center border bg-light">
+                            <span>img name</span>
+                        </div>
+                  </li>
+                  <li class="bg-light  text-center p-0 m-2">
+                    <img src="/img/banner_header_small2.png" alt="">
+                    <div class="text-center border bg-light">
+                        <span>img name</span>
+                    </div>
+              </li>
+              <li class="bg-light  text-center p-0 m-2">
+                <img src="/img/banner_header_small2.png" alt="">
+                <div class="text-center border bg-light">
+                    <span>img name</span>
+                </div>
+          </li>
+          <li class="bg-light  text-center p-0 m-2">
+            <img src="/img/banner_header_small2.png" alt="">
+            <div class="text-center border bg-light">
+                <span>img name</span>
+            </div>
+      </li>
+      <li class="bg-light  text-center p-0 m-2">
+        <img src="/img/banner_header_small2.png" alt="">
+        <div class="text-center border bg-light">
+            <span>img name</span>
+        </div>
+  </li>
                                 
-                              </div>
+                              </ul>
+                           
                             </div>
                         </div>
 
                     </div>
 
 
-                    <div class="my-gallery-side-box col">
-                        <div class="card" style="width: 18rem;">
+                    <div class="my-gallery-side-box col-12 h-50 pl-0 pl-sm-0 pl-md-0 pl-lg-3 pl-xl-3 mb-4 mb-sm-4 mb-md-4 mb-lg-4 mb-xl-4  mt-2 mt-sm-2 mt-md-2 mt-lg-0 mt-xl-0 pr-0  col-sm-12 col-md-12 col-lg-4 col-xl-4">
+                        <div class="card" >
                             <div class="card-body">
                                 <h5 class="card-title">Card title</h5>
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -85,5 +146,5 @@
 
 
         
-    </html>
-</body>
+  
+</body></html>

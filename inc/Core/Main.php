@@ -1,7 +1,9 @@
 <?php
 
 namespace MyGallery\Core;
-
+use MyGallery\Interfaces\MenuPageInterface;
+use MyGallery\View\Slider;
+use MyGallery\Utils\MenuConfig;
 /**
  * Initialize scripts and styles.
  *
@@ -12,15 +14,18 @@ namespace MyGallery\Core;
 
 class Main
 {
+    protected $config_menu;
     /**
      * Function constructor
      *
      * @param \MyGallery\Render\Slider $templateRender 
      */
-    public function __construct(\MyGallery\Render\Slider $templateRender)
+    public function __construct(Slider $templateRender,MenuPageInterface $menu_page,MenuConfig $config)
     {
         $this->template = $templateRender;
         $this->registerActions();
+        $this->config_menu=$config->get();
+        $menu_page->init($config);
     }
 
     /**
@@ -32,8 +37,16 @@ class Main
      */
     public function enqueueAdminScripts($hook)
     {
+        \wp_enqueue_style(MYGALLERY_PLUGIN_SLUG . '-style', MYGALLERY_PLUGIN_URL . '/public/css/my-gallery.css');
         if ('post.php' == $hook) {
-            wp_enqueue_script('my_gallery');
+            wp_enqueue_script(MYGALLERY_PLUGIN_SLUG.'-post-edit-script');
+        }
+        if (strrpos($hook, $this->config_menu->menu->subs[0]->menu_slug) != false) {
+            \wp_enqueue_style(MYGALLERY_PLUGIN_SLUG . 'add-gallery-style', MYGALLERY_PLUGIN_URL . '/public/css/add-gallery.css');
+            \wp_enqueue_style(MYGALLERY_PLUGIN_SLUG . 'add-gallery-font', MYGALLERY_PLUGIN_URL . '/public/css/font.css');
+            \wp_enqueue_style(MYGALLERY_PLUGIN_SLUG . 'bootstrap', MYGALLERY_PLUGIN_URL . '/public/css/bootstrap.css');
+            wp_enqueue_media( array('id'=>1995) );
+            wp_enqueue_script(MYGALLERY_PLUGIN_SLUG.'add-gallery');
         }
     }
 
@@ -44,7 +57,7 @@ class Main
      */
     public function enqueueScripts()
     {
-        wp_enqueue_script('gallery_script');
+        wp_enqueue_script(MYGALLERY_PLUGIN_SLUG.'-slider-script');
     }
 
     /**
@@ -64,8 +77,11 @@ class Main
      */
     public function registerScripts()
     {
-        wp_register_script('my_gallery', MYGALLERY_PLUGIN_URL . '/public/js/0.bundle.js', array('react', 'react-dom', 'lodash', 'media-models'), MYGALLERY_VERSION);
-        wp_register_script('gallery_script', MYGALLERY_PLUGIN_URL . '/public/js/1.bundle.js', array('jquery'), MYGALLERY_VERSION);
+        wp_register_script(MYGALLERY_PLUGIN_SLUG.'-post-edit-script', MYGALLERY_PLUGIN_URL . '/public/js/0.bundle.js', array('react', 'react-dom', 'lodash', 'media-models'), MYGALLERY_PLUGIN_VERSION);
+      
+        wp_register_script(MYGALLERY_PLUGIN_SLUG.'add-gallery', MYGALLERY_PLUGIN_URL .'/public/js/2.bundle.js', array('react', 'react-dom', 'lodash','underscore','backbone','jquery','media-models'), MYGALLERY_PLUGIN_VERSION);
+        wp_register_script(MYGALLERY_PLUGIN_SLUG.'-slider-script', MYGALLERY_PLUGIN_URL . '/public/js/1.bundle.js', array('jquery'), MYGALLERY_PLUGIN_VERSION);
+       
     }
 
     /**
