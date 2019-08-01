@@ -107,12 +107,12 @@ class ShortcodeModel
 
         //parsing gallery config
 
-        if ($attr['config']) {
+        if (isset($attr['config'])) {
             $config = $this->removeBrackets($attr['config']);
             $this->settings->config = $this->setConfig($config);
 
         }
-        $this->code->misc .= ($attr['config']) ? ' config=' . (int) $config : '';
+        $this->code->misc .= isset($attr['config']) ? ' config=' . (int) $config : '';
     }
     /**
      * Get custom class names from string and convert to array
