@@ -4,3 +4,15 @@
     background-repeat: no-repeat;
     background-position: 50%;
 }
+
+.gallery h2{
+    text-align: center;
+    padding-bottom:10px;
+}
+
+.input-title{
+    width:100%
+}
+.input-classnames{
+    width:100%;
+}

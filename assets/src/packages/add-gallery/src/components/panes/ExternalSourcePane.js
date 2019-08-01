@@ -9,7 +9,7 @@ export default function ExternalSourcePane({}){
                 Follow us on twitter to do not miss this important update.</p>
             <div className="d-flex">
                 <span className='fo fo-facebook'><a herf="#"></a></span>
-                <span className='fo fo-twitter ml-2 mr-2'><a herf="#"></a></span>
+                <span className='fo fo-twitter ml-3 mr-3'><a herf="#"></a></span>
                 <span className='fo fo-github'><a herf="#"></a></span>
             </div>
         </Pane>

@@ -1,11 +1,17 @@
 import {myGalleryGutenberg} from './App';
 import {myGalleryClassic} from './App';
 import {getEditorType} from '@my-gallery/helpers';
+import {myGalleryPlugin} from 'globals';
 
-export const config = {};
-window.addEventListener('load', () => {
-    config.editor = getEditorType();
-    switch (config.editor) {
+
+export const myGalleryGlobalConfig = myGalleryPlugin||{};
+export {myGalleryClassic} from './App';
+export {myGalleryGutenberg} from './App';
+
+
+window.addEventListener('load', ()=>{
+    myGalleryGlobalConfig.editor = getEditorType();
+    switch (myGalleryGlobalConfig.editor) {
         case 'gutenberg':
             myGalleryGutenberg();
             break;
@@ -13,4 +19,4 @@ window.addEventListener('load', () => {
             myGalleryClassic();
             break;
     }
-})
+} )

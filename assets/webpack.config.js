@@ -8,9 +8,10 @@ const path = require("path");
 module.exports = {
 
 	entry:{
-		 0:'./src/packages/post-edit/src/index.js',
-		 1:'./src/packages/slider/src/index.js',
-		 2:'./src/packages/add-gallery/src/index.js'
+		 'post-edit':'./src/packages/post-edit/src/index.js',
+		 'post-new':'./src/packages/post-new/src/index.js',
+		 'slider':'./src/packages/slider/src/index.js',
+		 'add-gallery':'./src/packages/add-gallery/src/index.js'
 		},	
 	output: {
 		path: __dirname,
@@ -58,8 +59,8 @@ module.exports = {
 
 	},
 	externals:{
-		'react':'window.React',
-		'react-dom':'window.ReactDOM',
+		//'react':'window.React',
+		//'react-dom':'window.ReactDOM',
 		'lodash':'window.lodash',
 		'globals':'window',
 		'jquery':'window.jQuery'
@@ -68,9 +69,10 @@ module.exports = {
 		alias: {
 				"@my-gallery/media-frame": path.resolve(__dirname,"src/packages/media-frame/src/index.js"),
 				"@my-gallery/helpers": path.resolve(__dirname,"src/packages/helpers/src/index.js"),
-				"@my-gallery/post-edit": path.resolve(__dirname,"src/packages/post-edit/src/index.js"),
+				"@my-gallery/post-edit": path.resolve(__dirname,"src/packages/post-edit/src/App.js"),
 				"@my-gallery/config":path.resolve(__dirname,"src/packages/config/src/index.js"),
-
+				"@my-gallery/message":path.resolve(__dirname,"src/packages/message/src/index.js"),
+				"@my-gallery/post-new":path.resolve(__dirname,"src/packages/post-new/src/index.js"),
 			}
 	},
 	plugins: [

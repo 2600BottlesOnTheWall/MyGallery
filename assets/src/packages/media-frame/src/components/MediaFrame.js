@@ -49,7 +49,7 @@ class MediaFrame extends React.Component {
         this.frame = new(getGalleryDetailsMediaFrame())({editing: false, mimeType: ["image"], multiple: true, selection: {}, state: "gallery"})
         this.onClick = this.onClick.bind(this);
         this.onUpdate = this.onUpdate.bind(this);
-        this.markSelected=this.markSelected.bind(this);
+     
         this.frame.on("update", this.onUpdate);
         this.frame.on("open",this.markSelected)
     }
@@ -66,14 +66,7 @@ class MediaFrame extends React.Component {
             return model.id;
         }).join(',');
     }
-    markSelected(){
-        var selection = this.frame.state().get( 'selection' );
-        var attachment = []
-        attachment.push(wp.media.attachment( 2038 ));
-        attachment.push(wp.media.attachment( 1975 ));
-        // attachment should be an array if you want select single image use [attachment]
-        selection.add( attachment  );
-    }
+
     onClick() {
         this.frame.open();
        

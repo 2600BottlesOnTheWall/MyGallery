@@ -11,7 +11,7 @@
     "redux":"~4.0.1",
     "redux-thunk": "~2.3.0",
     "prop-types":"15.7.2",
-    "react-sortable-hoc":"~1.9.1",
+    "react-sortable-hoc":"1.7.1",
     "module-alias":"~2.2.0",
     "array-move":"~2.1.0"
   },

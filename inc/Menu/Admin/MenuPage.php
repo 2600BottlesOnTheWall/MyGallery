@@ -16,14 +16,15 @@ use MyGallery\View\TemplateRender;
 class MenuPage implements MenuPageInterface
 {
     protected $config;
-    
+
     /**
      * Initiate and add menu configuration file.
      *
      * @return void
      */
-    public function init(MenuConfig $config){
-        $this->config=$config->get();
+    public function init(MenuConfig $config)
+    {
+        $this->config = $config->get();
         \add_action('admin_menu', array($this, '_addMainMenu'));
     }
     /**
@@ -33,13 +34,13 @@ class MenuPage implements MenuPageInterface
      */
     public function _addMainMenu()
     {
-        
+
         $menu = $this->config->menu;
         \add_menu_page($menu->page_title, $menu->menu_title, $menu->capability, $menu->menu_slug, '', $menu->icon);
         $this->addSubMenus();
     }
     /**
-     * Renders submenu 
+     * Renders submenu
      *
      * @return void
      */
@@ -47,10 +48,9 @@ class MenuPage implements MenuPageInterface
     {
         $subMenu = $this->config->menu->subs;
         foreach ($subMenu as $sub) {
-            $template=new TemplateRender($sub->template);
+            $template = new TemplateRender($sub->template);
             \add_submenu_page($sub->parent_slug, $sub->page_title, $sub->menu_title, $sub->capability, $sub->menu_slug, array($template, 'render'));
         }
     }
 
-   
 }

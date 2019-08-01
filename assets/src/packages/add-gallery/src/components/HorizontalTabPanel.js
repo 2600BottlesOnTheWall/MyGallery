@@ -30,7 +30,7 @@ export default class HorizontalTabPanel extends TabPanel{
  
     render(){
         return (
-            <div>
+            <div style={{visibility:(this.props.visibility!==undefined?this.props.visibility:"visible")}}>
                 <div className="mt-2 mt-md-2">
                     <HorizontalTabsMenu className="nav nav-tabs" tabsList={this.state.tabs} ariaName="ImageSelect" onClick={this.tabClickHandler} />
                 </div>

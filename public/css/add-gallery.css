@@ -11,16 +11,24 @@ body {
 .tabs-big{
     width:50%;
 }
+
 .tab-content{
     background-color: #fff;
-    min-height: 10px;
+    min-height: 140px;
     border: 1px solid #e5e5e5;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
     background: #fff;
     border-top:none;
     padding:10px;
 }
+.vertical-tab-panel{
+    min-height: 600px;
+}
+.tab-pane{
+    height:150px;
+}
 .my-gallery-card{
+  
     position: relative;
     display: -ms-flexbox;
     display: flex;
@@ -32,6 +40,10 @@ body {
     background-clip: border-box;
     border: 1px solid rgba(0, 0, 0, 0.125);
     border-radius: 0.25rem;
+  
+}
+.hide-card{
+  display: none;
 }
 .nav-link{
     box-shadow: none !important;
@@ -39,14 +51,19 @@ body {
 .fo{
     font-family: 'fontello';
     font-size:25px;
+    line-height: 25px;
 }
+
 .fo-facebook:before{
+
     content:'\F230';
 }
 .fo-github:before{
+   
     content:"\F113";
 }
 .fo-twitter:before{
+    
     content:"\F099";
 }
 .input-group select{
@@ -126,3 +143,44 @@ content: "";
     top:5px;
     right:5px;
 } 
+
+.rating > span {
+    display: inline-block;
+    position: relative;
+    width: 1.1em;
+     font-size: 28px;
+     color: gold;
+  }
+  
+  .rating > span:before
+   {
+     content: "\2605";
+     position: absolute;
+     left: 0; 
+    color: gold;
+  }
+
+  .tab-content > nav {
+      background: #f1f1f1 !important;
+  }
+
+.closed{
+    visibility:hidden;
+}
+.notice{
+    min-height: 40px;
+}
+#close-message:after{
+    cursor:pointer;
+    line-height: 40px;
+    font-size:25px;
+    color:#007bff;
+    content:"\E803";
+
+}
+
+@media screen and (max-width: 782px){
+    .wp-responsive-open #wpbody{
+        right:-11.9em !important;
+    }
+}

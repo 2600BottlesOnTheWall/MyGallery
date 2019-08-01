@@ -14,7 +14,8 @@ use MyGallery\Utils\MenuConfig;
 
 class Main
 {
-    protected $config_menu;
+    protected $configMenu;
+    protected $originalShortcode;
     /**
      * Function constructor
      *
@@ -24,7 +25,8 @@ class Main
     {
         $this->template = $templateRender;
         $this->registerActions();
-        $this->config_menu=$config->get();
+        $this->registerFilters();
+        $this->configMenu=$config->get();
         $menu_page->init($config);
     }
 
@@ -38,14 +40,16 @@ class Main
     public function enqueueAdminScripts($hook)
     {
         \wp_enqueue_style(MYGALLERY_PLUGIN_SLUG . '-style', MYGALLERY_PLUGIN_URL . '/public/css/my-gallery.css');
-        if ('post.php' == $hook) {
-            wp_enqueue_script(MYGALLERY_PLUGIN_SLUG.'-post-edit-script');
-        }
-        if (strrpos($hook, $this->config_menu->menu->subs[0]->menu_slug) != false) {
+        if ('post.php' == $hook) wp_enqueue_script(MYGALLERY_PLUGIN_SLUG.'-post-edit-script');
+        if('post-new.php' == $hook)wp_enqueue_script(MYGALLERY_PLUGIN_SLUG.'-post-new-script');
+        if (strrpos($hook, $this->configMenu->menu->subs[0]->menu_slug) != false) {
             \wp_enqueue_style(MYGALLERY_PLUGIN_SLUG . 'add-gallery-style', MYGALLERY_PLUGIN_URL . '/public/css/add-gallery.css');
             \wp_enqueue_style(MYGALLERY_PLUGIN_SLUG . 'add-gallery-font', MYGALLERY_PLUGIN_URL . '/public/css/font.css');
             \wp_enqueue_style(MYGALLERY_PLUGIN_SLUG . 'bootstrap', MYGALLERY_PLUGIN_URL . '/public/css/bootstrap.css');
-            wp_enqueue_media( array('id'=>1995) );
+            $post_id=$this->getCustomQueryVar('post');
+            if($post_id){
+                wp_enqueue_media( array('id'=>$post_id));
+            }
             wp_enqueue_script(MYGALLERY_PLUGIN_SLUG.'add-gallery');
         }
     }
@@ -68,6 +72,7 @@ class Main
     public function enqueueStyles()
     {
         wp_enqueue_style('my_gallery_style', MYGALLERY_PLUGIN_URL . '/public/css/1.css');
+        wp_enqueue_style('my_gallery_additional_style', MYGALLERY_PLUGIN_URL . '/public/css/my-gallery.css');
     }
 
     /**
@@ -77,10 +82,10 @@ class Main
      */
     public function registerScripts()
     {
-        wp_register_script(MYGALLERY_PLUGIN_SLUG.'-post-edit-script', MYGALLERY_PLUGIN_URL . '/public/js/0.bundle.js', array('react', 'react-dom', 'lodash', 'media-models'), MYGALLERY_PLUGIN_VERSION);
-      
-        wp_register_script(MYGALLERY_PLUGIN_SLUG.'add-gallery', MYGALLERY_PLUGIN_URL .'/public/js/2.bundle.js', array('react', 'react-dom', 'lodash','underscore','backbone','jquery','media-models'), MYGALLERY_PLUGIN_VERSION);
-        wp_register_script(MYGALLERY_PLUGIN_SLUG.'-slider-script', MYGALLERY_PLUGIN_URL . '/public/js/1.bundle.js', array('jquery'), MYGALLERY_PLUGIN_VERSION);
+        wp_register_script(MYGALLERY_PLUGIN_SLUG.'-post-edit-script', MYGALLERY_PLUGIN_URL . '/public/js/post-edit.bundle.js', array('react', 'react-dom', 'lodash', 'media-models'), MYGALLERY_PLUGIN_VERSION);
+        wp_register_script(MYGALLERY_PLUGIN_SLUG.'-post-new-script', MYGALLERY_PLUGIN_URL . '/public/js/post-new.bundle.js', array('react', 'react-dom', 'lodash', 'media-models'), MYGALLERY_PLUGIN_VERSION);
+        wp_register_script(MYGALLERY_PLUGIN_SLUG.'add-gallery', MYGALLERY_PLUGIN_URL .'/public/js/add-gallery.bundle.js', array('react', 'react-dom', 'lodash','underscore','backbone','jquery','media-models'), MYGALLERY_PLUGIN_VERSION);
+        wp_register_script(MYGALLERY_PLUGIN_SLUG.'-slider-script', MYGALLERY_PLUGIN_URL . '/public/js/slider.bundle.js', array('jquery'), MYGALLERY_PLUGIN_VERSION);
        
     }
 
@@ -97,6 +102,14 @@ class Main
         add_action('wp_enqueue_scripts', array($this, 'enqueueScripts'));
         add_shortcode('my-gallery', array($this, 'renderSlider'));
     }
+     /**
+     * Register filters and shortcode.
+     * 
+     * @return void
+     */
+    private function registerFilters(){
+      
+    }
     /**
      * Facade for render function.
      *
@@ -108,4 +121,17 @@ class Main
     {
         return $this->template->render($shortcodeParameters);
     }
+
+    public function getCustomQueryVar($var){
+       switch($var){
+           case 'post':
+           if(isset($_GET['post'])){
+                $post=$_GET['post'];
+                $filtered_post=preg_filter('/[\d]/','$0',$post);
+                return (int)$filtered_post;
+           }
+           return false;
+       }
+    }
+ 
 }

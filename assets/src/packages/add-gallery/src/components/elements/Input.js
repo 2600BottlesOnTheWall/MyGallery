@@ -14,7 +14,7 @@ export class Input extends React.Component {
         this.setState({value: event.target.value});
     }
     blurHandler  ()  {
-        this.props.onBlur&&this.props.onBlur(this.state.value);  
+        this.props.onBlur&&this.props.onBlur(this.state.value,this.props.propName);  
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -23,10 +23,10 @@ export class Input extends React.Component {
         }
     }
     render() {
-
+        const className=this.props.className||'';
         return (
         
-            <input {...this.props} value={this.state.value} onChange={this.handleChange} onBlur={this.blurHandler} />)
+            <input className={'input-title '+className} value={this.state.value} onChange={this.handleChange} onBlur={this.blurHandler} />)
     }
 }
 
