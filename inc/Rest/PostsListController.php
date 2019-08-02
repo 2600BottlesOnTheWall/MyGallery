@@ -46,7 +46,7 @@ class PostsListController
                     'id' => array(
                         'description' => 'post id',
                         'type' => 'integer',
-                        'validate_callback' => function ($param, $request, $key) {
+                        'validate_callback' => function ($param) {
                             return is_numeric($param);
                         },
                     ),
@@ -61,10 +61,10 @@ class PostsListController
     /**
      * Check if user have rights to read posts
      *
-     * @param WP_REST_Request $request
+     * 
      * @return void
      */
-    public function checkPermission(\WP_REST_Request $request)
+    public function checkPermission()
     {
 
         if (!current_user_can('read')) {

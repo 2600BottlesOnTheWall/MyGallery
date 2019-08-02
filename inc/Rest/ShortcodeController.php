@@ -57,7 +57,7 @@ class ShortcodeController
                 'schema' => array($this, 'getSchema'),
                 "args" => array(
                     'id' => array(
-                        'validate_callback' => function ($param, $request, $key) {
+                        'validate_callback' => function ($param) {
                             return is_numeric($param);
                         },
                     ),
@@ -69,10 +69,10 @@ class ShortcodeController
     /**
      * Check if user have rights to read posts
      *
-     * @param WP_REST_Request $request
+     * 
      * @return void
      */
-    public function checkPermission(\WP_REST_Request $request)
+    public function checkPermission()
     {
         if (!current_user_can('read')) {
             return new \WP_Error('rest_forbidden', Errors::text('NO_RIGHTS_TO_READ'));
@@ -87,7 +87,7 @@ class ShortcodeController
      * @return void
      */
     public function checkPermissionPostUpdate(\WP_REST_Request $request)
-    {$post_id = (int) $request['id'];
+        {$post_id = (int) $request['id'];
 
         if (!current_user_can('edit_post', $post_id)) {
             return new \WP_Error('rest_forbidden', Errors::text('NO_RIGHTS_TO_WRITE'));
@@ -215,7 +215,7 @@ class ShortcodeController
     /**
      * Decode response to json
      *
-     * @param misc $postData
+     * @param object|array $postData
      * @return string json
      */
     protected function prepareResponse($postData)

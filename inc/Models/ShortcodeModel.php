@@ -106,7 +106,7 @@ class ShortcodeModel
         $this->code->misc .= !empty($classesString) ? ' classes=' . $classesString : '';
 
         //parsing gallery config
-
+        $config='';
         if (isset($attr['config'])) {
             $config = $this->removeBrackets($attr['config']);
             $this->settings->config = $this->setConfig($config);
@@ -123,6 +123,7 @@ class ShortcodeModel
     protected function setCustomClassNames(string $classes)
     {
         //remove spaces
+        $class_names=array();
         $remove_spaces = preg_replace('/(\x20|\s|%20)/i', '', $classes);
         $classes_arr = explode(',', $remove_spaces);
         foreach ($classes_arr as $class) {

@@ -21,6 +21,8 @@ class Slider
     use ConfigParse;
     use Helpers;
 
+    protected $templatePath;
+
     public function __construct($templatePath)
     {
         if (file_exists($templatePath)) {
@@ -51,6 +53,7 @@ class Slider
         }
 
         $imageIds = explode(',', $attr['ids']);
+        //Variables use in included template 
         $title = isset($attr['title']) ? $attr['title'] : '';
         $classes = isset($attr['classes']) ? str_replace(',', ' ', $attr['classes']) : '';
         $config = isset($attr['config']) ? $this->setConfig((int) $attr['config']) : (ShortcodeFactory::$defaultSettings)->config;
@@ -66,7 +69,7 @@ class Slider
      * Solve problem with parsing shortcode parameters.
      * Some time shortcode was saved with &qoute; instead of quotes.It confuses WP regexp.
      * and $attr array instead param name contains parts of title with digital key.
-     * This function solves this problem.
+     * This function solves this problem.It finds and glue params with keys == digits in one string.
      *
      * @param array $attr array with parsed shortcode attributes
      *
@@ -78,12 +81,14 @@ class Slider
         $pattern = '/(?P<digit_key>[\d]+)/i';
         $new_attr = array();
         $counter = 0;
+        $prop_value='';
+        $prop_name=null;
         foreach ($attr as $key => $item) {
             if ($key === 0 && $counter === 0) {
                 return new \WP_Error('parsing_shortcode_error', 'Wrong shortcode format.');
             }
 
-            $key_check = preg_match_all($pattern, $key, $matches);
+            preg_match_all($pattern, $key, $matches);
             if (count($matches['digit_key']) > 0) {
                 $prop_value .= $item . ' ';
             } else {

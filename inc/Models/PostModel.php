@@ -76,7 +76,7 @@ class PostModel
         if (count($matches['shortcodes']) == 0) {
             return array();
         }
-
+        $shortcodes=array();
         foreach ($matches['shortcodes'] as $item) {
             $shortcode_item = $this->getShotcodeModel($item)->toObject();
             $shortcode_item->postId = $this->postId;
