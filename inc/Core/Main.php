@@ -16,6 +16,8 @@ class Main
 {
     protected $configMenu;
     protected $originalShortcode;
+    protected $template;
+ 
     /**
      * Function constructor
      *
@@ -25,7 +27,6 @@ class Main
     {
         $this->template = $templateRender;
         $this->registerActions();
-        $this->registerFilters();
         $this->configMenu=$config->get();
         $menu_page->init($config);
     }
@@ -39,10 +40,10 @@ class Main
      */
     public function enqueueAdminScripts($hook)
     {
-        \wp_enqueue_style(MYGALLERY_PLUGIN_SLUG . '-style', MYGALLERY_PLUGIN_URL . '/public/css/my-gallery.css');
+       
         if ('post.php' == $hook) wp_enqueue_script(MYGALLERY_PLUGIN_SLUG.'-post-edit-script');
         if('post-new.php' == $hook)wp_enqueue_script(MYGALLERY_PLUGIN_SLUG.'-post-new-script');
-        if (strrpos($hook, $this->configMenu->menu->subs[0]->menu_slug) != false) {
+        if (strrpos($hook, $this->configMenu->menu->subs[0]->menu_slug) !== false) {
             \wp_enqueue_style(MYGALLERY_PLUGIN_SLUG . 'add-gallery-style', MYGALLERY_PLUGIN_URL . '/public/css/add-gallery.css');
             \wp_enqueue_style(MYGALLERY_PLUGIN_SLUG . 'add-gallery-font', MYGALLERY_PLUGIN_URL . '/public/css/font.css');
             \wp_enqueue_style(MYGALLERY_PLUGIN_SLUG . 'bootstrap', MYGALLERY_PLUGIN_URL . '/public/css/bootstrap.css');
@@ -102,14 +103,7 @@ class Main
         add_action('wp_enqueue_scripts', array($this, 'enqueueScripts'));
         add_shortcode('my-gallery', array($this, 'renderSlider'));
     }
-     /**
-     * Register filters and shortcode.
-     * 
-     * @return void
-     */
-    private function registerFilters(){
-      
-    }
+  
     /**
      * Facade for render function.
      *
