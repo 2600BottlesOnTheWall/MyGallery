@@ -215,7 +215,7 @@ class ShortcodeController
     /**
      * Decode response to json
      *
-     * @param object|array $postData
+     * @param object|array|boolean $postData
      * @return string json
      */
     protected function prepareResponse($postData)
