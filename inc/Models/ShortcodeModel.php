@@ -36,8 +36,8 @@ class ShortcodeModel
     public $settings;
 
     public function __construct($code, $default_settings)
-    {
-        $this->originalCode = preg_replace('/(&quot;)/i', '"', $code);
+    {   $replace_quotes_code=preg_replace('/(&quot;)/i', '"', $code);
+        $this->originalCode = substr_replace($replace_quotes_code,' ',-1,0);
         $this->settings = $default_settings;
         $this->code = (object) array(
             'ids' => '',

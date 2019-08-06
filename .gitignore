@@ -3,6 +3,8 @@
 # dependencies
 /assets/node_modules
 /.pnp
+/vendor
+/bin
 .pnp.js
 
 # testing

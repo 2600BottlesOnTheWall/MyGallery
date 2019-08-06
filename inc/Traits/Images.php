@@ -18,7 +18,7 @@ trait Images{
     protected function createImageObject(array $imageIds,$size='thumbnail'){
         $image=array();
         foreach($imageIds as $image_id){
-            $image_url=$this->getImageUrl($image_id,$size);
+            $image_url=$this->getImageUrl((int)$image_id,$size);
             if($image_url){
                 $image[]=(object)array(
                     'id'=>$image_id,

@@ -1,6 +1,6 @@
 <?php
 
-function my_gallery_autoload($class)
+function my_gallery_plugin_autoload($class)
 {
 
     if (strpos($class, MYGALLERY_PLUGIN_NAMESPACE) === false) {
@@ -15,4 +15,4 @@ function my_gallery_autoload($class)
     }
 }
 
-spl_autoload_register("my_gallery_autoload");
+spl_autoload_register("my_gallery_plugin_autoload");

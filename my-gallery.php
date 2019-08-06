@@ -13,7 +13,9 @@ License: MIT
 <?php
 namespace MyGallery;
 
-
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 
 define("MYGALLERY_PLUGIN_VERSION", "1.1.3");

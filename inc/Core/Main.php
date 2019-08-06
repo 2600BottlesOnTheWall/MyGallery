@@ -40,7 +40,7 @@ class Main
      */
     public function enqueueAdminScripts($hook)
     {
-       
+        wp_enqueue_style('my_gallery_additional_style', MYGALLERY_PLUGIN_URL . '/public/css/my-gallery.css');
         if ('post.php' == $hook) wp_enqueue_script(MYGALLERY_PLUGIN_SLUG.'-post-edit-script');
         if('post-new.php' == $hook)wp_enqueue_script(MYGALLERY_PLUGIN_SLUG.'-post-new-script');
         if (strrpos($hook, $this->configMenu->menu->subs[0]->menu_slug) !== false) {
