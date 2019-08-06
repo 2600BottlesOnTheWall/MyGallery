@@ -17,8 +17,7 @@ build:
         before:
             - composer require phpunit/phpunit:^7.0 --dev
     tests:
-      -
-        override:
+      - override:
                 command: vendor/bin/phpunit --coverage-clover=tests/testCoverage.xml
                 coverage:
                     file: clover.xml
