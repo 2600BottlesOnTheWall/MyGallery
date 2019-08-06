@@ -1,0 +1,10 @@
+{
+  "name":"my-gallery",
+  "description": "Wordpress gallery plugin.",
+  "require-dev": {
+    "phpunit/phpunit": "^7"
+},
+  "scripts": {
+    "test": "vendor/bin/phpunit --coverage-clover tests/testCoverage.xml"
+  }
+}
