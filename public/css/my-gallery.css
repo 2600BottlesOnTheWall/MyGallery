@@ -4,7 +4,12 @@
     background-repeat: no-repeat;
     background-position: 50%;
 }
-
+span.dashicons-myGallery  {
+    background-size: 100% !important;
+}
+.button-container{
+    display: inline-block;
+}
 .gallery h2{
     text-align: center;
     padding-bottom:10px;

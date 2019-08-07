@@ -4,7 +4,7 @@ namespace MyGallery\Menu\Admin;
 use MyGallery\Interfaces\MenuPageInterface;
 use MyGallery\Utils\MenuConfig;
 use MyGallery\View\TemplateRender;
-
+use MyGallery\Traits\TemplateFactoryFacade;
 /**
  * Class renders menu page.
  *
@@ -15,6 +15,9 @@ use MyGallery\View\TemplateRender;
 
 class MenuPage implements MenuPageInterface
 {
+    //adds getTemplate() method
+    use TemplateFactoryFacade;
+
     protected $config;
 
     /**
@@ -48,9 +51,10 @@ class MenuPage implements MenuPageInterface
     {
         $subMenu = $this->config->menu->subs;
         foreach ($subMenu as $sub) {
-            $template = new TemplateRender($sub->template);
-            \add_submenu_page($sub->parent_slug, $sub->page_title, $sub->menu_title, $sub->capability, $sub->menu_slug, array($template, 'render'));
+            $template = $this->getTemplate($sub->template);
+            \add_submenu_page($sub->parent_slug, $sub->page_title, $sub->menu_title, $sub->capability, $sub->menu_slug, array($template, 'renderWithEcho'));
         }
     }
+   
 
 }

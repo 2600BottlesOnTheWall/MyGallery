@@ -16,7 +16,7 @@ trait Helpers
      * @param boolean $var
      * @return string
      */
-    protected function boolToString(bool $var)
+    public function boolToString(bool $var)
     {
         return $var ? 'true' : 'false';
     }

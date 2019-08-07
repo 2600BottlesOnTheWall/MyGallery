@@ -6,11 +6,11 @@ use MyGallery\Factories\ShortcodeFactory;
 use MyGallery\Traits\ConfigParse;
 use MyGallery\Traits\Helpers;
 use MyGallery\Traits\Images;
-
+use MyGallery\Traits\TemplateFactoryFacade;
 /**
  * Render template for slider and gallery.
  *
- * @package Render
+ * @package View
  * @author  Evgeniy S.Zalevskiy <2600@ukr.net>
  * @license MIT https://opensource.org/licenses/MIT
  */
@@ -20,17 +20,26 @@ class Slider
     use Images;
     use ConfigParse;
     use Helpers;
+    //adds getTemplate() method
+    use TemplateFactoryFacade;
 
     protected $templatePath;
 
-    public function __construct($templatePath)
+    public function __construct(string $templatePath)
     {
-        if (file_exists($templatePath)) {
-            $this->templatePath = $templatePath;
-        } else {
-            throw new \Exception('Wrong template file path ' . $templatePath);
-        }
+        $this->template = $this->getTemplate($templatePath);
+        $this->registerShortcode();
     }
+    /**
+     * Register shortcode
+     *
+     * @return void
+     */
+    protected function registerShortcode()
+    {
+        add_shortcode('my-gallery', array($this, 'render'));
+    }
+
     /**
      * Render html for slider from template.
      *
@@ -53,16 +62,16 @@ class Slider
         }
 
         $imageIds = explode(',', $attr['ids']);
-        //Variables use in included template 
-        $title = isset($attr['title']) ? $attr['title'] : '';
-        $classes = isset($attr['classes']) ? str_replace(',', ' ', $attr['classes']) : '';
-        $config = isset($attr['config']) ? $this->setConfig((int) $attr['config']) : (ShortcodeFactory::$defaultSettings)->config;
-        $images = $this->createImageObject($imageIds, array('full', 'thumbnail'));
-        $boolToString = array($this, 'boolToString');
-        ob_start();
-        include_once $this->templatePath;
-        $content = ob_get_contents();
-        ob_end_clean();
+        //Variables use in included template
+        $args = array(
+            'title' => isset($attr['title']) ? $attr['title'] : '',
+            'classes' => isset($attr['classes']) ? str_replace(',', ' ', $attr['classes']) : '',
+            'config' => isset($attr['config']) ? $this->setConfig((int) $attr['config']) : (ShortcodeFactory::$defaultSettings)->config,
+            'images' => $this->createImageObject($imageIds, array('full', 'thumbnail')),
+            'boolToString' => array($this, 'boolToString'),
+        );
+        
+        $content = $this->template->addArguments($args)->render();
         return $content;
     }
     /**
@@ -81,8 +90,8 @@ class Slider
         $pattern = '/(?P<digit_key>[\d]+)/i';
         $new_attr = array();
         $counter = 0;
-        $prop_value='';
-        $prop_name=null;
+        $prop_value = '';
+        $prop_name = null;
         foreach ($attr as $key => $item) {
             if ($key === 0 && $counter === 0) {
                 return new \WP_Error('parsing_shortcode_error', 'Wrong shortcode format.');

@@ -28,10 +28,7 @@ export function myGalleryGutenberg() {
  *
  */
 export function myGalleryClassic() {
-    const divElement = document.createElement("div"),
-        toolsContainer = document.querySelector(".wp-editor-tools");
-    divElement.className = "editor-button-container";
+    const buttonContainer = document.querySelector("#my-gallery-media-button");
     ReactDOM.render(
-        <MediaFrame button={ButtonClassic}/>, divElement);
-    toolsContainer.append(divElement);
+        <MediaFrame button={ButtonClassic}/>, buttonContainer);
 }

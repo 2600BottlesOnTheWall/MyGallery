@@ -11,7 +11,9 @@ MyGallery is a wordpress plugin that allows you to create a slider gallery anywh
 
 *   Clean Design.
 *   Supports guttenberg editor and classic editor.
+*   Easy customizable
 *   Shortcode support.
+*   
 
 ### Installing
 
@@ -39,6 +41,11 @@ MyGallery Tutorial Classic editor
 
 [![Alt text](http://img.youtube.com/vi/CwkWybGo-nI/0.jpg)](https://www.youtube.com/watch?v=CwkWybGo-nI) 
 
+## Whats Next?
+
+* Extending the range of slider settings.
+* Using plugins for even more customization.
+* Create a gallery using images from instagram.
 
 ## Dependencies
 
