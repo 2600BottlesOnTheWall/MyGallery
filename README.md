@@ -1,6 +1,6 @@
 !['Alt text'](banner_header.png)
 
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/zalevsk1y/MyGallery/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/zalevsk1y/MyGallery/?branch=master)  [![Build Status](https://scrutinizer-ci.com/g/zalevsk1y/MyGallery/badges/build.png?b=master)](https://scrutinizer-ci.com/g/zalevsk1y/MyGallery/build-status/master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/zalevsk1y/MyGallery/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/zalevsk1y/MyGallery/?branch=master)  [![Build Status](https://scrutinizer-ci.com/g/zalevsk1y/MyGallery/badges/build.png?b=master)](https://scrutinizer-ci.com/g/zalevsk1y/MyGallery/build-status/master)  [![Code Coverage](https://scrutinizer-ci.com/g/zalevsk1y/MyGallery/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/zalevsk1y/MyGallery/?branch=master)
 
 # MyGallery Wordpress Plugin
 
