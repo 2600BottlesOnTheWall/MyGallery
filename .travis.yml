@@ -39,6 +39,7 @@ before_script:
   - |
     if [ -f ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini ]; then
       phpenv config-rm xdebug.ini
+      echo 'OK'
     else
       echo "xdebug.ini does not exist"
     fi
