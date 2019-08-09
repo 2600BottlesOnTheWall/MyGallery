@@ -23,7 +23,7 @@ class Slider
     //adds getTemplate() method
     use TemplateFactoryFacade;
 
-    protected $templatePath;
+    protected $template;
 
     public function __construct(string $templatePath)
     {
