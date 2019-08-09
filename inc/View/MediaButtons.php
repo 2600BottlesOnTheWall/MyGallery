@@ -15,6 +15,7 @@ class MediaButtons
     //adds getTemplate() method
     use TemplateFactoryFacade;
 
+    protected $template;
     public function __construct(string $templatePath)
     {
         $this->template =  $this->getTemplate($templatePath);
