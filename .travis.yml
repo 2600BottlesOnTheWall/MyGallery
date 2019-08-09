@@ -46,7 +46,7 @@ before_script:
   - |
     if [[ ! -z "$WP_VERSION" ]] ; then
       bash bin/install-wp-tests.sh wordpress_test root '' localhost $WP_VERSION
-      composer global require "phpunit/phpunit=7.*"
+      composer require "phpunit/phpunit=7.*"
     fi
   - |
     if [[ "$WP_TRAVISCI" == "phpcs" ]] ; then
@@ -57,7 +57,7 @@ before_script:
 script:
   - |
     if [[ ! -z "$WP_VERSION" ]] ; then
-      phpdbg -qrr phpunit --coverage-clover Coverage.clover tests/
+      phpdbg -qrr /bin/phpunit --coverage-clover Coverage.clover tests/
       WP_MULTISITE=1 phpunit
     fi
   - |
