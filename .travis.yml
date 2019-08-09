@@ -56,7 +56,7 @@ before_script:
 script:
   - |
     if [[ ! -z "$WP_VERSION" ]] ; then
-      phpdbg -qrr vendor/bin/phpunit --coverage-clover Coverage.clover tests/
+      vendor/bin/phpunit --coverage-clover Coverage.clover tests/
       WP_MULTISITE=1 phpunit
     fi
   - |
