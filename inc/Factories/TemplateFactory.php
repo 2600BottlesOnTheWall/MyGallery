@@ -18,11 +18,11 @@ class TemplateFactory
     /**
      * Getter for creating new instance
      *
-     * @param integer $postId
+     * @param integer $templatePath path to template file
      * @return object [PostModel]
      */
 
-    public static function get($templatePath)
+    public static function get(string $templatePath)
     {
         return new TemplateRender($templatePath);
     }
