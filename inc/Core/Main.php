@@ -23,7 +23,7 @@ class Main
     /**
      * Function constructor
      *
-     * @param MyGallery\Interfaces\MenuPageInterface; $menu_page
+     * @param MyGallery\Interfaces\MenuPageInterface $menu_page
      * @param MyGallery\Utils\MenuConfig $config
      */
     public function __construct(MenuPageInterface $menu_page, MenuConfig $config)
