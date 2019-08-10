@@ -22,7 +22,7 @@ use MyGallery\Utils\MenuConfig;
 
        
     }
-    public function addMainMenuTest (){
+    public function testAddMainMenu (){
         $menu_config=new MenuConfig('mock/menu-config.php');
         $this->instance->init($menu_config);
         $menu_slug=MYGALLERY_PLUGIN_SLUG . '-main-menu';
