@@ -13,7 +13,7 @@ use MyGallery\Utils\MenuConfig;
     {
         
         parent::setUp();
-        $this->configPath=__DIR__.'/../menu_config.php';
+        $this->configPath=__DIR__.'/../menu-config.php';
         wp_set_current_user($this->factory->user->create([
             'role' => 'administrator',
         ]));
