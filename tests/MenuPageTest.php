@@ -23,10 +23,10 @@ use MyGallery\Utils\MenuConfig;
        
     }
     public function testAddMainMenu (){
-        echo $this->configPath;
         $menu_config=new MenuConfig($this->configPath);
         $this->instance->init($menu_config);
         $menu_slug=MYGALLERY_PLUGIN_SLUG . '-main-menu';
+        echo $menu_slug;
         $this->assertNotEmpty(menu_page_url( $menu_slug ));
 
     }
