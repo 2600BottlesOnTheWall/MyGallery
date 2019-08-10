@@ -1,13 +1,14 @@
 <?php
 use MyGallery\Models\PostModel;
+use MyGallery\Models\ShortcodeModel;
 /**
- * Class SampleTest
+ * Class PostModelTest
  *
- * @package My_Gallery
+ * @package MyGallery
  */
 
 
-class ExampleTest extends \WP_UnitTestCase
+class PostModelTest extends \WP_UnitTestCase
 {
     public function setUp()
     {
@@ -22,6 +23,7 @@ class ExampleTest extends \WP_UnitTestCase
     public function  testGetShortcodes(){
         $shortcode=$this->instance->getShortcode();
         $this->assertCount(1,$shortcode);
+        $this->assertInstanceOf('ShortcodeModel',$shortcode[0]);
     }
     public function tearDown()
     {

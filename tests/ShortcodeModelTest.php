@@ -1,9 +1,9 @@
 <?php
 use MyGallery\Models\ShortcodeModel;
 /**
- * Class SampleTest
+ * Class ShortcodeModelTest
  *
- * @package My_Gallery
+ * @package MyGallery
  */
 class DefaultSettings{
     protected static $settings;

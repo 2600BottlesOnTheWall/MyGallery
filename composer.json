@@ -5,6 +5,6 @@
     "phpunit/phpunit": "^7"
 },
   "scripts": {
-    "test": "vendor/bin/phpunit --coverage-clover Coverage.clover"
+    "test": "phpunit --coverage-clover Coverage.clover"
   }
 }

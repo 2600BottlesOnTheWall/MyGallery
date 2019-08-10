@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
 define("MYGALLERY_PLUGIN_VERSION", "2.0.0");
-define("MYGALLERY_PLUGIN_SLUG", "myGallery");
+define("MYGALLERY_PLUGIN_SLUG", "my-gallery");
 define("MYGALLERY_PLUGIN_SHORTCODE", "my-gallery");
 define("MYGALLERY_PLUGIN_NAMESPACE", __NAMESPACE__);
 define("MYGALLERY_PLUGIN_URL", plugins_url("", __FILE__));

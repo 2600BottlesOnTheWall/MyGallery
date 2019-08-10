@@ -14,7 +14,7 @@ class MenuConfig
     protected $config;
     protected $main_menu_keys=['page_title'=>0,'menu_title'=>1 ,'capability'=>2,'menu_slug'=>3,'template'=>4,'icon'=>5];
     protected $sub_menu_keys=['page_title'=>0,'parent_slug'=>1,'menu_title'=>2,'capability'=>3,'menu_slug'=>4,'template'=>5];
-    public function __construct($config_path){
+    public function __construct(string $config_path){
         if (!file_exists($config_path)) {
             throw new \Exception('Cannot load template file '.$config_path);
         }

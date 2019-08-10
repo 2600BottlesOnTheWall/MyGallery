@@ -3,7 +3,6 @@ namespace MyGallery\Menu\Admin;
 
 use MyGallery\Interfaces\MenuPageInterface;
 use MyGallery\Utils\MenuConfig;
-use MyGallery\View\TemplateRender;
 use MyGallery\Traits\TemplateFactoryFacade;
 /**
  * Class renders menu page.
@@ -28,14 +27,14 @@ class MenuPage implements MenuPageInterface
     public function init(MenuConfig $config)
     {
         $this->config = $config->get();
-        \add_action('admin_menu', array($this, '_addMainMenu'));
+        \add_action('admin_menu', array($this, 'addMainMenu'));
     }
     /**
      * Callback for "admin_menu" action
      *
      * @return void
      */
-    public function _addMainMenu()
+    public function addMainMenu()
     {
 
         $menu = $this->config->menu;
