@@ -17,10 +17,10 @@ class ShortcodeFactory
     /**
      * Set default settings for shortcode parameters
      *
-     * @param object $settings
+     * @param \stdClass $settings
      * @return void
      */
-    public static function setDefaultSettings(object $settings)
+    public static function setDefaultSettings(\stdClass $settings)
     {
         static::$defaultSettings = $settings;
     }
