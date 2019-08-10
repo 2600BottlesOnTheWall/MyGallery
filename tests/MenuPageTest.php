@@ -14,7 +14,7 @@ use MyGallery\Utils\MenuConfig;
         
         parent::setUp();
 
-        wp_set_current_user($this->factory->user->create_and_get([
+        wp_set_current_user($this->factory->user->create([
             'role' => 'administrator',
         ]));
         
