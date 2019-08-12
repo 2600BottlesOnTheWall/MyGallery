@@ -20,7 +20,7 @@ return  array(
                 'parent_slug' => MYGALLERY_PLUGIN_SLUG . '-main-menu',
                 'menu_title' => __('Add gallery', MYGALLERY_PLUGIN_SLUG),
                 'capability' => 'manage_options',
-                'menu_slug' => MYGALLERY_PLUGIN_SLUG . '-menu-add-shortcode',
+                'menu_slug' => MYGALLERY_PLUGIN_SLUG . '-main-menu',
                 'template' => MYGALLERY_PLUGIN_DIR . 'template/menu/add-gallery-menu.php',
             ),
              array(

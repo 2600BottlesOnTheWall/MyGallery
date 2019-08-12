@@ -25,7 +25,7 @@ class ShortcodeModelTest extends \WP_UnitTestCase
         $this->defaultSettings=DefaultSettings::get();
         $this->factory()->attachment->create_many(5);
 
-        // your set up methods here
+       
     }
     /**
      * @dataProvider codeIdsParsing

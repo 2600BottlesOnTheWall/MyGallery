@@ -38,7 +38,7 @@ class MenuPage implements MenuPageInterface
     {
 
         $menu = $this->config->menu;
-        \add_menu_page($menu->page_title, $menu->menu_title, $menu->capability, $menu->menu_slug, '', $menu->icon);
+        \add_menu_page($menu->page_title, $menu->menu_title, $menu->capability, $menu->menu_slug,  '', $menu->icon);
         $this->addSubMenus();
     }
     /**
@@ -46,7 +46,7 @@ class MenuPage implements MenuPageInterface
      *
      * @return void
      */
-    protected function addSubMenus()
+    public function addSubMenus()
     {
         $subMenu = $this->config->menu->subs;
         foreach ($subMenu as $sub) {
