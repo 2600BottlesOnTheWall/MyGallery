@@ -25,9 +25,9 @@ use MyGallery\Utils\MenuConfig;
     public function testAddMainMenu (){
         $menu_config=new MenuConfig($this->configPath);
         $this->instance->init($menu_config);
+        $this->instance->addMainMenu();
         $menu_slug=MYGALLERY_PLUGIN_SLUG . '-main-menu';
-        echo $menu_slug;
-        $this->assertNotEmpty(menu_page_url( $menu_slug ));
+        $this->assertNotEmpty(menu_page_url( $menu_slug ,false ));
 
     }
 }
