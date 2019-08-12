@@ -49,15 +49,39 @@ class MenuConfig
     protected function verifyFormat(array $config){
         $check_main_menu=array_diff_key($this->main_menu_keys,$config);
         if(count($check_main_menu)>0){
-            throw new \Exception('Wrong main menu config file format.No needed keys in config file '.implode(',',$check_main_menu));
+            $this->wrongFormat($check_main_menu,'main');
         }
         if(array_key_exists('subs',$config)&&is_array($config['subs'])){
             foreach($config['subs'] as $sub_menu){
                 $check_sub_menu=array_diff_key($this->sub_menu_keys,$sub_menu);
                 if(count($check_sub_menu)>0){
-                    throw new \Exception('Wrong sub menu config file format.No needed keys in config file '.implode(',',$check_sub_menu));
+                    $this->wrongFormat($check_sub_menu,'sub');
                 }
             }
         }
+    }
+    /**
+     * Get missed keys and throw Exception
+     *
+     * @param array $check_main_menu array of missed keys
+     * @param string $menu_type should be main|sub
+     * @return void
+     */
+    protected function wrongFormat(array $check_main_menu,string $menu_type){
+        switch($menu_type){
+            case 'main':
+                $menu_keys=$this->main_menu_keys;
+                break;
+            case 'sub':
+                $menu_keys=$this->sub_menu_keys;
+                break;
+            default:
+                throw  new \Exception ('Wrong menu type name.Menu type should be "main" or "sub".You Entered: '.$menu_type);
+        }
+        $missed_keys=[];
+            foreach($check_main_menu as $value){
+                $missed_keys[]=array_search($value,$menu_keys);
+            }
+            throw new \Exception('Wrong main menu config file format.No needed keys in config file: '.implode(',',$check_main_menu).'.You need to add "'. implode(',',$missed_keys).'" parameter');
     }
 }

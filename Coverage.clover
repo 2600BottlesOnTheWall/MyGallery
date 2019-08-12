@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1565600323">
-  <project timestamp="1565600323">
+<coverage generated="1565602142">
+  <project timestamp="1565602142">
     <package name="MyGallery\Menu\Admin">
       <file name="/var/www/html/wpblog1/wp-content/plugins/my-gallery/inc/Menu/Admin/MenuPage.php">
         <class name="MyGallery\Menu\Admin\MenuPage" namespace="MyGallery\Menu\Admin">
@@ -337,13 +337,13 @@
     <package name="MyGallery\Utils">
       <file name="/var/www/html/wpblog1/wp-content/plugins/my-gallery/inc/Utils/MenuConfig.php">
         <class name="MyGallery\Utils\MenuConfig" namespace="MyGallery\Utils" fullPackage="Utils" package="Utils">
-          <metrics complexity="12" methods="3" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="24" coveredstatements="17" elements="27" coveredelements="18"/>
+          <metrics complexity="16" methods="4" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="36" coveredstatements="26" elements="40" coveredelements="27"/>
         </class>
-        <line num="17" type="method" name="__construct" visibility="public" complexity="2" crap="2" count="2"/>
-        <line num="18" type="stmt" count="2"/>
+        <line num="17" type="method" name="__construct" visibility="public" complexity="2" crap="2" count="3"/>
+        <line num="18" type="stmt" count="3"/>
         <line num="19" type="stmt" count="1"/>
-        <line num="21" type="stmt" count="1"/>
-        <line num="22" type="stmt" count="1"/>
+        <line num="21" type="stmt" count="2"/>
+        <line num="22" type="stmt" count="2"/>
         <line num="23" type="stmt" count="1"/>
         <line num="24" type="stmt" count="1"/>
         <line num="31" type="method" name="get" visibility="public" complexity="4" crap="6.74" count="1"/>
@@ -356,17 +356,30 @@
         <line num="39" type="stmt" count="0"/>
         <line num="40" type="stmt" count="0"/>
         <line num="42" type="stmt" count="0"/>
-        <line num="49" type="method" name="verifyFormat" visibility="protected" complexity="6" crap="6.40" count="1"/>
-        <line num="50" type="stmt" count="1"/>
-        <line num="51" type="stmt" count="1"/>
-        <line num="52" type="stmt" count="0"/>
+        <line num="49" type="method" name="verifyFormat" visibility="protected" complexity="6" crap="6.05" count="2"/>
+        <line num="50" type="stmt" count="2"/>
+        <line num="51" type="stmt" count="2"/>
+        <line num="52" type="stmt" count="1"/>
         <line num="54" type="stmt" count="1"/>
         <line num="55" type="stmt" count="1"/>
         <line num="56" type="stmt" count="1"/>
         <line num="57" type="stmt" count="1"/>
         <line num="58" type="stmt" count="0"/>
         <line num="62" type="stmt" count="1"/>
-        <metrics loc="63" ncloc="44" classes="1" methods="3" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="24" coveredstatements="17" elements="27" coveredelements="18"/>
+        <line num="70" type="method" name="wrongFormat" visibility="protected" complexity="4" crap="4.59" count="1"/>
+        <line num="71" type="stmt" count="1"/>
+        <line num="72" type="stmt" count="1"/>
+        <line num="73" type="stmt" count="1"/>
+        <line num="74" type="stmt" count="1"/>
+        <line num="75" type="stmt" count="0"/>
+        <line num="76" type="stmt" count="0"/>
+        <line num="77" type="stmt" count="0"/>
+        <line num="79" type="stmt" count="0"/>
+        <line num="81" type="stmt" count="1"/>
+        <line num="82" type="stmt" count="1"/>
+        <line num="83" type="stmt" count="1"/>
+        <line num="85" type="stmt" count="1"/>
+        <metrics loc="87" ncloc="61" classes="1" methods="4" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="36" coveredstatements="26" elements="40" coveredelements="27"/>
       </file>
     </package>
     <package name="MyGallery\View">
@@ -475,6 +488,6 @@
       <line num="2" type="stmt" count="0"/>
       <metrics loc="1" ncloc="0" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
-    <metrics files="14" loc="1210" ncloc="782" classes="13" methods="60" coveredmethods="16" conditionals="0" coveredconditionals="0" statements="320" coveredstatements="120" elements="380" coveredelements="136"/>
+    <metrics files="14" loc="1234" ncloc="799" classes="13" methods="61" coveredmethods="16" conditionals="0" coveredconditionals="0" statements="332" coveredstatements="129" elements="393" coveredelements="145"/>
   </project>
 </coverage>
