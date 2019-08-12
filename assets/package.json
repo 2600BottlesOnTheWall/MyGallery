@@ -1,6 +1,6 @@
 {
   "name": "my-gallery",
-  "version": "1.1.3",
+  "version": "2.0.0",
   "private": true,
   "dependencies": {
     "baguettebox.js":"1.11.0",

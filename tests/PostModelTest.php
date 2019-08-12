@@ -1,6 +1,6 @@
 <?php
 use MyGallery\Models\PostModel;
-use MyGallery\Models\ShortcodeModel;
+
 /**
  * Class PostModelTest
  *
@@ -39,27 +39,27 @@ class PostModelTest extends \WP_UnitTestCase
         $this->assertEquals($this->newShortcode,$post->post_content);
     }
     public function testAddNewPostShortcodes(){
-        $postId=$this->factory()->post->create(['post_title'=>'Test post','post_content'=>$this->shortcode]);
+        $postId=$this->factory()->post->create(['post_title'=>'Test post1','post_content'=>$this->shortcode]);
         $postInstance=new PostModel($postId);
        
         $shortcode=(object) array(
             'code'=>$this->newShortcode,
             'status'=>'draft'
         );
-        $this->instance->updatePostShortcodes(array($shortcode));
-        $post=get_post($this->postId);
+        $postInstance->updatePostShortcodes(array($shortcode));
+        $post=get_post($postId);
         $this->assertEquals($this->shortcode.'<p>'.$this->newShortcode.'</p>',$post->post_content);
     }
     public function testDeletePostShortcodes(){
-        $postId=$this->factory()->post->create(['post_title'=>'Test post','post_content'=>$this->shortcode]);
+        $postId=$this->factory()->post->create(['post_title'=>'Test post2','post_content'=>$this->shortcode]);
         $postInstance=new PostModel($postId);
        
         $shortcode=(object) array(
             'code'=>$this->shortcode,
             'status'=>'deleted'
         );
-        $this->instance->updatePostShortcodes(array($shortcode));
-        $post=get_post($this->postId);
+        $postInstance->updatePostShortcodes(array($shortcode));
+        $post=get_post($postId);
         $this->assertEmpty($post->post_content);
     }
     public function tearDown()

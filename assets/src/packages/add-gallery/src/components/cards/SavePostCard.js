@@ -1,6 +1,6 @@
 import React from 'react';
-import {Card} from './elements/Card';
-import {Button} from './elements/Button';
+import {Card} from '../elements/Card';
+import {Button} from '../elements/Button';
 
 export function SavePostCard({createNewGallery,updatePostData}){
     return (

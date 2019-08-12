@@ -1,6 +1,15 @@
 body {
     background-color:#f1f1f1 !important;
 }
+a:hover{
+    text-decoration: none !important;
+}
+a:focus{
+    box-shadow: none !important;
+}
+button:focus{
+    box-shadow: none !important;
+}
 .download-indicator{
     top:0px !important;
 }
@@ -178,7 +187,9 @@ content: "";
     content:"\E803";
 
 }
-
+.rating{
+    cursor:pointer;
+}
 @media screen and (max-width: 782px){
     .wp-responsive-open #wpbody{
         right:-11.9em !important;

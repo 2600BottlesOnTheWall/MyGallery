@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card} from './elements/Card';
+import {Card} from '../elements/Card';
 
 export default function IntroCard(){
     return (

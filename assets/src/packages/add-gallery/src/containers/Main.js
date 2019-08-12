@@ -9,7 +9,7 @@ import {getPostDataFromServer} from '../actions/post-data';
 import Message from './Message';
 import SideBar from './SideBar';
 import { connect } from 'react-redux';
-import IntroCard from '../components/IntroCard';
+import IntroCard from '../components/cards/IntroCard';
 import {getNonce} from '@my-gallery/helpers'
 
 export class Main extends React.Component{
@@ -30,6 +30,11 @@ export class Main extends React.Component{
                 <p>You have unsaved changes.Please save or <a href={this.getRedirectLink(postId)}>continue</a></p>
             ]
             this.props.showMessage('Warning',message);
+            return;
+        }
+        if(postId==-1) 
+        {
+            this.props.showMessage('Warning','Please select post');
             return;
         }
         this.redirectToPage(postId);

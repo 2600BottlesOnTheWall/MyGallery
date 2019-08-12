@@ -1,6 +1,6 @@
 import React from 'react';
 import SortableImageList from './elements/SortableImageList';
-import arrayMove from 'array-move';
+
 export default class GallerySortable extends React.Component{
     constructor(props){
         super(props);

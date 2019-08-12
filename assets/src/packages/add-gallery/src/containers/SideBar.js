@@ -1,13 +1,13 @@
 import React from 'react';
-import RateCard from '../components/RateCard'
-import {SavePostCard} from '../components/SavePostCard';
-import ShortCodeCard from '../components/ShortCodeCard';
+import RateCard from '../components/cards/RateCard'
+import {SavePostCard} from '../components/cards/SavePostCard';
+import ShortCodeCard from './ShortCodeCard';
 import {showMessage} from '../actions/main';
 import {createNewShortcode,updatePostData} from '../actions/post-data';
 import { connect } from 'react-redux';
 import {getNonce} from '@my-gallery/helpers';
 import config from '@my-gallery/config';
-import {Animate} from '../components/Animate'
+
 
 export class SideBar extends React.Component{
     constructor(props){

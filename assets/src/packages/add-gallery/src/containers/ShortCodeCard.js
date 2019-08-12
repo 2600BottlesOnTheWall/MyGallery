@@ -1,7 +1,7 @@
 import React from 'react';
-import {Card} from './elements/Card';
-import {Button} from './elements/Button';
-import {Code} from './elements/Code';
+import {Card} from '../components/elements/Card';
+import {Button} from '../components/elements/Button';
+import {Code} from '../components/elements/Code';
 import { connect } from 'react-redux';
 import config from '@my-gallery/config';
 import {selectShortcode,unselectShortcode,stopEditingShortcode,deleteShortcode,deleteUnsavedShortcode} from '../actions/post-data'
