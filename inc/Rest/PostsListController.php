@@ -13,7 +13,7 @@ use MyGallery\Message\Errors;
  */
 class PostsListController
 {
-    protected $namespace = "/my-gallery/v1";
+    protected $namespace = "my-gallery/v1";
     protected $resource_name = "posts-list";
     public function __construct()
     {

@@ -16,7 +16,7 @@ use MyGallery\Message\Errors;
 class ShortcodeController
 {
 
-    protected $namespace = "/my-gallery/v1";
+    protected $namespace = "my-gallery/v1";
     protected $resource_name = "post";
     public function __construct()
     {
