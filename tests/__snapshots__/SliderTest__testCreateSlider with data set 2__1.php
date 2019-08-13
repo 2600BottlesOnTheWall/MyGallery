@@ -5,7 +5,7 @@
             gallery: true,
             item: 1,
             loop: true,
-            thumbItem: 1,
+            thumbItem: 6,
             enableDrag: true,
             enableTouch:true,
             adaptiveHeight: false,

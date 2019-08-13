@@ -1,6 +1,6 @@
 <?php
 
-class PostsListControllerTest extends \WP_UnitTestCase
+class ShortcodeControllerTest extends \WP_UnitTestCase
 {
     protected $server;
     protected $namespacedRoute = '/my-gallery/v1';
@@ -31,23 +31,24 @@ class PostsListControllerTest extends \WP_UnitTestCase
         $response = $this->server->dispatch($request);
         $this->assertEquals(200, $response->get_status());
         $data = json_decode($response->get_data(), true);
-        $this->assertArrayHasKey('postId', $data);
-        $this->assertArrayHasKey('status', $data);
-        $this->assertArrayHasKey('shortcodes', $data);
-        $this->assertEquals($data['postId'], $this->postId);
-        $this->assertCount(1, $data['shortcodes']);
-        $this->assertEquals($data['status'], 'saved');
+        $this->assertCount(1, $data);
+        $this->assertArrayHasKey('postId', $data[0]);
+        $this->assertArrayHasKey('status', $data[0]);
+        $this->assertArrayHasKey('code', $data[0]);
+        $this->assertEquals($data[0]['postId'], $this->postId);
+      
+        $this->assertEquals($data[0]['status'], 'saved');
     }
     public function testPatchPostRoute()
     {
         $request = new WP_REST_Request('PATCH', '/my-gallery/v1/post/' . $this->postId);
-        $code='[my-gallery ids=1,2,3 title="New test1" config=11611]';
-        $body=array(
-            'shortcodes'=>array(
-                'status'=>'changed',
-                'code'=>$code
-            )
-            );
+        $code='[my-gallery ids=1,2,3 title=&quot;New test1&quot; config=11611]';
+        $encoded_shortcode=json_encode(array(array(
+                        'status'=>'changed',
+                        'code'=>$code
+                    )));
+        $body="shortcodes=".rawurlencode($encoded_shortcode);
+            
         $request->set_body($body);
         $response = $this->server->dispatch($request);
         $this->assertEquals(200, $response->get_status());

@@ -165,6 +165,7 @@ class ShortcodeController
     public function saveShortcodes(\WP_REST_Request $request)
     {
         $body = $request->get_body_params();
+      
         $post_id = (int) $request['id'];
         $post = $this->getPost($post_id);
         $escaped_data = $this->escapeShortcodesArray(json_decode($body['shortcodes']));
