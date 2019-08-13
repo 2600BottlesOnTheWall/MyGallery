@@ -2,6 +2,7 @@ filter:
     excluded_paths:
         - '*.bundle.js'
         - '*.min.js'
+        - '*Test.php'
         - '*/build/*'
         - '*/devServer/*'
         - '*/public/*'
