@@ -27,44 +27,48 @@ class PostModelTest extends \WP_UnitTestCase
     }
     public function testUpdatePostShortcodes()
     {
-        $postId = $this->factory()->post->create(['post_title' => 'Test post', 'post_content' => $this->shortcode]);
-        $postInstance = new PostModel($postId);
+        
+        $postInstance = $this->getNewPost();
 
         $shortcode = (object) array(
             'code' => $this->newShortcode,
             'status' => 'changed',
         );
         $postInstance->updatePostShortcodes(array($shortcode));
-        $post = get_post($postId);
+        $post = get_post($postInstance->postId());
 
         $this->assertEquals($this->newShortcode, $post->post_content);
     }
     public function testAddNewPostShortcodes()
     {
-        $postId = $this->factory()->post->create(['post_title' => 'Test post1', 'post_content' => $this->shortcode]);
-        $postInstance = new PostModel($postId);
+      
+        $postInstance = $this->getNewPost();
 
         $shortcode = (object) array(
             'code' => $this->newShortcode,
             'status' => 'draft',
         );
         $postInstance->updatePostShortcodes(array($shortcode));
-        $post = get_post($postId);
+        $post = get_post($postInstance->postId());
         $this->assertEquals($this->shortcode . '<p>' . $this->newShortcode . '</p>', $post->post_content);
     }
     public function testDeletePostShortcodes()
     {
-        $postId = $this->factory()->post->create(['post_title' => 'Test post2', 'post_content' => $this->shortcode]);
-        $postInstance = new PostModel($postId);
+       
+        $postInstance = $this->getNewPost();
 
         $shortcode = (object) array(
             'code' => $this->shortcode,
             'status' => 'deleted',
         );
         $postInstance->updatePostShortcodes(array($shortcode));
-        $post = get_post($postId);
+        $post = get_post($postInstance->postId());
         $this->assertEmpty($post->post_content);
     }
+    protected function getNewPost(){
+        $postId = $this->factory()->post->create(['post_title' => 'Test post', 'post_content' => $this->shortcode]);
+        return new PostModel($postId);
+    }   
     public function tearDown()
     {
         parent::tearDown();

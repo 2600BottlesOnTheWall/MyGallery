@@ -42,11 +42,21 @@ class PostModel
         $this->shortcodes = $this->parseShortcodes();
     }
     /**
+     * Getter for postId
+     *
+     * @return int
+     */
+    public function postId()
+    {
+        return $this->postId;
+    }
+    /**
      * Get array of shortcodes
      *
      * @param integer $index shortcode index in array
      * @return boolean|array|object
      */
+
     public function getShortcode(int $index = -1)
     {
         if (count($this->shortcodes) == 0) {
@@ -76,7 +86,7 @@ class PostModel
         if (count($matches['shortcodes']) == 0) {
             return array();
         }
-        $shortcodes=array();
+        $shortcodes = array();
         foreach ($matches['shortcodes'] as $item) {
             $shortcode_item = $this->getShotcodeModel($item)->toObject();
             $shortcode_item->postId = $this->postId;
