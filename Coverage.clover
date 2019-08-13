@@ -1,27 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1565700801">
-  <project timestamp="1565700801">
+<coverage generated="1565704342">
+  <project timestamp="1565704342">
     <package name="MyGallery\Menu\Admin">
       <file name="/var/www/html/wpblog1/wp-content/plugins/my-gallery/inc/Menu/Admin/MenuPage.php">
         <class name="MyGallery\Menu\Admin\MenuPage" namespace="MyGallery\Menu\Admin">
-          <metrics complexity="4" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="12" elements="15" coveredelements="15"/>
+          <metrics complexity="5" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="14" elements="18" coveredelements="18"/>
         </class>
-        <line num="27" type="method" name="init" visibility="public" complexity="1" crap="1" count="1"/>
-        <line num="29" type="stmt" count="1"/>
-        <line num="30" type="stmt" count="1"/>
+        <line num="21" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="22" type="stmt" count="1"/>
+        <line num="23" type="stmt" count="1"/>
+        <line num="29" type="method" name="init" visibility="public" complexity="1" crap="1" count="1"/>
         <line num="31" type="stmt" count="1"/>
-        <line num="37" type="method" name="addMainMenu" visibility="public" complexity="1" crap="1" count="1"/>
-        <line num="40" type="stmt" count="1"/>
-        <line num="41" type="stmt" count="1"/>
-        <line num="42" type="stmt" count="1"/>
-        <line num="43" type="stmt" count="1"/>
-        <line num="49" type="method" name="addSubMenus" visibility="public" complexity="2" crap="2" count="1"/>
-        <line num="51" type="stmt" count="1"/>
-        <line num="52" type="stmt" count="1"/>
-        <line num="53" type="stmt" count="1"/>
-        <line num="54" type="stmt" count="1"/>
+        <line num="32" type="stmt" count="1"/>
+        <line num="35" type="stmt" count="1"/>
+        <line num="41" type="method" name="addMainMenu" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="44" type="stmt" count="1"/>
+        <line num="45" type="stmt" count="1"/>
+        <line num="46" type="stmt" count="1"/>
+        <line num="47" type="stmt" count="1"/>
+        <line num="54" type="method" name="addSubMenus" visibility="public" complexity="2" crap="2" count="1"/>
         <line num="56" type="stmt" count="1"/>
-        <metrics loc="59" ncloc="35" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="12" elements="15" coveredelements="15"/>
+        <line num="57" type="stmt" count="1"/>
+        <line num="58" type="stmt" count="1"/>
+        <line num="59" type="stmt" count="1"/>
+        <line num="61" type="stmt" count="1"/>
+        <metrics loc="64" ncloc="40" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="14" elements="18" coveredelements="18"/>
       </file>
     </package>
     <package name="MyGallery\Models">
@@ -490,6 +493,6 @@
       <line num="2" type="stmt" count="0"/>
       <metrics loc="1" ncloc="0" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
-    <metrics files="14" loc="1245" ncloc="805" classes="13" methods="62" coveredmethods="35" conditionals="0" coveredconditionals="0" statements="333" coveredstatements="248" elements="395" coveredelements="283"/>
+    <metrics files="14" loc="1250" ncloc="810" classes="13" methods="63" coveredmethods="36" conditionals="0" coveredconditionals="0" statements="335" coveredstatements="250" elements="398" coveredelements="286"/>
   </project>
 </coverage>

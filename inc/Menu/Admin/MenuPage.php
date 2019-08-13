@@ -18,7 +18,9 @@ class MenuPage implements MenuPageInterface
     use TemplateFactoryFacade;
 
     protected $config;
-
+    public function __construct(MenuConfig $config){
+        $this->init($config);
+    }
     /**
      * Initiate and add menu configuration file.
      *
@@ -28,6 +30,8 @@ class MenuPage implements MenuPageInterface
     {
         $this->config = $config->get();
         \add_action('admin_menu', array($this, 'addMainMenu'));
+       
+        
     }
     /**
      * Callback for "admin_menu" action
@@ -41,6 +45,7 @@ class MenuPage implements MenuPageInterface
         \add_menu_page($menu->page_title, $menu->menu_title, $menu->capability, $menu->menu_slug,  '', $menu->icon);
         $this->addSubMenus();
     }
+  
     /**
      * Renders submenu
      *

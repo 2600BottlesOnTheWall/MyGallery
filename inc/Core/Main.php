@@ -1,11 +1,7 @@
 <?php
 
 namespace MyGallery\Core;
-
-use MyGallery\Interfaces\MenuPageInterface;
 use MyGallery\Utils\MenuConfig;
-use MyGallery\View\Slider;
-
 /**
  * Initialize scripts and styles.
  *
@@ -23,15 +19,12 @@ class Main
     /**
      * Function constructor
      *
-     * @param MyGallery\Interfaces\MenuPageInterface $menu_page
-     * @param MyGallery\Utils\MenuConfig $config
      */
-    public function __construct(MenuPageInterface $menu_page, MenuConfig $config)
+    public function __construct(MenuConfig $adminConfig)
     {
-
+        $this->configMenu=$adminConfig->get();
         $this->registerActions();
-        $this->configMenu = $config->get();
-        $menu_page->init($config);
+
     }
 
     /**
@@ -43,7 +36,7 @@ class Main
      */
     public function enqueueAdminScripts($hook)
     {
-        wp_enqueue_style(MYGALLERY_PLUGIN_SLUG.'additional-style', MYGALLERY_PLUGIN_URL . '/public/css/my-gallery.css');
+        wp_enqueue_style(MYGALLERY_PLUGIN_SLUG . 'additional-style', MYGALLERY_PLUGIN_URL . '/public/css/my-gallery.css');
         if ('post.php' == $hook) {
             wp_enqueue_script(MYGALLERY_PLUGIN_SLUG . '-post-edit-script');
         }

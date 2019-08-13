@@ -34,9 +34,11 @@ $modules = [];
 
 $modules['menu_config']=new Utils\MenuConfig(MYGALLERY_PLUGIN_DIR.'menu-config.php');
 
+
 //---Admin menu modules
-$modules['menu_page'] = new Menu\Admin\MenuPage();
-$modules["main"] = new Core\Main($modules['menu_page'],$modules['menu_config']);
+
+$modules['menu_page'] = new Menu\Admin\MenuPage($modules['menu_config']);
+$modules["main"] = new Core\Main($modules['menu_config']);
 $modules["slider"] = new View\Slider($slider_template_path);
 $modules['media_buttons']=new View\MediaButtons($media_buttons_template_path);
 $modules["rest_posts_list"] = new Rest\PostsListController();
