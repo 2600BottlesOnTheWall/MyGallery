@@ -9,66 +9,58 @@ use MyGallery\Models\PostModel;
 
 class PostModelTest extends \WP_UnitTestCase
 {
+    public $newShortcode='[my-gallery ids=434,232,435 title="New test" config=11611]';
+    public $shortcode='[my-gallery ids=434,232 title="Test" config=11111]';
     public function setUp()
     {
         parent::setUp();
         $this->settings = include 'mock/defaultGallerySettings.php';
-        $this->shortcode = '[my-gallery ids=434,232 title="Test" config=11111]';
-        $this->postId = $this->factory()->post->create(['post_title' => 'Test post', 'post_content' => $this->shortcode]);
-        $this->instance = new PostModel($this->postId);
-        $this->newShortcode = '[my-gallery ids=434,232,435 title="New test" config=11611]';
 
     }
     public function testGetShortcodes()
     {
-        $shortcode = $this->instance->getShortcode();
+        $shortcode = $this->getNewPost()->getShortcode();
         $this->assertCount(1, $shortcode);
         $this->assertInstanceOf(stdClass::class, $shortcode[0]);
     }
-    public function testUpdatePostShortcodes()
+    /**
+     * @dataProvider codeData
+     */
+    public function testUpdatePostShortcodes($code,$expected)
     {
-        
+
         $postInstance = $this->getNewPost();
 
-        $shortcode = (object) array(
-            'code' => $this->newShortcode,
-            'status' => 'changed',
-        );
-        $postInstance->updatePostShortcodes(array($shortcode));
-        $post = get_post($postInstance->postId());
-
-        $this->assertEquals($this->newShortcode, $post->post_content);
-    }
-    public function testAddNewPostShortcodes()
-    {
       
-        $postInstance = $this->getNewPost();
-
-        $shortcode = (object) array(
-            'code' => $this->newShortcode,
-            'status' => 'draft',
-        );
-        $postInstance->updatePostShortcodes(array($shortcode));
+        $postInstance->updatePostShortcodes(array($code));
         $post = get_post($postInstance->postId());
-        $this->assertEquals($this->shortcode . '<p>' . $this->newShortcode . '</p>', $post->post_content);
+
+        $this->assertEquals($expected, $post->post_content);
     }
-    public function testDeletePostShortcodes()
+    public function codeData()
+    {   $newShortcode=$this->newShortcode;
+        $shortcode=$this->shortcode;
+        return [
+            [(object) array(
+                'code' => $newShortcode,
+                'status' => 'changed',
+            ), $newShortcode],
+            [(object) array(
+                'code' => $newShortcode,
+                'status' => 'draft',
+            ), $shortcode . '<p>' . $newShortcode . '</p>'],
+            [(object) array(
+                'code' => $shortcode,
+                'status' => 'deleted',
+            ), ''],
+        ];
+    }
+
+    protected function getNewPost()
     {
-       
-        $postInstance = $this->getNewPost();
-
-        $shortcode = (object) array(
-            'code' => $this->shortcode,
-            'status' => 'deleted',
-        );
-        $postInstance->updatePostShortcodes(array($shortcode));
-        $post = get_post($postInstance->postId());
-        $this->assertEmpty($post->post_content);
-    }
-    protected function getNewPost(){
         $postId = $this->factory()->post->create(['post_title' => 'Test post', 'post_content' => $this->shortcode]);
         return new PostModel($postId);
-    }   
+    }
     public function tearDown()
     {
         parent::tearDown();
