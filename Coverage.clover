@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1565774043">
-  <project timestamp="1565774043">
+<coverage generated="1565790500">
+  <project timestamp="1565790500">
     <package name="MyGallery\Menu\Admin">
       <file name="/var/www/html/wpblog1/wp-content/plugins/my-gallery/inc/Menu/Admin/MenuPage.php">
         <class name="MyGallery\Menu\Admin\MenuPage" namespace="MyGallery\Menu\Admin">
@@ -90,50 +90,50 @@
         <class name="MyGallery\Models\ShortcodeModel" namespace="MyGallery\Models">
           <metrics complexity="13" methods="7" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="36" coveredstatements="30" elements="43" coveredelements="35"/>
         </class>
-        <line num="38" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="12"/>
-        <line num="39" type="stmt" count="12"/>
-        <line num="40" type="stmt" count="12"/>
-        <line num="41" type="stmt" count="12"/>
+        <line num="33" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="12"/>
+        <line num="34" type="stmt" count="12"/>
+        <line num="35" type="stmt" count="12"/>
+        <line num="36" type="stmt" count="12"/>
+        <line num="37" type="stmt" count="12"/>
+        <line num="38" type="stmt" count="12"/>
         <line num="42" type="stmt" count="12"/>
         <line num="43" type="stmt" count="12"/>
-        <line num="47" type="stmt" count="12"/>
-        <line num="48" type="stmt" count="12"/>
-        <line num="54" type="method" name="init" visibility="protected" complexity="1" crap="1" count="12"/>
-        <line num="57" type="stmt" count="12"/>
-        <line num="58" type="stmt" count="12"/>
-        <line num="64" type="method" name="toObject" visibility="public" complexity="1" crap="1" count="12"/>
-        <line num="67" type="stmt" count="12"/>
-        <line num="68" type="stmt" count="12"/>
-        <line num="69" type="stmt" count="12"/>
-        <line num="70" type="stmt" count="12"/>
-        <line num="78" type="method" name="parseCode" visibility="protected" complexity="7" crap="7" count="12"/>
-        <line num="82" type="stmt" count="12"/>
-        <line num="84" type="stmt" count="12"/>
-        <line num="85" type="stmt" count="12"/>
+        <line num="49" type="method" name="init" visibility="protected" complexity="1" crap="1" count="12"/>
+        <line num="52" type="stmt" count="12"/>
+        <line num="53" type="stmt" count="12"/>
+        <line num="59" type="method" name="toObject" visibility="public" complexity="1" crap="1" count="12"/>
+        <line num="62" type="stmt" count="12"/>
+        <line num="63" type="stmt" count="12"/>
+        <line num="64" type="stmt" count="12"/>
+        <line num="65" type="stmt" count="12"/>
+        <line num="73" type="method" name="parseCode" visibility="protected" complexity="7" crap="7" count="12"/>
+        <line num="77" type="stmt" count="12"/>
+        <line num="79" type="stmt" count="12"/>
+        <line num="80" type="stmt" count="12"/>
+        <line num="81" type="stmt" count="12"/>
+        <line num="83" type="stmt" count="12"/>
         <line num="86" type="stmt" count="12"/>
-        <line num="88" type="stmt" count="12"/>
+        <line num="87" type="stmt" count="10"/>
+        <line num="88" type="stmt" count="10"/>
+        <line num="89" type="stmt" count="10"/>
         <line num="91" type="stmt" count="12"/>
-        <line num="92" type="stmt" count="10"/>
-        <line num="93" type="stmt" count="10"/>
-        <line num="94" type="stmt" count="10"/>
-        <line num="96" type="stmt" count="12"/>
-        <line num="99" type="stmt" count="12"/>
+        <line num="94" type="stmt" count="12"/>
+        <line num="95" type="stmt" count="12"/>
+        <line num="96" type="stmt" count="8"/>
+        <line num="97" type="stmt" count="8"/>
         <line num="100" type="stmt" count="12"/>
-        <line num="101" type="stmt" count="8"/>
-        <line num="102" type="stmt" count="8"/>
-        <line num="105" type="stmt" count="12"/>
-        <line num="106" type="stmt" count="12"/>
-        <line num="114" type="method" name="setImage" visibility="protected" complexity="1" crap="1" count="12"/>
-        <line num="117" type="stmt" count="12"/>
-        <line num="126" type="method" name="setEmptyShortcode" visibility="protected" complexity="1" crap="2.00" count="0"/>
-        <line num="128" type="stmt" count="0"/>
+        <line num="101" type="stmt" count="12"/>
+        <line num="109" type="method" name="setImage" visibility="protected" complexity="1" crap="1" count="12"/>
+        <line num="112" type="stmt" count="12"/>
+        <line num="121" type="method" name="setEmptyShortcode" visibility="protected" complexity="1" crap="2.00" count="0"/>
+        <line num="123" type="stmt" count="0"/>
+        <line num="124" type="stmt" count="0"/>
+        <line num="125" type="stmt" count="0"/>
         <line num="129" type="stmt" count="0"/>
-        <line num="130" type="stmt" count="0"/>
-        <line num="134" type="stmt" count="0"/>
-        <line num="140" type="method" name="checkShortcodeName" visibility="protected" complexity="1" crap="2.00" count="0"/>
-        <line num="142" type="stmt" count="0"/>
-        <line num="144" type="stmt" count="0"/>
-        <metrics loc="146" ncloc="96" classes="1" methods="7" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="36" coveredstatements="30" elements="43" coveredelements="35"/>
+        <line num="135" type="method" name="checkShortcodeName" visibility="protected" complexity="1" crap="2.00" count="0"/>
+        <line num="137" type="stmt" count="0"/>
+        <line num="139" type="stmt" count="0"/>
+        <metrics loc="141" ncloc="91" classes="1" methods="7" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="36" coveredstatements="30" elements="43" coveredelements="35"/>
       </file>
     </package>
     <package name="MyGallery\Rest">
@@ -479,6 +479,6 @@
       <line num="2" type="stmt" count="0"/>
       <metrics loc="1" ncloc="0" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
-    <metrics files="14" loc="1223" ncloc="793" classes="13" methods="62" coveredmethods="36" conditionals="0" coveredconditionals="0" statements="322" coveredstatements="256" elements="384" coveredelements="292"/>
+    <metrics files="14" loc="1218" ncloc="788" classes="13" methods="62" coveredmethods="36" conditionals="0" coveredconditionals="0" statements="322" coveredstatements="256" elements="384" coveredelements="292"/>
   </project>
 </coverage>

@@ -15,7 +15,7 @@ use MyGallery\Factories\ShortcodeFactory;
 class PostModel
 {
 
-    protected $shortcode_pattern = "/(?<shortcodes>\[my\-gallery.*\])/i";
+    protected $shortcode_pattern = "/(?<shortcodes>\[my\-gallery.*\])/U";
     protected $postId;
     protected $post;
     protected $postBody;

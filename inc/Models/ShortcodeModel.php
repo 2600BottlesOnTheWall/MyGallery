@@ -22,11 +22,6 @@ class ShortcodeModel
     // removeBrackets()
     use Helpers;
     protected $shortcodeNamePattern = '/(?P<name>my\-gallery)/i';
-    protected $idsPattern = '/(?P<ids>ids\=[\d|,]+)/i';
-    protected $imageIdsPattern = '/(?P<ids>\d+)/i';
-    protected $galleryTitlePattern = '/title=(\&quot\;|\")(?P<title>.+)(\&quot\;|\")/i';
-    protected $galleryClassesPattern = '/classes\=(?P<classes>[^\s]*)/i';
-    protected $galleryConfigPattern = '/ config\=(?P<config>\d{5})/i';
     protected $originalCode;
     protected $imagesIds = array();
     protected $title = '';

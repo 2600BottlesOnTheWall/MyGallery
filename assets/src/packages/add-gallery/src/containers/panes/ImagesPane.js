@@ -1,6 +1,6 @@
 import React from 'react';
-import ImageItem from '../elements/ImageIten'
-import GallerySortable from '../GallerySortable';
+import ImageItem from '../../components/elements/ImageIten'
+import GallerySortable from '../../components/GallerySortable';
 import {connect} from 'react-redux';
 import arrayMove from 'array-move';
 import {setNewImagesOrder} from '../../actions/post-data'
@@ -28,7 +28,7 @@ export  class ImagesPane extends React.Component{
         return (
             <div className="images-pane">
                 <h6 className="text-nowrap d-flex  ml-2 ">Gallery images</h6>
-                <p className="d-flex w-auto  ml-2 mr-2 border-bottom pb-3 ">Drag to change the order.<br></br>Need some help? Read the Documentation or Watch a Video</p>
+                <p className="w-auto  ml-2 mr-2 border-bottom pb-3 ">Drag to change the order.<br></br>Need some help? Read the <a href='admin.php?page=my-gallery-menu-about'>Documentation</a>&nbsp; or Watch a <a href='admin.php?page=my-gallery-menu-about'>Video</a></p>
                 <GallerySortable  items={items} onChange={this.changeHandler}/>
             </div>
         )

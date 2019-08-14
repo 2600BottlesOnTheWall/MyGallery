@@ -24,3 +24,14 @@ span.dashicons-my-gallery  {
 .my-gallery-header-banner img{
     width:100%;
 }
+.wrap-about-my-gallery{
+    display:flex;
+    justify-content: center;
+}
+.container-about{
+    min-width:350px;
+    width:700px;
+}
+.container-about li{
+    list-style:initial; 
+}

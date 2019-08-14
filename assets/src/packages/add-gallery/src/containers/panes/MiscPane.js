@@ -1,6 +1,6 @@
 import React from 'react';
-import {Input} from '../elements/Input'
-import {TextAria} from '../elements/TextAria';
+import {Input} from '../../components/elements/Input'
+import {TextAria} from '../../components/elements/TextAria';
 import {connect} from 'react-redux';
 import {updateMisc} from '../../actions/post-data'
 import { shortcode } from '../../../../helpers/src';
@@ -18,7 +18,7 @@ export class MiscPane extends React.Component{
         return(
             <div className="misc-pane">
                 <h6 className="text-nowrap d-flex ml-2 ">Miscellaneous Settings page</h6>
-                <p className="d-flex w-auto  ml-2 mr-2 border-bottom pb-3" >You may customize your gallery by using additional settings below.<br></br>Need some help? Read the Documentation or Watch a Video</p>
+                <p className="w-auto  ml-2 mr-2 border-bottom pb-3" >You may customize your gallery by using additional settings below.<br></br>Need some help? Read the <a href='admin.php?page=my-gallery-menu-about'>Documentation</a>&nbsp; or Watch a  <a href='admin.php?page=my-gallery-menu-about'>Video</a></p>
                 <table className="config-table">
                     <tbody>
                         <tr>

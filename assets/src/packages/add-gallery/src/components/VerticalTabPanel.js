@@ -1,9 +1,9 @@
 import React from 'react';
 import TabPanel from './elements/TabPanel'
 import VerticalTabsMenu from './tab-menus/VerticalTabsMenu'
-import ImagesPane from './panes/ImagesPane';
-import ConfigPane from './panes/ConfigPane';
-import MiscPane from './panes/MiscPane'
+import ImagesPane from './../containers/panes/ImagesPane';
+import ConfigPane from './../containers/panes/ConfigPane';
+import MiscPane from './../containers/panes/MiscPane'
 export default class VerticalTabPanel extends TabPanel{
     constructor(props){
         super(props);
