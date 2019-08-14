@@ -12,6 +12,9 @@
         You will use the standard wordpress interface to create a slider gallery, so the process should not 
         cause difficulties.
     </p>
+    <p>
+        This plugin is built using the latest technical features of wordpress and php. That`s why,this plugin is required:
+    </p>
     <h3>Features</h3>
     <ul>
         <li>Clean Design.</li>
@@ -28,10 +31,25 @@
     <p>This will download the latest developer copy of MyGallery.</p>
     <h2>How to use this plugin?</h2>
     <p>Watch this short videos to learn how to use MyGallery plugin.</p>
+    <p>MyGallery Tutorial create gallery</p>
+    <p><a href="https://www.youtube.com/watch?v=aBpRo7snc4o" rel="nofollow"><img src="http://img.youtube.com/vi/aBpRo7snc4o/0.jpg" alt="Alt text" data-canonical-src="http://img.youtube.com/vi/aBpRo7snc4o/0.jpg" style="max-width:100%;"></a></p>
+    <p>MyGallery Tutorial edit gallery</p>
+    <p><a href="https://www.youtube.com/watch?v=7crchc1P44M" rel="nofollow"><img src="http://img.youtube.com/vi/7crchc1P44M/0.jpg" alt="Alt text" data-canonical-src="http://img.youtube.com/vi/7crchc1P44M/0.jpg" style="max-width:100%;"></a></p>
     <p>MyGallery Tutorial Gutenberg editor</p>
     <p><a href="https://www.youtube.com/watch?v=rW9SgwwJW6c" rel="nofollow"><img src="http://img.youtube.com/vi/rW9SgwwJW6c/0.jpg" alt="Alt text" data-canonical-src="http://img.youtube.com/vi/rW9SgwwJW6c/0.jpg" style="max-width:100%;"></a></p>
     <p>MyGallery Tutorial Classic editor</p>
     <p><a href="https://www.youtube.com/watch?v=CwkWybGo-nI" rel="nofollow"><img src="http://img.youtube.com/vi/CwkWybGo-nI/0.jpg" alt="Alt text" data-canonical-src="http://img.youtube.com/vi/CwkWybGo-nI/0.jpg" style="max-width:100%;"></a></p>
+    
+    <h3>Gallery settings</h3>
+    <p>In version 2.0.0, was added the ability to change gallery slider settings.
+        Plugin settings allow you to control the display of the gallery slider:</p>
+    <ul>
+        <li>gallery mode - determines whether there is a preview of the images under the main image of the gallery</li>
+        <li>loop - allows you to create an endless scroll of images in the slider</li>
+        <li>number of thumb items -number of images in the gallery preview below the main image</li>
+        <li>items - determines the number of images in the main window</li>
+    </ul>
+    <p>You can also set the gallery title in the misc settings item</p>
     <h2>Whats Next?</h2>
     <ul>
     <li>Extending the range of slider settings.</li>

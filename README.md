@@ -50,7 +50,7 @@ MyGallery Tutorial Classic editor
 
 [![Alt text](http://img.youtube.com/vi/CwkWybGo-nI/0.jpg)](https://www.youtube.com/watch?v=CwkWybGo-nI) 
 
-##Gallery settings
+## Gallery settings
 
 In version 2.0.0, was added the ability to change gallery slider settings. 
 Plugin settings allow you to control the display of the gallery slider:
