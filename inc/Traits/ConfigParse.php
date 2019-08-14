@@ -22,8 +22,7 @@ trait ConfigParse{
             'galleryMode'=>(bool)$configs[0],
             'loop'=>(bool) $configs[1],
             'thumbsNumber'=>$configs[2],
-            'vertical'=>(bool) $configs[3],
-            'items'=>$configs[4]
+            'items'=>$configs[3]
         );
     }
 }

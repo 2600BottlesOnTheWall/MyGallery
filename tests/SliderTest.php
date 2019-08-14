@@ -53,9 +53,10 @@ Class SliderTest  extends \WP_UnitTestCase
     public function codeParsing()
     {
         return [
-            [array('ids'=>'1,2,3,4,5,6,7','title'=>'Test Gallery','config'=>'10601'), __DIR__.'/mock/SliderTestSnapshot-1.php'],
-            [array('ids'=>'1,2,3,4,5,6,7'), __DIR__.'/mock/SliderTestSnapshot-2.php'],
-            [array('ids'=>'1,2,3,4,5,6,7','classes'=>'class-1,class-2'), __DIR__.'/mock/SliderTestSnapshot-3.php'],
+            [array('ids'=>'1,2,3,4,5,6,7','title'=>'Test Gallery','config'=>'1061'),'snapshot-1'],
+            [array('ids'=>'1,2,3,4,5,6,7','title'=>'Test', 0=>'Gallery',1=>'1','config'=>'1061'),'snapshot-1'],
+            [array('ids'=>'1,2,3,4,5,6,7'),'snapshot-2'],
+            [array('ids'=>'1,2,3,4,5,6,7'),'snapshot-3'],
         ];
     }
 }

@@ -364,6 +364,8 @@
     opacity: 0.5;
     -webkit-transition: opacity 0.35s linear 0s;
     transition: opacity 0.35s linear 0s;
+    text-decoration: none !important;
+    box-shadow: none !important;;
 }
 .lSAction > a:hover {
     opacity: 1;

@@ -1,4 +1,4 @@
-<?php return '<div class="gallery ">
+<?php return '<div class="gallery">
     <script>
   
         window.myGalleryPluginSettings={

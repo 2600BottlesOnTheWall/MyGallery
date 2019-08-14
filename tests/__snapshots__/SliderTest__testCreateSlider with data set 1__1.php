@@ -1,21 +1,22 @@
-<?php return '<div class="gallery ">
+<?php return '<div class="gallery">
     <script>
   
         window.myGalleryPluginSettings={
             gallery: true,
             item: 1,
-            loop: true,
+            loop: false,
             thumbItem: 6,
             enableDrag: true,
             enableTouch:true,
             adaptiveHeight: false,
             galleryMargin: 5,
             thumbMargin: 5,
-            vertical:true,
+            vertical:false,
         }
   
     </script>
         <div class="photo-thumb-gallery">
+                            <h2>Test Gallery 1 </h2>
                         <div class="lSSlideOuter">
                 <ul id="imageGallery" class="autoblog-gallery" >
                                             <li data-thumb="http://www.testMyPlugin.com/thumbnail-image1jpg"  data-src="http://www.testMyPlugin.com/full-image1jpg" >

@@ -26,14 +26,12 @@ export const defaultShortcode={
     images:[],
     settings:{
         misc:{
-        title:"",
-        classes:""
+        title:""
         },
         config:{
         galleryMode:true,
         loop:false,
         thumbsNumber:6,
-        vertical:false,
         items:1
         }
     },

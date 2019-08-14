@@ -57,15 +57,7 @@ class ShortcodeModelTest extends \WP_UnitTestCase
         $result = $instance->toObject();
         $this->assertEquals($expected, $result->code->misc);
     }
-    /**
-     * @dataProvider codeClassesParsing
-     */
-    public function testToObjectClassesParsing($code, $expected)
-    {
-        $instance = new ShortcodeModel($code, $this->defaultSettings);
-        $result = $instance->toObject();
-        $this->assertEquals($expected, $result->code->misc);
-    }
+ 
     public function codeIdsParsing()
     {
         return [
@@ -83,22 +75,10 @@ class ShortcodeModelTest extends \WP_UnitTestCase
     public function codeConfigParsing()
     {
         return [
-            ['[my-gallery ids=3,3,4,5,4,1 title="Test title" config=10161 ]', 'title="Test title" config=10161'],
-            ['[my-gallery ids="3,1,12,1"  config=10161 title=&quot;Test title&quot;]', 'title="Test title" config=10161'],
+            ['[my-gallery ids=3,3,4,5,4,1 title="Test title" config=1161 ]', 'title="Test title" config=1161'],
+            ['[my-gallery ids="3,1,12,1"  config=1161 title=&quot;Test title&quot;]', 'title="Test title" config=1161'],
         ];
     }
-    public function codeClassesParsing()
-    {
-        return [
-            ['[my-gallery ids=3,3,4,5,4,1 classes=class-1,class-sub-class config=10161 ]', ' classes=class-1,class-sub-class config=10161'],
-            ['[my-gallery ids="3,1,12,1"  config=10161 title=&quot;Test title&quot; classes=class-1,class-sub-class]', 'title="Test title" classes=class-1,class-sub-class config=10161'],
-        ];
-    }
-    public function tearDown()
-    {
-        // your tear down methods here
+  
 
-        // then
-        parent::tearDown();
-    }
 }

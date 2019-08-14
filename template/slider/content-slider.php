@@ -1,4 +1,4 @@
-<div class="gallery <?php echo esc_attr($classes)?>">
+<div class="gallery">
     <script>
   
         window.myGalleryPluginSettings={
@@ -11,7 +11,7 @@
             adaptiveHeight: false,
             galleryMargin: 5,
             thumbMargin: 5,
-            vertical:<?php echo esc_html($boolToString($config->vertical))?>,
+            vertical:false,
         }
   
     </script>

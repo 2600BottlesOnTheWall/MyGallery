@@ -28,14 +28,7 @@ export class MiscPane extends React.Component{
                                 <p className="description">Specify titles for your gallery</p>
                             </td>
                         </tr>
-                        <tr>
-                            <th>Custom gallery classes</th>
-                            <td>
-                                <TextAria rows="5" propName="classes" className="form-control my-gallery-input-class-names"  onBlur={this.changeHandler} value={misc.classes}/>
-                                <p className="description">Specify additional classes for your gallery. Separate the class names with a comma.</p>
-
-                            </td>
-                        </tr>
+                   
                         
                     </tbody>
                 </table>

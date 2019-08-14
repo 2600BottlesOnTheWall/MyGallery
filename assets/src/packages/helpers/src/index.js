@@ -140,9 +140,8 @@ export function generateNewConfig(newConfig){
     return configCode?'config='+configCode:'';
 }
 export function generateNewMisc(newMisc){
-    const title=newMisc.title,
-        classes=newMisc.classes.replace(/(\s|\n)/g,'');
-        return (title?'title=\"'+title+'\"':'')+(classes?' classes='+classes:'')
+    const title=newMisc.title
+        return (title?'title=\"'+title+'\"':'');
 
 }
 export function oldServerData(data){

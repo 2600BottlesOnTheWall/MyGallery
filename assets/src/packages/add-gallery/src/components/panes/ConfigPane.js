@@ -52,12 +52,7 @@ export class ConfigPane extends React.Component{
                                 <p className="description">Set number of thumbnails under the main image</p>
                             </td>
                         </tr>
-                        <tr>
-                            <th>Vertical</th>
-                            <td><Switch  propName="vertical" onChange={this.changeHandler} state={config.vertical}/>
-                            <p className="description">Determines the vertical position of thumbnails. </p>
-                            </td>
-                        </tr>
+                     
                         <tr>
                             <th>Items</th>
                             <td>

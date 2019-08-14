@@ -30,7 +30,7 @@ class ShortcodeModel
     protected $originalCode;
     protected $imagesIds = array();
     protected $title = '';
-    protected $classes = array();
+
     public $images;
     public $code;
     public $settings;
@@ -95,16 +95,6 @@ class ShortcodeModel
         }
         $this->code->misc .= !empty($this->title) ? 'title="' . $this->title . '"' : '';
 
-        //parsing and escaping gallery classes
-
-        if (isset($attr['classes'])) {
-            $classes = $this->removeBrackets($attr['classes']);
-            $this->classes = $this->setCustomClassNames($classes);
-            $this->settings->misc->classes = implode(',', $this->classes);
-        }
-        $classesString = implode(',', $this->classes);
-        $this->code->misc .= !empty($classesString) ? ' classes=' . $classesString : '';
-
         //parsing gallery config
         $config='';
         if (isset($attr['config'])) {
@@ -114,23 +104,7 @@ class ShortcodeModel
         }
         $this->code->misc .= isset($attr['config']) ? ' config=' . (int) $config : '';
     }
-    /**
-     * Get custom class names from string and convert to array
-     *
-     * @param string $classes string of custom classes separate by coma
-     * @return array
-     */
-    protected function setCustomClassNames(string $classes)
-    {
-        //remove spaces
-        $class_names=array();
-        $remove_spaces = preg_replace('/(\x20|\s|%20)/i', '', $classes);
-        $classes_arr = explode(',', $remove_spaces);
-        foreach ($classes_arr as $class) {
-            $class_names[] = esc_attr($class);
-        }
-        return $class_names;
-    }
+
     /**
      * Facfde function for Images Trait function
      *
