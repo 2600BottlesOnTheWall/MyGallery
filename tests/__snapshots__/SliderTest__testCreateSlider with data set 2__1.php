@@ -17,7 +17,7 @@
     </script>
         <div class="photo-thumb-gallery">
                         <div class="lSSlideOuter">
-                <ul id="imageGallery" class="autoblog-gallery" >
+                <ul id="imageGallery" class="my-gallery-list" >
                                             <li data-thumb="http://www.testMyPlugin.com/thumbnail-image1jpg"  data-src="http://www.testMyPlugin.com/full-image1jpg" >
                         <a href="http://www.testMyPlugin.com/full-image1jpg" title="image1">
                             <img src="http://www.testMyPlugin.com/thumbnail-image1jpg" height="1080" width="1920">

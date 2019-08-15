@@ -20,7 +20,7 @@
                 <h2 class='my-gallery-plugin-title'><?php echo esc_html($title)?></h2>
             <?php endif; ?>
             <div class="lSSlideOuter">
-                <ul id="imageGallery" class="autoblog-gallery" >
+                <ul id="imageGallery" class="my-gallery-list" >
                     <?php foreach($images as $image): ?>
                         <li data-thumb="<?php echo $image->url->thumbnail[0]; ?>"  data-src="<?php echo $image->url->full[0]; ?>" >
                         <a href="<?php echo $image->url->full[0]; ?>" title="image1">

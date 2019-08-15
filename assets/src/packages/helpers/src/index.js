@@ -29,10 +29,11 @@ function shortcodeClassic(text) {
 }
 
 export function shortcode(ids) {
+    const text = '[my-gallery ids=' + ids + ']'; 
     const editorWindow = myGalleryPlugin.editor == 'gutenberg'
             ? shortcodeGutenberg(text)
-            : myGalleryPlugin.editor == 'classic' && shortcodeClassic(text),
-        text = '[my-gallery ids=' + ids + ']';
+            : myGalleryPlugin.editor == 'classic' && shortcodeClassic(text);
+        
     editorWindow.innerHTML += '<br> ' + text;
 }
 

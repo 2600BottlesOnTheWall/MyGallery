@@ -10,14 +10,7 @@ span.dashicons-my-gallery  {
 .button-container{
     display: inline-block;
 }
-.my-gallery-plugin-title{
-    text-align: center;
-    padding-bottom:20px;
-    color:rgba(0,0,0,0.4) !important;
-}
-.my-gallery-plugin-container{
-    margin:15px 0 15px;
-}
+
 
 
 .wrap-about-my-gallery{

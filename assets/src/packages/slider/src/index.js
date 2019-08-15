@@ -19,13 +19,13 @@ window.addEventListener('load', () => {
        
     }
     const gallerySettings=window.myGalleryPluginSettings||defaultSettings;
-    if(gallerySettings.vertical)gallerySettings.verticalHeight=368.52;
+  
     gallerySettings.onBeforeStart=function (el) {
         el.children('li').each(function (i, item) {
             var el = $(item);
             el.find('img').attr('src', el.data('src'));
         })
     }
-    baguetteBox.run('.autoblog-gallery');
+    baguetteBox.run('.my-gallery-list');
     $("#imageGallery").length && $("#imageGallery").lightSlider(gallerySettings)
 })
