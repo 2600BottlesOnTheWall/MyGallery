@@ -2,7 +2,10 @@ import {myGalleryClassic} from "@my-gallery/post-edit";
 import {getEditorType} from '@my-gallery/helpers';
 import {myGalleryPlugin} from 'globals';
 
-export const myGalleryGlobalConfig = myGalleryPlugin||{};
+if(!myGalleryPlugin){
+    myGalleryPlugin=window.myGalleryPlugin={}
+ }
+ export const myGalleryGlobalConfig = myGalleryPlugin;
 window.addEventListener('load', ()=>{
     myGalleryGlobalConfig.editor = getEditorType();
     switch (myGalleryGlobalConfig.editor) {
