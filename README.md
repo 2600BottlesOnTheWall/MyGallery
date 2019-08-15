@@ -10,6 +10,8 @@ This plugin is built using the latest technical features of wordpress and php. T
 *   php> = 7
 *   wordpress> = 4.8.0
 
+Demo - (https://zalevsk1y.github.io/MyGallery/)[https://zalevsk1y.github.io/MyGallery/]
+
 ### Features
 
 *   Clean Design.
