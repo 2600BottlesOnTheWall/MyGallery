@@ -23,7 +23,8 @@ Demo - [MyGallery](https://zalevsk1y.github.io/MyGallery/)
 
 
 1. You can clone the GitHub repository: `https://github.com/zalevsk1y/MyGallery.git`
-2. Or download it directly as a ZIP file: `https://github.com/zalevsk1y/MyGallery/archive/master.zip`
+2. Or download it directly as a ZIP file: [https://github.com/zalevsk1y/MyGallery/archive/master.zip](https://wordpress.org/plugins/mygallery/)
+3. Wordpress download: [https://wordpress.org/plugins/mygallery/](https://wordpress.org/plugins/mygallery/)
 
 This will download the latest developer copy of MyGallery.
 
@@ -73,7 +74,11 @@ You can also set the gallery title in the misc settings item
 
 * baguetteBox.js [https://github.com/feimosi/baguetteBox.js/](https://github.com/feimosi/baguetteBox.js/)
 * lightslider [https://github.com/sachinchoolur/lightslider](https://github.com/sachinchoolur/lightslider)
+* React Sortable HOC[https://github.com/clauderic/react-sortable-hoc](https://github.com/clauderic/react-sortable-hoc)
+
 
 ## Bugs ##
 
 If you find an issue, let us know [here](https://github.com/zalevsk1y/MyGallery/issues?state=open)!
+
+
