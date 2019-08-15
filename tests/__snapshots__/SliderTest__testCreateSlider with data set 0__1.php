@@ -1,4 +1,4 @@
-<?php return '<div class="gallery">
+<?php return '<div class="my-gallery-plugin-container">
     <script>
   
         window.myGalleryPluginSettings={
@@ -16,7 +16,7 @@
   
     </script>
         <div class="photo-thumb-gallery">
-                            <h2>Test Gallery</h2>
+                            <h2 class=\'my-gallery-plugin-title\'>Test Gallery</h2>
                         <div class="lSSlideOuter">
                 <ul id="imageGallery" class="autoblog-gallery" >
                                             <li data-thumb="http://www.testMyPlugin.com/thumbnail-image1jpg"  data-src="http://www.testMyPlugin.com/full-image1jpg" >

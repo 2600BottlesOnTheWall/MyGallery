@@ -1,7 +1,9 @@
 <?php
 
 namespace MyGallery\Core;
+
 use MyGallery\Utils\MenuConfig;
+
 /**
  * Initialize scripts and styles.
  *
@@ -22,7 +24,7 @@ class Main
      */
     public function __construct(MenuConfig $adminConfig)
     {
-        $this->configMenu=$adminConfig->get();
+        $this->configMenu = $adminConfig->get();
         $this->registerActions();
 
     }
@@ -74,8 +76,8 @@ class Main
      */
     public function enqueueStyles()
     {
-        $default_style_path= MYGALLERY_PLUGIN_URL . '/public/css/my-gallery-slider.css';
-        $style_path=apply_filters('my_gallery_style',$default_style_path);
+        $default_style_path = MYGALLERY_PLUGIN_URL . '/public/css/my-gallery-slider.css';
+        $style_path = apply_filters('my_gallery_style', $default_style_path);
         wp_enqueue_style(MYGALLERY_PLUGIN_SLUG . '-style', MYGALLERY_PLUGIN_URL . '/public/css/slider.css');
         wp_enqueue_style(MYGALLERY_PLUGIN_SLUG . '-additional-style', $style_path);
     }
@@ -89,7 +91,7 @@ class Main
     {
         wp_register_script(MYGALLERY_PLUGIN_SLUG . '-post-edit-script', MYGALLERY_PLUGIN_URL . '/public/js/post-edit.bundle.js', array('react', 'react-dom', 'lodash', 'media-models'), MYGALLERY_PLUGIN_VERSION);
         wp_register_script(MYGALLERY_PLUGIN_SLUG . '-post-new-script', MYGALLERY_PLUGIN_URL . '/public/js/post-new.bundle.js', array('react', 'react-dom', 'lodash', 'media-models'), MYGALLERY_PLUGIN_VERSION);
-        wp_register_script(MYGALLERY_PLUGIN_SLUG . '-   add-gallery', MYGALLERY_PLUGIN_URL . '/public/js/add-gallery.bundle.js', array('react', 'react-dom', 'lodash', 'underscore', 'backbone', 'jquery', 'media-models'), MYGALLERY_PLUGIN_VERSION);
+        wp_register_script(MYGALLERY_PLUGIN_SLUG . '-add-gallery', MYGALLERY_PLUGIN_URL . '/public/js/add-gallery.bundle.js', array('react', 'react-dom', 'lodash', 'underscore', 'backbone', 'jquery', 'media-models'), MYGALLERY_PLUGIN_VERSION);
         wp_register_script(MYGALLERY_PLUGIN_SLUG . '-slider-script', MYGALLERY_PLUGIN_URL . '/public/js/slider.bundle.js', array('jquery'), MYGALLERY_PLUGIN_VERSION);
 
     }
