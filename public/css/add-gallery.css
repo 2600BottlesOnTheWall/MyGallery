@@ -190,6 +190,15 @@ content: "";
 .rating{
     cursor:pointer;
 }
+.input-title{
+    width:100%
+}
+.input-classnames{
+    width:100%;
+}
+.my-gallery-header-banner img{
+    width:100%;
+}
 @media screen and (max-width: 782px){
     .wp-responsive-open #wpbody{
         right:-11.9em !important;

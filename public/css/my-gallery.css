@@ -10,20 +10,16 @@ span.dashicons-my-gallery  {
 .button-container{
     display: inline-block;
 }
-.gallery h2{
+.my-gallery-plugin-title{
     text-align: center;
-    padding-bottom:10px;
+    padding-bottom:20px;
+    color:rgba(0,0,0,0.4) !important;
+}
+.my-gallery-plugin-container{
+    margin:15px 0 15px;
 }
 
-.input-title{
-    width:100%
-}
-.input-classnames{
-    width:100%;
-}
-.my-gallery-header-banner img{
-    width:100%;
-}
+
 .wrap-about-my-gallery{
     display:flex;
     justify-content: center;

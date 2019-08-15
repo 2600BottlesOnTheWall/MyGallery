@@ -1,4 +1,4 @@
-<div class="gallery">
+<div class="my-gallery-plugin-container">
     <script>
   
         window.myGalleryPluginSettings={
@@ -17,7 +17,7 @@
     </script>
         <div class="photo-thumb-gallery">
             <?php if(!empty($title)): ?>
-                <h2><?php echo esc_html($title)?></h2>
+                <h2 class='my-gallery-plugin-title'><?php echo esc_html($title)?></h2>
             <?php endif; ?>
             <div class="lSSlideOuter">
                 <ul id="imageGallery" class="autoblog-gallery" >

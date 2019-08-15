@@ -36,7 +36,7 @@ class Main
      */
     public function enqueueAdminScripts($hook)
     {
-        wp_enqueue_style(MYGALLERY_PLUGIN_SLUG . 'additional-style', MYGALLERY_PLUGIN_URL . '/public/css/my-gallery.css');
+        wp_enqueue_style(MYGALLERY_PLUGIN_SLUG . '-main-style', MYGALLERY_PLUGIN_URL . '/public/css/my-gallery.css');
         if ('post.php' == $hook) {
             wp_enqueue_script(MYGALLERY_PLUGIN_SLUG . '-post-edit-script');
         }
@@ -46,14 +46,14 @@ class Main
         }
 
         if (strrpos($hook, $this->configMenu->menu->subs[0]->menu_slug) !== false) {
-            \wp_enqueue_style(MYGALLERY_PLUGIN_SLUG . 'add-gallery-style', MYGALLERY_PLUGIN_URL . '/public/css/add-gallery.css');
-            \wp_enqueue_style(MYGALLERY_PLUGIN_SLUG . 'add-gallery-font', MYGALLERY_PLUGIN_URL . '/public/css/font.css');
-            \wp_enqueue_style(MYGALLERY_PLUGIN_SLUG . 'bootstrap', MYGALLERY_PLUGIN_URL . '/public/css/bootstrap.css');
+            \wp_enqueue_style(MYGALLERY_PLUGIN_SLUG . '-add-gallery-style', MYGALLERY_PLUGIN_URL . '/public/css/add-gallery.css');
+            \wp_enqueue_style(MYGALLERY_PLUGIN_SLUG . '-add-gallery-font', MYGALLERY_PLUGIN_URL . '/public/css/font.css');
+            \wp_enqueue_style(MYGALLERY_PLUGIN_SLUG . '-bootstrap', MYGALLERY_PLUGIN_URL . '/public/css/bootstrap.css');
             $post_id = $this->getCustomQueryVar('post');
             if ($post_id) {
                 wp_enqueue_media(array('id' => $post_id));
             }
-            wp_enqueue_script(MYGALLERY_PLUGIN_SLUG . 'add-gallery');
+            wp_enqueue_script(MYGALLERY_PLUGIN_SLUG . '-add-gallery');
         }
     }
 
@@ -74,8 +74,10 @@ class Main
      */
     public function enqueueStyles()
     {
-        wp_enqueue_style('my_gallery_style', MYGALLERY_PLUGIN_URL . '/public/css/1.css');
-        wp_enqueue_style('my_gallery_additional_style', MYGALLERY_PLUGIN_URL . '/public/css/my-gallery.css');
+        $default_style_path= MYGALLERY_PLUGIN_URL . '/public/css/my-gallery-slider.css';
+        $style_path=apply_filters('my_gallery_style',$default_style_path);
+        wp_enqueue_style(MYGALLERY_PLUGIN_SLUG . '-style', MYGALLERY_PLUGIN_URL . '/public/css/slider.css');
+        wp_enqueue_style(MYGALLERY_PLUGIN_SLUG . '-additional-style', $style_path);
     }
 
     /**
@@ -87,7 +89,7 @@ class Main
     {
         wp_register_script(MYGALLERY_PLUGIN_SLUG . '-post-edit-script', MYGALLERY_PLUGIN_URL . '/public/js/post-edit.bundle.js', array('react', 'react-dom', 'lodash', 'media-models'), MYGALLERY_PLUGIN_VERSION);
         wp_register_script(MYGALLERY_PLUGIN_SLUG . '-post-new-script', MYGALLERY_PLUGIN_URL . '/public/js/post-new.bundle.js', array('react', 'react-dom', 'lodash', 'media-models'), MYGALLERY_PLUGIN_VERSION);
-        wp_register_script(MYGALLERY_PLUGIN_SLUG . 'add-gallery', MYGALLERY_PLUGIN_URL . '/public/js/add-gallery.bundle.js', array('react', 'react-dom', 'lodash', 'underscore', 'backbone', 'jquery', 'media-models'), MYGALLERY_PLUGIN_VERSION);
+        wp_register_script(MYGALLERY_PLUGIN_SLUG . '-   add-gallery', MYGALLERY_PLUGIN_URL . '/public/js/add-gallery.bundle.js', array('react', 'react-dom', 'lodash', 'underscore', 'backbone', 'jquery', 'media-models'), MYGALLERY_PLUGIN_VERSION);
         wp_register_script(MYGALLERY_PLUGIN_SLUG . '-slider-script', MYGALLERY_PLUGIN_URL . '/public/js/slider.bundle.js', array('jquery'), MYGALLERY_PLUGIN_VERSION);
 
     }
