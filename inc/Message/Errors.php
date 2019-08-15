@@ -23,8 +23,7 @@ class Errors
             case 'NO_RIGHTS_TO_READ':
                 return \__('Sorry, but you do not have permission to read posts data', MYGALLERY_PLUGIN_SLUG);
             case 'NO_RIGHTS_TO_WRITE':
-            return \__('Sorry, but you do not have permission to edit posts data', MYGALLERY_PLUGIN_SLUG);
+                return \__('Sorry, but you do not have permission to edit posts data', MYGALLERY_PLUGIN_SLUG);
         }
-
     }
 }

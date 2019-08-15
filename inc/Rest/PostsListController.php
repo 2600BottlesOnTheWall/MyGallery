@@ -35,7 +35,8 @@ class PostsListController
      */
     public function registerRouts()
     {
-        register_rest_route($this->namespace,
+        register_rest_route(
+            $this->namespace,
             $this->resource_name . '/(?P<order_by>[a-z]+)' . '/(?P<order>desc|asc)',
             array(
                 'method' => 'GET',
@@ -61,7 +62,7 @@ class PostsListController
     /**
      * Check if user have rights to read posts
      *
-     * 
+     *
      * @return void
      */
     public function checkPermission()
@@ -142,5 +143,4 @@ class PostsListController
         }
         return \json_encode($response);
     }
-
 }

@@ -31,8 +31,9 @@ class ShortcodeModel
     public $settings;
 
     public function __construct($code, $default_settings)
-    {   $replace_quotes_code=preg_replace('/(&quot;)/i', '"', $code);
-        $this->originalCode = substr_replace($replace_quotes_code,' ',-1,0);
+    {
+        $replace_quotes_code=preg_replace('/(&quot;)/i', '"', $code);
+        $this->originalCode = substr_replace($replace_quotes_code, ' ', -1, 0);
         $this->settings = $default_settings;
         $this->code = (object) array(
             'ids' => '',
@@ -95,7 +96,6 @@ class ShortcodeModel
         if (isset($attr['config'])) {
             $config = $this->removeBrackets($attr['config']);
             $this->settings->config = $this->setConfig($config);
-
         }
         $this->code->misc .= isset($attr['config']) ? ' config=' . (int) $config : '';
     }
@@ -110,7 +110,6 @@ class ShortcodeModel
     {
 
         return $this->createImageObject($ids);
-
     }
 
     /**

@@ -8,7 +8,7 @@
 
 return  array(
     'menu' =>  array(
-        'page_title' => __('My Gallery Menu',MYGALLERY_PLUGIN_SLUG),
+        'page_title' => __('My Gallery Menu', MYGALLERY_PLUGIN_SLUG),
         'menu_title' => __('My Gallery', MYGALLERY_PLUGIN_SLUG),
         'capability' => 'edit_posts',
         'menu_slug' => MYGALLERY_PLUGIN_SLUG . '-main-menu',
@@ -16,7 +16,7 @@ return  array(
         'icon'=> 'dashicons-'.MYGALLERY_PLUGIN_SLUG,
         'subs' => array(
              array(
-                'page_title' => __('Add gallery',MYGALLERY_PLUGIN_SLUG),
+                'page_title' => __('Add gallery', MYGALLERY_PLUGIN_SLUG),
                 'parent_slug' => MYGALLERY_PLUGIN_SLUG . '-main-menu',
                 'menu_title' => __('Add gallery', MYGALLERY_PLUGIN_SLUG),
                 'capability' => 'edit_posts',
@@ -24,7 +24,7 @@ return  array(
                 'template' => MYGALLERY_PLUGIN_DIR . 'template/menu/add-gallery-menu.php',
             ),
              array(
-                'page_title' => __('About',MYGALLERY_PLUGIN_SLUG),
+                'page_title' => __('About', MYGALLERY_PLUGIN_SLUG),
                 'parent_slug' => MYGALLERY_PLUGIN_SLUG . '-main-menu',
                 'menu_title' => __('About', MYGALLERY_PLUGIN_SLUG),
                 'capability' => 'manage_options',

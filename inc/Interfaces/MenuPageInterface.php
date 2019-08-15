@@ -14,5 +14,4 @@ use MyGallery\Utils\MenuConfig;
 interface MenuPageInterface
 {
     public function init(MenuConfig $config);
-
 }

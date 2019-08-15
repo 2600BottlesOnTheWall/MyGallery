@@ -22,8 +22,6 @@ class Success
         switch ($slug) {
             case 'SUCCESS':
                 return \__('Operation was successful.', MYGALLERY_PLUGIN_SLU);
-
         }
     }
-
 }

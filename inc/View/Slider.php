@@ -7,6 +7,7 @@ use MyGallery\Traits\ConfigParse;
 use MyGallery\Traits\Helpers;
 use MyGallery\Traits\Images;
 use MyGallery\Traits\TemplateFactoryFacade;
+
 /**
  * Render template for slider and gallery.
  *
@@ -107,12 +108,10 @@ class Slider
 
                 $prop_value = $item . ' ';
                 $prop_name = $key;
-
             }
             $counter++;
         }
         $new_attr[$prop_name] = $prop_value;
         return $new_attr;
     }
-
 }

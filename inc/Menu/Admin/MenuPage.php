@@ -4,6 +4,7 @@ namespace MyGallery\Menu\Admin;
 use MyGallery\Interfaces\MenuPageInterface;
 use MyGallery\Utils\MenuConfig;
 use MyGallery\Traits\TemplateFactoryFacade;
+
 /**
  * Class renders menu page.
  *
@@ -18,7 +19,8 @@ class MenuPage implements MenuPageInterface
     use TemplateFactoryFacade;
 
     protected $config;
-    public function __construct(MenuConfig $config){
+    public function __construct(MenuConfig $config)
+    {
         $this->init($config);
     }
     /**
@@ -30,8 +32,6 @@ class MenuPage implements MenuPageInterface
     {
         $this->config = $config->get();
         \add_action('admin_menu', array($this, 'addMainMenu'));
-       
-        
     }
     /**
      * Callback for "admin_menu" action
@@ -42,7 +42,7 @@ class MenuPage implements MenuPageInterface
     {
 
         $menu = $this->config->menu;
-        \add_menu_page($menu->page_title, $menu->menu_title, $menu->capability, $menu->menu_slug,  '', $menu->icon);
+        \add_menu_page($menu->page_title, $menu->menu_title, $menu->capability, $menu->menu_slug, '', $menu->icon);
         $this->addSubMenus();
     }
   
@@ -59,6 +59,4 @@ class MenuPage implements MenuPageInterface
             \add_submenu_page($sub->parent_slug, $sub->page_title, $sub->menu_title, $sub->capability, $sub->menu_slug, array($template, 'renderWithEcho'));
         }
     }
-   
-
 }

@@ -1,7 +1,9 @@
 <?php
 
 namespace MyGallery\View;
+
 use MyGallery\Traits\TemplateFactoryFacade;
+
 /**
  * Render media button for classic editor
  *
@@ -41,5 +43,4 @@ class MediaButtons
         $button = $this->template->render();
         return $buttons . $button;
     }
-  
 }

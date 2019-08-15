@@ -63,7 +63,8 @@ class TemplateRender
      *
      * @return void
      */
-    public function renderWithEcho(){
+    public function renderWithEcho()
+    {
         echo $this->render();
     }
     /**
@@ -72,9 +73,10 @@ class TemplateRender
      *
      * @return string
      */
-    public function render(){
+    public function render()
+    {
         if (empty($this->path)) {
-        throw new \Exception('Path did not set ' . $template_path);
+            throw new \Exception('Path did not set ' . $template_path);
         }
 
         if (count($this->args) > 0) {
@@ -89,5 +91,4 @@ class TemplateRender
         ob_end_clean();
         return $content;
     }
-
 }

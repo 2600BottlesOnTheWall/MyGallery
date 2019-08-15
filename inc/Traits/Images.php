@@ -1,5 +1,6 @@
 <?php
 namespace MyGallery\Traits;
+
 /**
  * Get image urls and creates object
  *
@@ -7,7 +8,8 @@ namespace MyGallery\Traits;
  * @author  Evgeniy S.Zalevskiy <2600@ukr.net>
  * @license MIT
  */
-trait Images{
+trait Images
+{
     /**
      * Creates object with image ids and urls
      *
@@ -15,34 +17,36 @@ trait Images{
      * @param string|array $size size of images could be a string or array
      * @return object
      */
-    protected function createImageObject(array $imageIds,$size='thumbnail'){
+    protected function createImageObject(array $imageIds, $size = 'thumbnail')
+    {
         $image=array();
-        foreach($imageIds as $image_id){
-            $image_url=$this->getImageUrl((int)$image_id,$size);
-            if($image_url){
+        foreach ($imageIds as $image_id) {
+            $image_url=$this->getImageUrl((int)$image_id, $size);
+            if ($image_url) {
                 $image[]=(object)array(
                     'id'=>$image_id,
                     'url'=>$image_url
                 );
-                }
             }
+        }
         return $image;
     }
     /**
-     * Get image url using wp_get_attachment_image_src() function 
+     * Get image url using wp_get_attachment_image_src() function
      *
      * @param integer $id
      * @param string|array $size size of images could be a string or array
      * @return object|boolean
      */
-    protected function getImageUrl(int $id,$size='thumbnail'){
+    protected function getImageUrl(int $id, $size = 'thumbnail')
+    {
         $image=array();
-        if(gettype($size)=='string'){
-            $image_url=wp_get_attachment_image_src($id,$size);
+        if (gettype($size)=='string') {
+            $image_url=wp_get_attachment_image_src($id, $size);
             return $image_url[0];
-        }else if(gettype($size)=='array'){
-            foreach($size as $size_name){
-                $image[$size_name]=wp_get_attachment_image_src($id,$size_name);
+        } elseif (gettype($size)=='array') {
+            foreach ($size as $size_name) {
+                $image[$size_name]=wp_get_attachment_image_src($id, $size_name);
             }
             return (object)$image;
         }

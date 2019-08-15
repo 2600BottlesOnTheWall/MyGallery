@@ -143,5 +143,4 @@ class PostModel
 
         return ShortcodeFactory::get($code);
     }
-
 }

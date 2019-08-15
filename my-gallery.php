@@ -13,8 +13,8 @@ License: MIT
 <?php
 namespace MyGallery;
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
+if (! defined('ABSPATH')) {
+    exit;
 }
 
 

@@ -39,7 +39,8 @@ class ShortcodeController
     public function registerRouts()
     {
 
-        register_rest_route($this->namespace,
+        register_rest_route(
+            $this->namespace,
             $this->resource_name . '/(?P<id>[\d]+)',
             array(
                 'methods' => 'GET',
@@ -48,7 +49,8 @@ class ShortcodeController
                 'schema' => array($this, 'getSchema'),
             )
         );
-        register_rest_route($this->namespace,
+        register_rest_route(
+            $this->namespace,
             $this->resource_name . '/(?P<id>[\d]+)',
             array(
                 'methods' => 'PATCH',
@@ -64,12 +66,11 @@ class ShortcodeController
                 ),
             )
         );
-
     }
     /**
      * Check if user have rights to read posts
      *
-     * 
+     *
      * @return void
      */
     public function checkPermission()
@@ -87,7 +88,8 @@ class ShortcodeController
      * @return void
      */
     public function checkPermissionPostUpdate(\WP_REST_Request $request)
-        {$post_id = (int) $request['id'];
+    {
+        $post_id = (int) $request['id'];
 
         if (!current_user_can('edit_post', $post_id)) {
             return new \WP_Error('rest_forbidden', Errors::text('NO_RIGHTS_TO_WRITE'));
@@ -182,7 +184,6 @@ class ShortcodeController
     {
         $escaped_data = [];
         foreach ($shortcodes as $shortcode) {
-
             $escaped_data[] = (object) array(
                 "status" => esc_html($shortcode->status),
                 "code" => esc_html($shortcode->code),
@@ -201,7 +202,6 @@ class ShortcodeController
         $post = $this->getPost($id);
         $response = $post->getShortcode();
         return $response;
-
     }
     /**
      * Post Factory facade

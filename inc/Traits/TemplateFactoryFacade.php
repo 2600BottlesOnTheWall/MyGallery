@@ -20,7 +20,8 @@ trait TemplateFactoryFacade
      * @param string $templatePath path to template
      * @return object
      */
-    protected function getTemplate(string $templatePath){
+    protected function getTemplate(string $templatePath)
+    {
         return TemplateFactory::get($templatePath);
     }
 }

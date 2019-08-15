@@ -26,7 +26,6 @@ class Main
     {
         $this->configMenu = $adminConfig->get();
         $this->registerActions();
-
     }
 
     /**
@@ -93,7 +92,6 @@ class Main
         wp_register_script(MYGALLERY_PLUGIN_SLUG . '-post-new-script', MYGALLERY_PLUGIN_URL . '/public/js/post-new.bundle.js', array('react', 'react-dom', 'lodash', 'media-models'), MYGALLERY_PLUGIN_VERSION);
         wp_register_script(MYGALLERY_PLUGIN_SLUG . '-add-gallery', MYGALLERY_PLUGIN_URL . '/public/js/add-gallery.bundle.js', array('react', 'react-dom', 'lodash', 'underscore', 'backbone', 'jquery', 'media-models'), MYGALLERY_PLUGIN_VERSION);
         wp_register_script(MYGALLERY_PLUGIN_SLUG . '-slider-script', MYGALLERY_PLUGIN_URL . '/public/js/slider.bundle.js', array('jquery'), MYGALLERY_PLUGIN_VERSION);
-
     }
 
     /**
@@ -107,7 +105,6 @@ class Main
         add_action('admin_enqueue_scripts', array($this, 'enqueueAdminScripts'));
         add_action('wp_enqueue_scripts', array($this, 'enqueueStyles'));
         add_action('wp_enqueue_scripts', array($this, 'enqueueScripts'));
-
     }
     /**
      * Get query params
@@ -127,5 +124,4 @@ class Main
                 return false;
         }
     }
-
 }
