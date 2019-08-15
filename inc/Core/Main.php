@@ -77,7 +77,8 @@ class Main
     {
         $default_style_path = MYGALLERY_PLUGIN_URL . '/public/css/my-gallery-slider.css';
         $style_path = apply_filters('my_gallery_style', $default_style_path);
-        wp_enqueue_style(MYGALLERY_PLUGIN_SLUG . '-style', MYGALLERY_PLUGIN_URL . '/public/css/slider.css');
+        wp_enqueue_style(MYGALLERY_PLUGIN_SLUG . '-slider-style', MYGALLERY_PLUGIN_URL . '/public/css/slider.css');
+        wp_enqueue_style(MYGALLERY_PLUGIN_SLUG . '-additional-slider-style', $style_path);
  
     }
 
