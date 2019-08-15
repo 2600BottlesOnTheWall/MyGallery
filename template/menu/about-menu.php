@@ -16,12 +16,12 @@
         This plugin is built using the latest technical features of wordpress and php. That`s why,this plugin is required:
     </p>
     <h3>Features</h3>
-    <ul>
+    <ol>
         <li>Clean Design.</li>
         <li>Supports guttenberg editor and classic editor.</li>
         <li>Easy customizable</li>
         <li>Shortcode support.</li>
-    </ul>
+</ol>
     <h3>Installing</h3>
     <ol>
         <li>You can download from the Wordpress.org : <a href='https://wordpress.org/plugins/mygallery/'>https://wordpress.org/plugins/mygallery/</a></li>
@@ -43,24 +43,24 @@
     <h3>Gallery settings</h3>
     <p>In version 2.0.0, was added the ability to change gallery slider settings.
         Plugin settings allow you to control the display of the gallery slider:</p>
-    <ul>
+    <ol>
         <li>gallery mode - determines whether there is a preview of the images under the main image of the gallery</li>
         <li>loop - allows you to create an endless scroll of images in the slider</li>
         <li>number of thumb items -number of images in the gallery preview below the main image</li>
         <li>items - determines the number of images in the main window</li>
-    </ul>
+    </ol>
     <p>You can also set the gallery title in the misc settings item</p>
     <h2>Whats Next?</h2>
-    <ul>
+    <ol>
     <li>Extending the range of slider settings.</li>
     <li>Using plugins for even more customization.</li>
     <li>Create a gallery using images from instagram.</li>
-    </ul>
+    </ol>
     <h2>Dependencies</h2>
-    <ul>
+    <ol>
     <li>baguetteBox.js <a href="https://github.com/feimosi/baguetteBox.js/">https://github.com/feimosi/baguetteBox.js/</a></li>
     <li>lightslider <a href="https://github.com/sachinchoolur/lightslider">https://github.com/sachinchoolur/lightslider</a></li>
-    </ul>
+    </ol>
     <h2>Bugs</h2>
     <p>If you find an issue, let us know <a href="https://github.com/zalevsk1y/MyGallery/issues?state=open">here</a>!</p>
 </div>
