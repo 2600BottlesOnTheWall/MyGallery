@@ -5,7 +5,7 @@
     
     <div  itemprop="text">
     <p>
-        <img src="<?php echo plugins_url('../../public/images/banner_header_2.0.png', __FILE__ ) ?>" alt="'Alt text'" style="max-width:100%;">
+        <img src="<?php echo MYGALLERY_PLUGIN_URL.'/public/images/banner_top.png' ?>" alt="'Alt text'" style="max-width:100%;">
     </p>
     <p>
         MyGallery is a wordpress plugin that allows you to create a slider gallery anywhere in your post.

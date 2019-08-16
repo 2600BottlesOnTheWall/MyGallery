@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1565948794">
-  <project timestamp="1565948794">
+<coverage generated="1565950971">
+  <project timestamp="1565950971">
     <package name="MyGallery\Menu\Admin">
       <file name="/var/www/html/wpblog1/wp-content/plugins/my-gallery/inc/Menu/Admin/MenuPage.php">
         <class name="MyGallery\Menu\Admin\MenuPage" namespace="MyGallery\Menu\Admin">
