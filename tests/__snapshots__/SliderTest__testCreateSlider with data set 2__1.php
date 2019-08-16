@@ -1,7 +1,7 @@
 <?php return '<div class="my-gallery-plugin-container">
     <script>
-  
-        window.myGalleryPluginSettings={
+        window.myGalleryPluginSettings=window.myGalleryPluginSettings||[];
+        window.myGalleryPluginSettings.push({
             gallery: true,
             item: 1,
             loop: true,
@@ -12,11 +12,11 @@
             galleryMargin: 5,
             thumbMargin: 5,
             vertical:false,
-        }
+        });
   
     </script>
         <div class="photo-thumb-gallery">
-                        <div class="lSSlideOuter">
+                       
                 <ul id="imageGallery" class="my-gallery-list" >
                                             <li data-thumb="http://www.testMyPlugin.com/thumbnail-image1jpg"  data-src="http://www.testMyPlugin.com/full-image1jpg" >
                         <a href="http://www.testMyPlugin.com/full-image1jpg" title="image1">
@@ -49,8 +49,8 @@
                             </a>
                         </li>
                                     </ul>
-            </div> <!--  photo-thumb-gallery -->
-        </div> <!--  gallery-tittle -->
+       
+        </div> <!--  photo-thumb-gallery -->
     </div> <!--  gallery -->
     
 
