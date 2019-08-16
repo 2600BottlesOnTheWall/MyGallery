@@ -42,13 +42,7 @@ html,body{
     margin:40px 0 50px;
   ;
 }
-.footer{
-    width: 100%;
-    height: 100px;
-    overflow: hidden;
-    display:flex;
-    background-color: #e9eaeb;
-}
+
 .my-gallery-plugin-container img{
     max-width: 100%;
     height: auto;
