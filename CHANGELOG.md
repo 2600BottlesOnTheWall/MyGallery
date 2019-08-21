@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## 2.0.1 - 2019-08-21
+
+### Changed
+
+*   change name of the plugin
+
+### Added
+
+*   front end error handler
+
 ## 2.0.0 - 2019-08-01
 
 ### Added

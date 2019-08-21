@@ -4,8 +4,8 @@ filter:
         - '*.min.js'
         - '*/build/*'
         - '*/devServer/*'
-        - '*/public/*'
-        - '*/tests/*'
+        - 'public/'
+        - 'tests/'
 checks:
     javascript: true
     php:

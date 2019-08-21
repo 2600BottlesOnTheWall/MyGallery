@@ -1,6 +1,6 @@
 <div class='wrap wrap-about-my-gallery'>
 <div class="container-about">
-    <h1>Welcome to MyGallery <?php echo MYGALLERY_PLUGIN_VERSION ?></h1>
+    <h1>Welcome to My Slider Gallery <?php echo MYGALLERY_PLUGIN_VERSION ?></h1>
     <br>
     
     <div  itemprop="text">
@@ -8,7 +8,7 @@
         <img src="<?php echo MYGALLERY_PLUGIN_URL.'/public/images/banner_top.png' ?>" alt="'Alt text'" style="max-width:100%;">
     </p>
     <p>
-        MyGallery is a wordpress plugin that allows you to create a slider gallery anywhere in your post.
+        My Slider Gallery is a wordpress plugin that allows you to create a slider gallery anywhere in your post.
         You will use the standard wordpress interface to create a slider gallery, so the process should not 
         cause difficulties.
     </p>
@@ -28,16 +28,16 @@
         <li>Or download it directly as a ZIP file: <a href='https://github.com/zalevsk1y/MyGallery/archive/master.zip'>https://github.com/zalevsk1y/MyGallery/archive/master.zip</a></li>
         
     </ol>
-    <p>This will download the latest developer copy of MyGallery.</p>
+    <p>This will download the latest developer copy of My Slider Gallery.</p>
     <h2>How to use this plugin?</h2>
-    <p>Watch this short videos to learn how to use MyGallery plugin.</p>
-    <p>MyGallery Tutorial create gallery</p>
+    <p>Watch this short videos to learn how to use My Slider Gallery plugin.</p>
+    <p>My Slider Gallery Tutorial create gallery</p>
     <p><a href="https://www.youtube.com/watch?v=aBpRo7snc4o" rel="nofollow"><img src="http://img.youtube.com/vi/aBpRo7snc4o/0.jpg" alt="Alt text" data-canonical-src="http://img.youtube.com/vi/aBpRo7snc4o/0.jpg" style="max-width:100%;"></a></p>
-    <p>MyGallery Tutorial edit gallery</p>
+    <p>My Slider Gallery Tutorial edit gallery</p>
     <p><a href="https://www.youtube.com/watch?v=7crchc1P44M" rel="nofollow"><img src="http://img.youtube.com/vi/7crchc1P44M/0.jpg" alt="Alt text" data-canonical-src="http://img.youtube.com/vi/7crchc1P44M/0.jpg" style="max-width:100%;"></a></p>
-    <p>MyGallery Tutorial Gutenberg editor</p>
+    <p>My Slider Gallery Tutorial Gutenberg editor</p>
     <p><a href="https://www.youtube.com/watch?v=rW9SgwwJW6c" rel="nofollow"><img src="http://img.youtube.com/vi/rW9SgwwJW6c/0.jpg" alt="Alt text" data-canonical-src="http://img.youtube.com/vi/rW9SgwwJW6c/0.jpg" style="max-width:100%;"></a></p>
-    <p>MyGallery Tutorial Classic editor</p>
+    <p>My Slider Gallery Tutorial Classic editor</p>
     <p><a href="https://www.youtube.com/watch?v=CwkWybGo-nI" rel="nofollow"><img src="http://img.youtube.com/vi/CwkWybGo-nI/0.jpg" alt="Alt text" data-canonical-src="http://img.youtube.com/vi/CwkWybGo-nI/0.jpg" style="max-width:100%;"></a></p>
     
     <h3>Gallery settings</h3>

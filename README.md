@@ -4,7 +4,7 @@
 
 # My Slider Gallery Wordpress Plugin
 
-MyGallery is a wordpress plugin that allows you to create a slider gallery anywhere in your post. You will use the standard wordpress interface to create a slider gallery, so the process should not cause difficulties.
+My Slide Gallery is a wordpress plugin that allows you to create a slider gallery anywhere in your post. You will use the standard wordpress interface to create a slider gallery, so the process should not cause difficulties.
 
 This plugin is built using the latest technical features of wordpress and php. That`s why,this plugin is required:
 *   php> = 7
@@ -26,29 +26,29 @@ Demo - [My Slider Gallery](https://zalevsk1y.github.io/MyGallery/)
 2. Or download it directly as a ZIP file: [https://github.com/zalevsk1y/MyGallery/archive/master.zip](https://wordpress.org/plugins/mygallery/)
 3. Wordpress download: [https://wordpress.org/plugins/mygallery/](https://wordpress.org/plugins/mygallery/)
 
-This will download the latest developer copy of MyGallery.
+This will download the latest developer copy of My Slider Gallery.
 
 ## How to use this plugin?
 
-Watch this short videos to learn how to use MyGallery plugin. 
+Watch this short videos to learn how to use My Slider Gallery plugin. 
 
-MyGallery Tutorial create gallery
+My Slider Gallery Tutorial create gallery
 
 [![Alt text](http://img.youtube.com/vi/aBpRo7snc4o/0.jpg)](https://www.youtube.com/watch?v=aBpRo7snc4o) 
 
-MyGallery Tutorial edit gallery
+My Slider Gallery Tutorial edit gallery
 
 [![Alt text](http://img.youtube.com/vi/7crchc1P44M/0.jpg)](https://www.youtube.com/watch?v=7crchc1P44M) 
 
 
-MyGallery Tutorial Gutenberg editor
+My Slider Gallery Tutorial Gutenberg editor
 
 
 [![Alt text](http://img.youtube.com/vi/rW9SgwwJW6c/0.jpg)](https://www.youtube.com/watch?v=rW9SgwwJW6c) 
 
 
 
-MyGallery Tutorial Classic editor
+My Slider Gallery Tutorial Classic editor
 
 
 [![Alt text](http://img.youtube.com/vi/CwkWybGo-nI/0.jpg)](https://www.youtube.com/watch?v=CwkWybGo-nI) 
