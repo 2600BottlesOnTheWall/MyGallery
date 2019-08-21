@@ -3,7 +3,7 @@
 /*
 Plugin Name: My Slider Gallery
 Plugin URI: https://github.com/zalevsk1y/MyGallery
-Description: Add slider and gallery to your post fast and easy.
+Description: Plugin was renamed. MyGallery become My Slider Gallery. Add slider and gallery to your post fast and easy.
 Version: 2.0.1
 Author: Evgeny S.Zalevskiy <2600@ukr.net>
 Author URI: https://github.com/zalevsk1y/
