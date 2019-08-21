@@ -1,6 +1,6 @@
 {
-  "name": "my-gallery",
-  "version": "2.0.0",
+  "name": "my-slider-gallery",
+  "version": "2.0.1",
   "private": true,
   "dependencies": {
     "baguettebox.js":"1.11.0",

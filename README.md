@@ -2,7 +2,7 @@
 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/zalevsk1y/MyGallery/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/zalevsk1y/MyGallery/?branch=master)  [![Build Status](https://scrutinizer-ci.com/g/zalevsk1y/MyGallery/badges/build.png?b=master)](https://scrutinizer-ci.com/g/zalevsk1y/MyGallery/build-status/master)  [![Code Coverage](https://scrutinizer-ci.com/g/zalevsk1y/MyGallery/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/zalevsk1y/MyGallery/?branch=master)
 
-# MyGallery Wordpress Plugin
+# My Slider Gallery Wordpress Plugin
 
 MyGallery is a wordpress plugin that allows you to create a slider gallery anywhere in your post. You will use the standard wordpress interface to create a slider gallery, so the process should not cause difficulties.
 
@@ -10,7 +10,7 @@ This plugin is built using the latest technical features of wordpress and php. T
 *   php> = 7
 *   wordpress> = 4.8.0
 
-Demo - [MyGallery](https://zalevsk1y.github.io/MyGallery/)
+Demo - [My Slider Gallery](https://zalevsk1y.github.io/MyGallery/)
 
 ### Features
 

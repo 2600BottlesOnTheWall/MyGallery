@@ -8,8 +8,8 @@
 
 return  array(
     'menu' =>  array(
-        'page_title' => __('My Gallery Menu', MYGALLERY_PLUGIN_SLUG),
-        'menu_title' => __('My Gallery', MYGALLERY_PLUGIN_SLUG),
+        'page_title' => __('My Slider Gallery Menu', MYGALLERY_PLUGIN_SLUG),
+        'menu_title' => __('My Slider Gallery', MYGALLERY_PLUGIN_SLUG),
         'capability' => 'edit_posts',
         'menu_slug' => MYGALLERY_PLUGIN_SLUG . '-main-menu',
         'template' => MYGALLERY_PLUGIN_DIR . 'template/admin-menu/main-menu.php',
