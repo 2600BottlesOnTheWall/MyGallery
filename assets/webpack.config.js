@@ -73,6 +73,7 @@ module.exports = {
 				"@my-gallery/config":path.resolve(__dirname,"src/packages/config/src/index.js"),
 				"@my-gallery/message":path.resolve(__dirname,"src/packages/message/src/index.js"),
 				"@my-gallery/post-new":path.resolve(__dirname,"src/packages/post-new/src/index.js"),
+				"@my-gallery/error-handler": path.resolve(__dirname,"src/packages/error-handler/src/index.js")
 			}
 	},
 	plugins: [

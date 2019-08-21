@@ -1,4 +1,4 @@
-import jQuery from 'jquery';
+
 import baguetteBox from 'baguettebox.js';
 import lightSlider from 'lightslider';
 import 'baguettebox.js/dist/baguetteBox.css';
