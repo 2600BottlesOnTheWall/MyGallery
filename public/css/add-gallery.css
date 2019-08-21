@@ -134,9 +134,7 @@ content: "";
     height:32px !important;
 }
 
-.my-gallery-header-banner img{
-    width:100%;
-}
+
 .my-gallery-shortcode{
     position: relative;
 }
@@ -196,8 +194,10 @@ content: "";
 .input-classnames{
     width:100%;
 }
-.my-gallery-header-banner img{
-    width:100%;
+.my-gallery-header-banner{
+    width: 100%;
+    overflow: hidden;
+    background-color: black;
 }
 @media screen and (max-width: 782px){
     .wp-responsive-open #wpbody{
