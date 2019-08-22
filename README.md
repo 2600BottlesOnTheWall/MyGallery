@@ -1,6 +1,6 @@
 !['Alt text'](public/images/banner_header_2.0.png)
 
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/zalevsk1y/MyGallery/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/zalevsk1y/MyGallery/?branch=master)  [![Build Status](https://scrutinizer-ci.com/g/zalevsk1y/MyGallery/badges/build.png?b=master)](https://scrutinizer-ci.com/g/zalevsk1y/MyGallery/build-status/master)  [![Code Coverage](https://scrutinizer-ci.com/g/zalevsk1y/MyGallery/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/zalevsk1y/MyGallery/?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/zalevsk1y/my-slider-gallery/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/zalevsk1y/my-slider-gallery/?branch=master) [![Build Status](https://scrutinizer-ci.com/g/zalevsk1y/my-slider-gallery/badges/build.png?b=master)](https://scrutinizer-ci.com/g/zalevsk1y/my-slider-gallery/build-status/master) [![Code Coverage](https://scrutinizer-ci.com/g/zalevsk1y/my-slider-gallery/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/zalevsk1y/my-slider-gallery/?branch=master)
 
 # My Slider Gallery Wordpress Plugin
 
@@ -10,7 +10,7 @@ This plugin is built using the latest technical features of wordpress and php. T
 *   php> = 7
 *   wordpress> = 4.8.0
 
-Demo - [My Slider Gallery](https://zalevsk1y.github.io/MyGallery/)
+Demo - [My Slider Gallery](https://github.com/zalevsk1y/my-slider-gallery/)
 
 ### Features
 
@@ -22,8 +22,8 @@ Demo - [My Slider Gallery](https://zalevsk1y.github.io/MyGallery/)
 ### Installing
 
 
-1. You can clone the GitHub repository: `https://github.com/zalevsk1y/MyGallery.git`
-2. Or download it directly as a ZIP file: [https://github.com/zalevsk1y/MyGallery/archive/master.zip](https://wordpress.org/plugins/mygallery/)
+1. You can clone the GitHub repository: `https://github.com/zalevsk1y/my-slider-gallery.git`
+2. Or download it directly as a ZIP file: [https://github.com/zalevsk1y/my-slider-gallery/archive/master.zip](https://wordpress.org/plugins/mygallery/)
 3. Wordpress download: [https://wordpress.org/plugins/mygallery/](https://wordpress.org/plugins/mygallery/)
 
 This will download the latest developer copy of My Slider Gallery.
@@ -79,6 +79,6 @@ You can also set the gallery title in the misc settings item
 
 ## Bugs ##
 
-If you find an issue, let us know [here](https://github.com/zalevsk1y/MyGallery/issues?state=open)!
+If you find an issue, let us know [here](https://github.com/zalevsk1y/my-slider-gallery/issues/new)!
 
 
