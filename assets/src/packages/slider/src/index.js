@@ -5,7 +5,7 @@ import 'baguettebox.js/dist/baguetteBox.css';
 import 'lightslider/dist/css/lightslider.css';
 import 'lightslider/dist/img/controls.png'
 
-window.addEventListener('load', () => {
+window.addEventListener('DOMContentLoaded', () => {
     const defaultSettings={
         gallery: true,
         item: 1,
