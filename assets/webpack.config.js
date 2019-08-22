@@ -89,7 +89,7 @@ module.exports = {
 		  
 	],
 	devServer:{
-		port:9000,
+		port:9001,
 		contentBase: [path.resolve(__dirname, '../public/'),path.join(__dirname,'devServer/assert')],
 		index:path.join(__dirname, 'devServer/index.html'),
 		before:devServer

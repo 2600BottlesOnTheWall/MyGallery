@@ -19,7 +19,7 @@ const config={
         deleteShortcodeApi:"admin-ajax.php?action=my_gallery_shortcode_api&status=delete"
     },
     errorReport:{
-        url:'https://github.com/zalevsk1y/MyGallery/issues/new'
+        url:'https://github.com/zalevsk1y/my-slider-gallery/issues/new'
     }
 } 
 

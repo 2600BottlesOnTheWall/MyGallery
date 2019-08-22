@@ -10,7 +10,7 @@ This plugin is built using the latest technical features of wordpress and php. T
 *   php> = 7
 *   wordpress> = 4.8.0
 
-Demo - [My Slider Gallery](https://github.com/zalevsk1y/my-slider-gallery/)
+Demo - [My Slider Gallery](https://zalevsk1y.github.io/my-slider-gallery/)
 
 ### Features
 
