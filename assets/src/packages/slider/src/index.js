@@ -20,9 +20,19 @@ window.addEventListener('DOMContentLoaded', () => {
     }
     const gallerySettings=window.myGalleryPluginSettings;
     const onBeforeStart=function (el) {
+        const widthOfContainer=el.innerWidth();
         el.children('li').each(function (i, item) {
-            var el = $(item);
-            el.find('img').attr('src', el.data('src'));
+            var galleryItem = $(item),
+                image=galleryItem.find('img'),
+                imgObj=$('<img>'),
+                imgWidth=parseInt(image.attr('width')),
+                imgHeight=parseInt(image.attr('height')),
+                currentImageHeight=widthOfContainer*(imgHeight/imgWidth);
+                image.css('height',currentImageHeight+'px');
+            imgObj.attr('src', galleryItem.data('src')).on('load',function(){
+                image.css('height','auto');
+                image.attr('src', galleryItem.data('src'));
+            })
         });
     }
     $(".my-gallery-list").each(function(key,value){
