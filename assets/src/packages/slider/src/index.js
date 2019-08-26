@@ -19,6 +19,12 @@ window.addEventListener('DOMContentLoaded', () => {
        
     }
     const gallerySettings=window.myGalleryPluginSettings;
+    $(window).bind(
+        'touchmove',
+         function(e) {
+          e.preventDefault();
+        }
+      );
     const onBeforeStart=function (el) {
         //lazy load
         const widthOfContainer=el.innerWidth();
