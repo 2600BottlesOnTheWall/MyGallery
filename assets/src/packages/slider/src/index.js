@@ -44,6 +44,6 @@ window.addEventListener('DOMContentLoaded', () => {
         $(value).lightSlider(settings)
     })
     
-    baguetteBox.run('.my-gallery-list');
+    baguetteBox.run('.my-gallery-list',{'noScrollbars':true});
    
 })
