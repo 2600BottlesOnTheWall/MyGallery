@@ -1,4 +1,5 @@
 <?php
+
 namespace MyGallery\Models;
 
 use MyGallery\Traits\ConfigParse;
@@ -6,13 +7,11 @@ use MyGallery\Traits\Helpers;
 use MyGallery\Traits\Images;
 
 /**
- * Operates with shortcode object
+ * Operates with shortcode object.
  *
- * @package Models
  * @author  Evgeniy S.Zalevskiy <2600@ukr.net>
  * @license MIT
  */
-
 class ShortcodeModel
 {
     // setConfig()
@@ -23,7 +22,7 @@ class ShortcodeModel
     use Helpers;
     protected $shortcodeNamePattern = '/(?P<name>my\-gallery)/i';
     protected $originalCode;
-    protected $imagesIds = array();
+    protected $imagesIds = [];
     protected $title = '';
 
     public $images;
@@ -32,16 +31,17 @@ class ShortcodeModel
 
     public function __construct($code, $default_settings)
     {
-        $replace_quotes_code=preg_replace('/(&quot;)/i', '"', $code);
+        $replace_quotes_code = preg_replace('/(&quot;)/i', '"', $code);
         $this->originalCode = substr_replace($replace_quotes_code, ' ', -1, 0);
         $this->settings = $default_settings;
-        $this->code = (object) array(
-            'ids' => '',
+        $this->code = (object) [
+            'ids'    => '',
             'config' => '',
-            'misc' => '',
-        );
+            'misc'   => '',
+        ];
         $this->init();
     }
+
     /**
      * Initialize.
      *
@@ -49,23 +49,24 @@ class ShortcodeModel
      */
     protected function init()
     {
-
         $this->parseCode();
     }
+
     /**
-     * Creates shortcode object in proper format for front end
+     * Creates shortcode object in proper format for front end.
      *
      * @return object
      */
     public function toObject()
     {
-        return (object) array(
-            'code' => $this->code,
-            'images' => $this->images,
-            'settings' => $this->settings,
+        return (object) [
+            'code'          => $this->code,
+            'images'        => $this->images,
+            'settings'      => $this->settings,
             '_originalCode' => $this->originalCode,
-        );
+        ];
     }
+
     /**
      * Parse shortcode attributes with shortcode_parse_atts() wp function.
      *
@@ -81,7 +82,7 @@ class ShortcodeModel
             $ids = $this->removeBrackets($attr['ids']);
             $this->images = $this->setImage(explode(',', $ids));
         }
-        $this->code->ids = isset($ids) ? 'ids=' . $ids : '';
+        $this->code->ids = isset($ids) ? 'ids='.$ids : '';
         //parsing and escaping gallery title
 
         if (isset($attr['title'])) {
@@ -89,47 +90,48 @@ class ShortcodeModel
             $this->title = esc_html($title);
             $this->settings->misc->title = $this->title;
         }
-        $this->code->misc .= !empty($this->title) ? 'title="' . $this->title . '"' : '';
+        $this->code->misc .= !empty($this->title) ? 'title="'.$this->title.'"' : '';
 
         //parsing gallery config
-        $config='';
+        $config = '';
         if (isset($attr['config'])) {
             $config = $this->removeBrackets($attr['config']);
             $this->settings->config = $this->setConfig($config);
         }
-        $this->code->misc .= isset($attr['config']) ? ' config=' . (int) $config : '';
+        $this->code->misc .= isset($attr['config']) ? ' config='.(int) $config : '';
     }
 
     /**
-     * Facfde function for Images Trait function
+     * Facfde function for Images Trait function.
      *
      * @param array $ids
+     *
      * @return array
      */
     protected function setImage(array $ids)
     {
-
         return $this->createImageObject($ids);
     }
 
     /**
-     * Set default structure for empty shortcode object
+     * Set default structure for empty shortcode object.
      *
      * @return void
      */
     protected function setEmptyShortcode()
     {
-        $this->images = array();
-        $this->code = (object) array(
-            'ids' => '',
+        $this->images = [];
+        $this->code = (object) [
+            'ids'    => '',
             'config' => '',
-            'misc' => '',
-        );
+            'misc'   => '',
+        ];
     }
+
     /**
-     * Check if shortcode has correct name
+     * Check if shortcode has correct name.
      *
-     * @return boolean
+     * @return bool
      */
     protected function checkShortcodeName()
     {

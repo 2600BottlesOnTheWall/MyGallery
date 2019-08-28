@@ -1,2 +1,2 @@
 
-<h1><?php echo 'MAIN MENU';?></h1> 
+<h1><?php echo 'MAIN MENU'; ?></h1> 

@@ -1,4 +1,6 @@
-<?php return '<div class="my-gallery-plugin-container">
+<?php
+
+return '<div class="my-gallery-plugin-container">
     <script>
         window.myGalleryPluginSettings=window.myGalleryPluginSettings||[];
         window.myGalleryPluginSettings.push({

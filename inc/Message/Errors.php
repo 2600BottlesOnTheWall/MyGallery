@@ -1,22 +1,23 @@
 <?php
+
 namespace MyGallery\Message;
 
 /**
- * Class error message storage
+ * Class error message storage.
  *
  *
- * @package  Message
  * @author   Evgeniy S.Zalevskiy <2600@ukr.net>
  * @license  MIT
  */
 class Errors
 {
-/**
- * Text message
- *
- * @param string $slug
- * @return string|void
- */
+    /**
+     * Text message.
+     *
+     * @param string $slug
+     *
+     * @return string|void
+     */
     public static function text($slug)
     {
         switch ($slug) {

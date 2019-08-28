@@ -1,4 +1,5 @@
 <?php
+
 namespace MyGallery\Rest;
 
 use MyGallery\Factories\PostFactory;
@@ -7,68 +8,69 @@ use MyGallery\Message\Errors;
 /**
  * Rest controller
  * GET /my-gallery/v1/post/{post_id}/ return object with shortcodes
- * PATCH /my-gallery/v1/post/{post_id}/ replace or add shortcodes to post
+ * PATCH /my-gallery/v1/post/{post_id}/ replace or add shortcodes to post.
  *
- * @package Models
  * @author  Evgeniy S.Zalevskiy <2600@ukr.net>
  * @license MIT
  */
 class ShortcodeController
 {
+    protected $namespace = 'my-gallery/v1';
+    protected $resource_name = 'post';
 
-    protected $namespace = "my-gallery/v1";
-    protected $resource_name = "post";
     public function __construct()
     {
         $this->init();
     }
+
     /**
-     * Initialization.Add action for rest function registration
+     * Initialization.Add action for rest function registration.
      *
      * @return void
      */
     protected function init()
     {
-        add_action('rest_api_init', array($this, 'registerRouts'));
+        add_action('rest_api_init', [$this, 'registerRouts']);
     }
+
     /**
-     * Register routes
+     * Register routes.
      *
      * @return void
      */
     public function registerRouts()
     {
-
         register_rest_route(
             $this->namespace,
-            $this->resource_name . '/(?P<id>[\d]+)',
-            array(
-                'methods' => 'GET',
-                'callback' => array($this, 'getShortcodes'),
-                'permission_callback' => array($this, 'checkPermission'),
-                'schema' => array($this, 'getSchema'),
-            )
+            $this->resource_name.'/(?P<id>[\d]+)',
+            [
+                'methods'             => 'GET',
+                'callback'            => [$this, 'getShortcodes'],
+                'permission_callback' => [$this, 'checkPermission'],
+                'schema'              => [$this, 'getSchema'],
+            ]
         );
         register_rest_route(
             $this->namespace,
-            $this->resource_name . '/(?P<id>[\d]+)',
-            array(
-                'methods' => 'PATCH',
-                'callback' => array($this, 'saveShortcodes'),
-                'permission_callback' => array($this, 'checkPermissionPostUpdate'),
-                'schema' => array($this, 'getSchema'),
-                "args" => array(
-                    'id' => array(
+            $this->resource_name.'/(?P<id>[\d]+)',
+            [
+                'methods'             => 'PATCH',
+                'callback'            => [$this, 'saveShortcodes'],
+                'permission_callback' => [$this, 'checkPermissionPostUpdate'],
+                'schema'              => [$this, 'getSchema'],
+                'args'                => [
+                    'id' => [
                         'validate_callback' => function ($param) {
                             return is_numeric($param);
                         },
-                    ),
-                ),
-            )
+                    ],
+                ],
+            ]
         );
     }
+
     /**
-     * Check if user have rights to read posts
+     * Check if user have rights to read posts.
      *
      *
      * @return void
@@ -81,10 +83,12 @@ class ShortcodeController
 
         return true;
     }
+
     /**
-     * Check if user have rights to update posts
+     * Check if user have rights to update posts.
      *
      * @param WP_REST_Request $request
+     *
      * @return void
      */
     public function checkPermissionPostUpdate(\WP_REST_Request $request)
@@ -97,57 +101,61 @@ class ShortcodeController
 
         return true;
     }
+
     /**
-     * Get sample schema for posts list
+     * Get sample schema for posts list.
      *
      *
      * @return void
      */
     public function getSchema()
     {
-        $schema = array(
-            '$schema' => 'http://json-schema.org/draft-04/schema#',
-            'title' => 'Posts',
+        $schema = [
+            '$schema'     => 'http://json-schema.org/draft-04/schema#',
+            'title'       => 'Posts',
             'description' => 'List of posts with ids',
-            'type' => 'object',
-            'items' => array(
-                'type' => 'object',
-                'properties' => array(
-                    'postId' => array(
+            'type'        => 'object',
+            'items'       => [
+                'type'       => 'object',
+                'properties' => [
+                    'postId' => [
                         'description' => \esc_html__('post id', MYGALLERY_PLUGIN_SHORTCODE),
-                        'type' => 'integer',
-                    ),
-                    'status' => array(
+                        'type'        => 'integer',
+                    ],
+                    'status' => [
                         'description' => \esc_html__('status of shortcode (saved|draft|deleted)', MYGALLERY_PLUGIN_SHORTCODE),
-                        'type' => 'integer',
-                    ),
-                    'shortcodes' => array(
+                        'type'        => 'integer',
+                    ],
+                    'shortcodes' => [
                         'description' => \esc_html__('Array of shortcodes object', MYGALLERY_PLUGIN_SHORTCODE),
-                        'type' => 'array',
-                        'properties' => array(
-                            'code' => array(
+                        'type'        => 'array',
+                        'properties'  => [
+                            'code' => [
                                 'type' => 'object',
-                            ),
-                            'images' => array(
+                            ],
+                            'images' => [
                                 'type' => 'array',
-                            ),
-                            'settings' => array(
+                            ],
+                            'settings' => [
                                 'type' => 'object',
-                            ),
-                            '_originalCode' => array(
+                            ],
+                            '_originalCode' => [
                                 'type' => 'string',
-                            ),
-                        ),
-                    ),
-                ),
-            ),
-        );
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ];
+
         return $schema;
     }
+
     /**
-     *Function gets array of shotcode objects
+     *Function gets array of shotcode objects.
      *
      * @param WP_REST_Request $request
+     *
      * @return array
      */
     public function getShortcodes(\WP_REST_Request $request)
@@ -156,72 +164,85 @@ class ShortcodeController
         $post_data = $this->extractShortcodeData($id);
 
         $response = $this->prepareResponse($post_data);
+
         return $response;
     }
+
     /**
-     * Saves shortcode to the post body
+     * Saves shortcode to the post body.
      *
      * @param WP_REST_Request $request
+     *
      * @return void
      */
     public function saveShortcodes(\WP_REST_Request $request)
     {
         $body = $request->get_body_params();
-      
+
         $post_id = (int) $request['id'];
         $post = $this->getPost($post_id);
         $escaped_data = $this->escapeShortcodesArray(json_decode($body['shortcodes']));
         $response = $post->updatePostShortcodes($escaped_data);
+
         return $response;
     }
+
     /**
-     * Escaping received data
+     * Escaping received data.
      *
      * @param array $shortcodes array of shortcode string and status
+     *
      * @return void
      */
     protected function escapeShortcodesArray(array $shortcodes)
     {
         $escaped_data = [];
         foreach ($shortcodes as $shortcode) {
-            $escaped_data[] = (object) array(
-                "status" => esc_html($shortcode->status),
-                "code" => esc_html($shortcode->code),
-            );
+            $escaped_data[] = (object) [
+                'status' => esc_html($shortcode->status),
+                'code'   => esc_html($shortcode->code),
+            ];
         }
+
         return $escaped_data;
     }
+
     /**
-     * Get shortcode data from post pody
+     * Get shortcode data from post pody.
      *
-     * @param integer $id
+     * @param int $id
+     *
      * @return object
      */
     protected function extractShortcodeData(int $id)
     {
         $post = $this->getPost($id);
         $response = $post->getShortcode();
+
         return $response;
     }
+
     /**
-     * Post Factory facade
+     * Post Factory facade.
      *
-     * @param integer $post_id
+     * @param int $post_id
+     *
      * @return void
      */
     protected function getPost(int $post_id)
     {
         return PostFactory::get($post_id);
     }
+
     /**
-     * Decode response to json
+     * Decode response to json.
      *
-     * @param object|array|boolean $postData
+     * @param object|array|bool $postData
+     *
      * @return string json
      */
     protected function prepareResponse($postData)
     {
-
         return \json_encode($postData);
     }
 }

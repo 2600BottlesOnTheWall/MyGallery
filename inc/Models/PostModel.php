@@ -1,20 +1,18 @@
 <?php
+
 namespace MyGallery\Models;
 
 use MyGallery\Exception\MyException;
 use MyGallery\Factories\ShortcodeFactory;
 
 /**
- * Operates with WP post content
+ * Operates with WP post content.
  *
- * @package Models
  * @author  Evgeniy S.Zalevskiy <2600@ukr.net>
  * @license MIT
  */
-
 class PostModel
 {
-
     protected $shortcode_pattern = "/(?<shortcodes>\[my\-gallery.*\])/U";
     protected $postId;
     protected $post;
@@ -26,8 +24,9 @@ class PostModel
         $this->postId = $postId;
         $this->init();
     }
+
     /**
-     * Initialization
+     * Initialization.
      *
      * @return void
      */
@@ -41,8 +40,9 @@ class PostModel
         $this->postBody = $this->post->post_content;
         $this->shortcodes = $this->parseShortcodes();
     }
+
     /**
-     * Getter for postId
+     * Getter for postId.
      *
      * @return int
      */
@@ -50,17 +50,18 @@ class PostModel
     {
         return $this->postId;
     }
-    /**
-     * Get array of shortcodes
-     *
-     * @param integer $index shortcode index in array
-     * @return boolean|array|object
-     */
 
+    /**
+     * Get array of shortcodes.
+     *
+     * @param int $index shortcode index in array
+     *
+     * @return bool|array|object
+     */
     public function getShortcode(int $index = -1)
     {
         if (count($this->shortcodes) == 0) {
-            return array();
+            return [];
         }
 
         if ($index == -1) {
@@ -69,6 +70,7 @@ class PostModel
 
         return isset($this->shortcodes[$index]) ? $this->shortcodes[$index] : false;
     }
+
     /**
      * Parse shorcodes from post content.Not using  do_shortcode( $content ) because
      * it is not flexible no filters that allow to change regexp patterns.
@@ -84,22 +86,25 @@ class PostModel
 
         preg_match_all($this->shortcode_pattern, $this->postBody, $matches);
         if (count($matches['shortcodes']) == 0) {
-            return array();
+            return [];
         }
-        $shortcodes = array();
+        $shortcodes = [];
         foreach ($matches['shortcodes'] as $item) {
             $shortcode_item = $this->getShotcodeModel($item)->toObject();
             $shortcode_item->postId = $this->postId;
             $shortcode_item->status = 'saved';
             $shortcodes[] = $shortcode_item;
         }
+
         return $shortcodes;
     }
+
     /**
-     * Update post shortcodes
+     * Update post shortcodes.
      *
      * @param array $shortcodes array of shortcodes object
-     * @return integer post id
+     *
+     * @return int post id
      */
     public function updatePostShortcodes(array $shortcodes)
     {
@@ -110,37 +115,41 @@ class PostModel
                     $this->postBody = str_replace($matches['shortcodes'][$key], $shortcode->code, $this->postBody);
                     break;
                 case 'draft':
-                    $this->postBody .= '<p>' . $shortcode->code . '</p>';
+                    $this->postBody .= '<p>'.$shortcode->code.'</p>';
                     break;
                 case 'deleted':
                     $this->postBody = str_replace($matches['shortcodes'][$key], '', $this->postBody);
                     break;
             }
         }
+
         return $this->updatePost();
     }
+
     /**
-     * wp_update_post function facade
+     * wp_update_post function facade.
      *
-     * @return integer|null
+     * @return int|null
      */
     protected function updatePost()
     {
         $post_array = [
-            'ID' => $this->postId,
+            'ID'           => $this->postId,
             'post_content' => $this->postBody,
         ];
+
         return \wp_update_post($post_array);
     }
+
     /**
-     * ShortcodeFactory facade
+     * ShortcodeFactory facade.
      *
      * @param string $code
+     *
      * @return void
      */
     protected function getShotcodeModel(string $code)
     {
-
         return ShortcodeFactory::get($code);
     }
 }

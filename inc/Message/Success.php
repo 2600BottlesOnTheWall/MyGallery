@@ -1,22 +1,23 @@
 <?php
+
 namespace MyGallery\Message;
 
 /**
- * Class success message storage
+ * Class success message storage.
  *
  *
- * @package  Message
  * @author   Evgeniy S.Zalevskiy <2600@ukr.net>
  * @license  MIT
  */
 class Success
 {
-/**
- * Text message
- *
- * @param string $slug
- * @return string|void
- */
+    /**
+     * Text message.
+     *
+     * @param string $slug
+     *
+     * @return string|void
+     */
     public static function text(string $slug)
     {
         switch ($slug) {

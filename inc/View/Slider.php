@@ -11,11 +11,9 @@ use MyGallery\Traits\TemplateFactoryFacade;
 /**
  * Render template for slider and gallery.
  *
- * @package View
  * @author  Evgeniy S.Zalevskiy <2600@ukr.net>
  * @license MIT https://opensource.org/licenses/MIT
  */
-
 class Slider
 {
     use Images;
@@ -31,14 +29,15 @@ class Slider
         $this->template = $this->getTemplate($templatePath);
         $this->registerShortcode();
     }
+
     /**
-     * Register shortcode
+     * Register shortcode.
      *
      * @return void
      */
     protected function registerShortcode()
     {
-        add_shortcode('my-gallery', array($this, 'render'));
+        add_shortcode('my-gallery', [$this, 'render']);
     }
 
     /**
@@ -64,17 +63,19 @@ class Slider
 
         $imageIds = explode(',', $attr['ids']);
         //Variables use in included template
-        $args = array(
-            'title' => isset($attr['title']) ? $attr['title'] : '',
-            'classes' => isset($attr['classes']) ? str_replace(',', ' ', $attr['classes']) : '',
-            'config' => isset($attr['config']) ? $this->setConfig((int) $attr['config']) : (ShortcodeFactory::$defaultSettings)->config,
-            'images' => $this->createImageObject($imageIds, array('full', 'thumbnail')),
-            'boolToString' => array($this, 'boolToString'),
-        );
-        
+        $args = [
+            'title'        => isset($attr['title']) ? $attr['title'] : '',
+            'classes'      => isset($attr['classes']) ? str_replace(',', ' ', $attr['classes']) : '',
+            'config'       => isset($attr['config']) ? $this->setConfig((int) $attr['config']) : (ShortcodeFactory::$defaultSettings)->config,
+            'images'       => $this->createImageObject($imageIds, ['full', 'thumbnail']),
+            'boolToString' => [$this, 'boolToString'],
+        ];
+
         $content = $this->template->addArguments($args)->render();
+
         return $content;
     }
+
     /**
      * Solve problem with parsing shortcode parameters.
      * Some time shortcode was saved with &qoute; instead of quotes.It confuses WP regexp.
@@ -85,11 +86,10 @@ class Slider
      *
      * @return array
      */
-
     protected function fixParsingProblems($attr)
     {
         $pattern = '/(?P<digit_key>[\d]+)/i';
-        $new_attr = array();
+        $new_attr = [];
         $counter = 0;
         $prop_value = '';
         $prop_name = null;
@@ -100,18 +100,19 @@ class Slider
 
             preg_match_all($pattern, $key, $matches);
             if (count($matches['digit_key']) > 0) {
-                $prop_value .= $item . ' ';
+                $prop_value .= $item.' ';
             } else {
                 if ($counter > 0) {
                     $new_attr[$prop_name] = $this->removeProblemSymbols($prop_value);
                 }
 
-                $prop_value = $item . ' ';
+                $prop_value = $item.' ';
                 $prop_name = $key;
             }
             $counter++;
         }
         $new_attr[$prop_name] = $prop_value;
+
         return $new_attr;
     }
 }

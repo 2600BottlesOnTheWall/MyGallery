@@ -1,33 +1,38 @@
 <?php
+
 namespace MyGallery\Factories;
 
 use MyGallery\Models\ShortcodeModel;
 
 /**
- * Factory class creates instance of ShortcodeModel class
+ * Factory class creates instance of ShortcodeModel class.
  *
  *  *
- * @package  Factories
+ *
  * @author   Evgeniy S.Zalevskiy <2600@ukr.net>
  * @license  MIT
  */
 class ShortcodeFactory
 {
     public static $defaultSettings;
+
     /**
-     * Set default settings for shortcode parameters
+     * Set default settings for shortcode parameters.
      *
      * @param \stdClass $settings
+     *
      * @return void
      */
     public static function setDefaultSettings(\stdClass $settings)
     {
         static::$defaultSettings = $settings;
     }
+
     /**
-     * Getter for creating new instance
+     * Getter for creating new instance.
      *
      * @param string $code
+     *
      * @return object [ShortcodeModel]
      */
     public static function get(string $code)
