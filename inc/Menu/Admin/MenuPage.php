@@ -7,6 +7,8 @@ use MyGallery\Traits\TemplateFactoryFacade;
 
 /**
  * Class renders menu page.
+ * 
+ * PHP version 7.0
  *
  * @package Menu
  * @author  Evgeniy S.Zalevskiy <2600@ukr.net>
@@ -15,10 +17,21 @@ use MyGallery\Traits\TemplateFactoryFacade;
 
 class MenuPage implements MenuPageInterface
 {
-    //adds getTemplate() method
+    /**
+     * Trait adds getTemplate() method.
+     */
     use TemplateFactoryFacade;
-
+    /**
+     * Object of menu configuration class that holds menu configs.
+     *
+     * @var MenuConfig
+     */
     protected $config;
+    /**
+     * Init function.
+     *
+     * @param MenuConfig $config Object of menu configuration class that holds menu configs.
+     */
     public function __construct(MenuConfig $config)
     {
         $this->init($config);

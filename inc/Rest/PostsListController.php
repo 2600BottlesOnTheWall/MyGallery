@@ -6,6 +6,8 @@ use MyGallery\Message\Errors;
 /**
  * Rest controller
  * GET /my-gallery/v1/post-list/{order_by}/{order} return list of posts (titles & post_id)
+ * 
+ * PHP version 7.0
  *
  * @package Models
  * @author  Evgeniy S.Zalevskiy <2600@ukr.net>
@@ -13,14 +15,27 @@ use MyGallery\Message\Errors;
  */
 class PostsListController
 {
+    /**
+     * Namespace.
+     *
+     * @var string
+     */
     protected $namespace = "my-gallery/v1";
+    /**
+     * Name of resource.
+     *
+     * @var string
+     */
     protected $resource_name = "posts-list";
+    /**
+     * Init function.
+     */
     public function __construct()
     {
         $this->init();
     }
     /**
-     * Initialization.Add action for rest function registration
+     * Initialization.Add action for rest function registration.
      *
      * @return void
      */
@@ -29,7 +44,7 @@ class PostsListController
         add_action('rest_api_init', array($this, 'registerRouts'));
     }
     /**
-     * Register routes
+     * Register routes.
      *
      * @return void
      */
@@ -60,7 +75,7 @@ class PostsListController
         );
     }
     /**
-     * Check if user have rights to read posts
+     * Check if user have rights to read posts.
      *
      *
      * @return void
@@ -75,7 +90,7 @@ class PostsListController
         return true;
     }
     /**
-     * Get sample schema for posts list
+     * Get sample schema for posts list.
      *
      *
      * @return void
@@ -104,9 +119,9 @@ class PostsListController
         return $schema;
     }
     /**
-     * Get List of posts
+     * Get List of posts.
      *
-     * @param \WP_REST_Request $request
+     * @param \WP_REST_Request $request Instance contains info about request.
      * @return void
      */
     public function getPostsList(\WP_REST_Request $request)
@@ -127,9 +142,9 @@ class PostsListController
         return $response;
     }
     /**
-     * Prepare object of post titles
+     * Prepare object of post titles.
      *
-     * @param array $posts Array of WP_Post objects
+     * @param array $posts Array of WP_Post objects.
      * @return string json
      */
     protected function prepareResponse(array $posts)

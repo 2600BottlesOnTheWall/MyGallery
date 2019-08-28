@@ -4,6 +4,7 @@ namespace MyGallery\Message;
 /**
  * Class error message storage
  *
+ * PHP version 7.0
  *
  * @package  Message
  * @author   Evgeniy S.Zalevskiy <2600@ukr.net>
@@ -14,7 +15,7 @@ class Errors
 /**
  * Text message
  *
- * @param string $slug
+ * @param string $slug Slug of the message.
  * @return string|void
  */
     public static function text($slug)

@@ -7,6 +7,8 @@ use MyGallery\Utils\MenuConfig;
 /**
  * Initialize scripts and styles.
  *
+ * PHP version 7.0
+ * 
  * @package Core
  * @author  Evgeniy S.Zalevskiy <2600@ukr.net>
  * @license MIT https://opensource.org/licenses/MIT

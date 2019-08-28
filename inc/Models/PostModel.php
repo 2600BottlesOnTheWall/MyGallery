@@ -5,7 +5,9 @@ use MyGallery\Exception\MyException;
 use MyGallery\Factories\ShortcodeFactory;
 
 /**
- * Operates with WP post content
+ * Operates with WP post content.
+ * 
+ * PHP version 7.0
  *
  * @package Models
  * @author  Evgeniy S.Zalevskiy <2600@ukr.net>
@@ -14,13 +16,41 @@ use MyGallery\Factories\ShortcodeFactory;
 
 class PostModel
 {
-
+    /**
+     * RegExp pattern to get shortcode name.
+     *
+     * @var string
+     */
     protected $shortcode_pattern = "/(?<shortcodes>\[my\-gallery.*\])/U";
+    /**
+     * Id of post.
+     *
+     * @var int
+     */
     protected $postId;
+    /**
+     * WP_Post instance.
+     *
+     * @var object
+     */
     protected $post;
+    /**
+     * Post body.
+     *
+     * @var string
+     */
     protected $postBody;
+    /**
+     * Array of post shortcodes.
+     *
+     * @var array
+     */
     protected $shortcodes;
-
+    /**
+     * Init function.
+     *
+     * @param integer $postId Id of post.
+     */
     public function __construct(int $postId)
     {
         $this->postId = $postId;
@@ -51,9 +81,9 @@ class PostModel
         return $this->postId;
     }
     /**
-     * Get array of shortcodes
+     * Get array of shortcodes.
      *
-     * @param integer $index shortcode index in array
+     * @param integer $index Shortcode index in array.
      * @return boolean|array|object
      */
 
@@ -74,7 +104,7 @@ class PostModel
      * it is not flexible no filters that allow to change regexp patterns.
      *
      *
-     * @return array
+     * @return array|bool
      */
     protected function parseShortcodes()
     {
@@ -96,9 +126,9 @@ class PostModel
         return $shortcodes;
     }
     /**
-     * Update post shortcodes
+     * Update post shortcodes.
      *
-     * @param array $shortcodes array of shortcodes object
+     * @param array $shortcodes Array of shortcodes object.
      * @return integer post id
      */
     public function updatePostShortcodes(array $shortcodes)
@@ -120,7 +150,7 @@ class PostModel
         return $this->updatePost();
     }
     /**
-     * wp_update_post function facade
+     * wp_update_post function facade.
      *
      * @return integer|null
      */
@@ -133,9 +163,9 @@ class PostModel
         return \wp_update_post($post_array);
     }
     /**
-     * ShortcodeFactory facade
+     * ShortcodeFactory facade.
      *
-     * @param string $code
+     * @param string $code shortcode.
      * @return void
      */
     protected function getShotcodeModel(string $code)

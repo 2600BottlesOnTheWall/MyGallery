@@ -9,21 +9,35 @@ use MyGallery\Message\Errors;
  * GET /my-gallery/v1/post/{post_id}/ return object with shortcodes
  * PATCH /my-gallery/v1/post/{post_id}/ replace or add shortcodes to post
  *
+ * PHP version 7.0
+ * 
  * @package Models
  * @author  Evgeniy S.Zalevskiy <2600@ukr.net>
  * @license MIT
  */
 class ShortcodeController
 {
-
+    /**
+     * Namespace.
+     *
+     * @var string
+     */
     protected $namespace = "my-gallery/v1";
+    /**
+     * Name of resource.
+     *
+     * @var string
+     */
     protected $resource_name = "post";
+    /**
+     * Init function.
+     */
     public function __construct()
     {
         $this->init();
     }
     /**
-     * Initialization.Add action for rest function registration
+     * Initialization.Add action for rest function registration.
      *
      * @return void
      */
@@ -32,7 +46,7 @@ class ShortcodeController
         add_action('rest_api_init', array($this, 'registerRouts'));
     }
     /**
-     * Register routes
+     * Register routes.
      *
      * @return void
      */
@@ -68,7 +82,7 @@ class ShortcodeController
         );
     }
     /**
-     * Check if user have rights to read posts
+     * Check if user have rights to read posts.
      *
      *
      * @return void
@@ -82,9 +96,9 @@ class ShortcodeController
         return true;
     }
     /**
-     * Check if user have rights to update posts
+     * Check if user have rights to update posts.
      *
-     * @param WP_REST_Request $request
+     * @param WP_REST_Request $request Instance contains info about request.
      * @return void
      */
     public function checkPermissionPostUpdate(\WP_REST_Request $request)
@@ -98,7 +112,7 @@ class ShortcodeController
         return true;
     }
     /**
-     * Get sample schema for posts list
+     * Get sample schema for posts list.
      *
      *
      * @return void
@@ -145,9 +159,9 @@ class ShortcodeController
         return $schema;
     }
     /**
-     *Function gets array of shotcode objects
+     *Function gets array of shotcode objects.
      *
-     * @param WP_REST_Request $request
+     * @param WP_REST_Request $request Instance contains info about request.
      * @return array
      */
     public function getShortcodes(\WP_REST_Request $request)
@@ -177,7 +191,7 @@ class ShortcodeController
     /**
      * Escaping received data
      *
-     * @param array $shortcodes array of shortcode string and status
+     * @param array $shortcodes array of shortcode string and status.
      * @return void
      */
     protected function escapeShortcodesArray(array $shortcodes)
@@ -192,9 +206,9 @@ class ShortcodeController
         return $escaped_data;
     }
     /**
-     * Get shortcode data from post pody
+     * Get shortcode data from post body.
      *
-     * @param integer $id
+     * @param integer $id Post id.
      * @return object
      */
     protected function extractShortcodeData(int $id)
@@ -204,9 +218,9 @@ class ShortcodeController
         return $response;
     }
     /**
-     * Post Factory facade
+     * Post Factory facade.
      *
-     * @param integer $post_id
+     * @param integer $post_id Post id.
      * @return void
      */
     protected function getPost(int $post_id)
@@ -214,9 +228,9 @@ class ShortcodeController
         return PostFactory::get($post_id);
     }
     /**
-     * Decode response to json
+     * Decode response to json.
      *
-     * @param object|array|boolean $postData
+     * @param object|array|boolean $postData Data that should be send to user.
      * @return string json
      */
     protected function prepareResponse($postData)

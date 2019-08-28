@@ -16,14 +16,13 @@ class PostFactory
 {
 
     /**
-     * Getter for creating new instance
+     * Getter for creating new instance.
      *
-     * @param integer $postId
-     * @return object [PostModel]
+     * @param integer $postId Id of post.
+     * @return PostModel
      */
 
-    public static function get($postId)
-    {
+    public static function get($postId){
         return new PostModel($postId);
     }
 }

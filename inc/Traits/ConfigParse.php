@@ -4,6 +4,8 @@ namespace MyGallery\Traits;
 /**
  * Parsing config parameters from
  *
+ * PHP version 7.0
+ * 
  * @package Models
  * @author  Evgeniy S.Zalevskiy <2600@ukr.net>
  * @license MIT
@@ -11,9 +13,9 @@ namespace MyGallery\Traits;
 trait ConfigParse
 {
     /**
-     * Create config object from parsed data
+     * Create config object from parsed data.
      *
-     * @param integer $configCode code of config params
+     * @param integer $configCode code of config params.
      * @return object
      */
     protected function setConfig(int $configCode)

@@ -10,6 +10,8 @@ use MyGallery\Traits\TemplateFactoryFacade;
 
 /**
  * Render template for slider and gallery.
+ * 
+ * PHP version 7.0
  *
  * @package View
  * @author  Evgeniy S.Zalevskiy <2600@ukr.net>
@@ -21,7 +23,9 @@ class Slider
     use Images;
     use ConfigParse;
     use Helpers;
-    //adds getTemplate() method
+    /**
+     * Adds getTemplate() method.
+     */
     use TemplateFactoryFacade;
 
     protected $template;
@@ -32,7 +36,7 @@ class Slider
         $this->registerShortcode();
     }
     /**
-     * Register shortcode
+     * Register shortcode.
      *
      * @return void
      */
@@ -44,7 +48,7 @@ class Slider
     /**
      * Render html for slider from template.
      *
-     * @param array $attr parameters for slider render
+     * @param array $attr Parameters for slider render.
      *
      * @return string
      */
@@ -63,7 +67,7 @@ class Slider
         }
 
         $imageIds = explode(',', $attr['ids']);
-        //Variables use in included template
+        //Variables that need to be included in template.
         $args = array(
             'title' => isset($attr['title']) ? $attr['title'] : '',
             'classes' => isset($attr['classes']) ? str_replace(',', ' ', $attr['classes']) : '',
@@ -80,9 +84,11 @@ class Slider
      * Some time shortcode was saved with &qoute; instead of quotes.It confuses WP regexp.
      * and $attr array instead param name contains parts of title with digital key.
      * This function solves this problem.It finds and glue params with keys == digits in one string.
+     * Вo not throw Exceptions because this is not a critical error. 
+     * And Exceptions adversely affect performance.
      *
-     * @param array $attr array with parsed shortcode attributes
-     *
+     * @param array $attr Array with parsed shortcode attributes.
+     * 
      * @return array
      */
 

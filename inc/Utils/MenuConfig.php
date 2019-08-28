@@ -4,16 +4,53 @@ namespace MyGallery\Utils;
 
 /**
  * Class load menu config file.
+ * 
+ * PHP version 7.0
  *
  * @package Utils
  * @author  Evgeniy S.Zalevskiy <2600@ukr.net>
  * @license MIT https://opensource.org/licenses/MIT
  */
 class MenuConfig
-{
+{   
+    /**
+     * Array with configs that need to create WP admin menu.
+     * 
+     *  @var array
+     */
     protected $config;
-    protected $main_menu_keys=['page_title'=>0,'menu_title'=>1 ,'capability'=>2,'menu_slug'=>3,'template'=>4,'icon'=>5];
-    protected $sub_menu_keys=['page_title'=>0,'parent_slug'=>1,'menu_title'=>2,'capability'=>3,'menu_slug'=>4,'template'=>5];
+    /**
+     * Template that checks input main menu config structure.
+     *
+     * @var array
+     */
+    protected $main_menu_keys=array(
+        'page_title'=>0,
+        'menu_title'=>1 ,
+        'capability'=>2,
+        'menu_slug'=>3,
+        'template'=>4,
+        'icon'=>5
+    );
+    /**
+     * Template that checks input sub menu config structure.
+     *
+     * @var array
+     */
+    protected $sub_menu_keys=array(
+        'page_title'=>0,
+        'parent_slug'=>1,
+        'menu_title'=>2,
+        'capability'=>3,
+        'menu_slug'=>4,
+        'template'=>5
+    );
+    /**
+     * Init function.
+     *
+     * @param string $config_path Path to file with config array.
+     * @throws \Exception
+     */
     public function __construct(string $config_path)
     {
         if (!file_exists($config_path)) {
@@ -26,7 +63,7 @@ class MenuConfig
     /**
      * Get the menu config in diff formats
      *
-     * @param string $format format of output config
+     * @param string $format Format of output config.
      * @return object|array|string
      */
     public function get(string $format = 'object')
@@ -42,9 +79,9 @@ class MenuConfig
         }
     }
     /**
-     * Verify of menu config file format
+     * Verify of menu config file format.
      *
-     * @param array $config
+     * @param array $config Menu config file.
      * @return void
      */
     protected function verifyFormat(array $config)
@@ -63,10 +100,11 @@ class MenuConfig
         }
     }
     /**
-     * Get missed keys and throw Exception
+     * Get missed keys and throw Exception.
      *
-     * @param array $check_main_menu array of missed keys
-     * @param string $menu_type should be main|sub
+     * @param array $check_main_menu Array of missed keys.
+     * @param string $menu_type Should be main|sub.
+     * @throws \Exception
      * @return void
      */
     protected function wrongFormat(array $check_main_menu, string $menu_type)

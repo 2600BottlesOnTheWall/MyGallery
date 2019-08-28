@@ -4,6 +4,8 @@ namespace MyGallery\Traits;
 /**
  * Get image urls and creates object
  *
+ * PHP version 7.0
+ * 
  * @package Models
  * @author  Evgeniy S.Zalevskiy <2600@ukr.net>
  * @license MIT
@@ -11,10 +13,10 @@ namespace MyGallery\Traits;
 trait Images
 {
     /**
-     * Creates object with image ids and urls
+     * Creates object with image ids and urls.
      *
-     * @param array $imageIds array of image ids
-     * @param string|array $size size of images could be a string or array
+     * @param array $imageIds Array of image ids.
+     * @param string|array $size Size of images could be a string or array.
      * @return object
      */
     protected function createImageObject(array $imageIds, $size = 'thumbnail')
@@ -32,10 +34,10 @@ trait Images
         return $image;
     }
     /**
-     * Get image url using wp_get_attachment_image_src() function
+     * Get image url using wp_get_attachment_image_src() function.
      *
      * @param integer $id
-     * @param string|array $size size of images could be a string or array
+     * @param string|array $size Size of images could be a string or array.
      * @return object|boolean
      */
     protected function getImageUrl(int $id, $size = 'thumbnail')

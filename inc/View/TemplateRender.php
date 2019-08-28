@@ -5,6 +5,8 @@ namespace MyGallery\View;
 /**
  * Class loading template file and render it with args.
  *
+ * PHP version 7.0
+ * 
  * @package View
  * @author  Evgeniy S.Zalevskiy <2600@ukr.net>
  * @license MIT https://opensource.org/licenses/MIT
@@ -12,8 +14,24 @@ namespace MyGallery\View;
 
 class TemplateRender
 {
+    /**
+     * Path to template file.
+     *
+     * @var string 
+     */
     protected $path;
+    /**
+     * Array of arguments that need to be included in template.
+     *
+     * @var array
+     */
     protected $args;
+    /**
+     * Init function.
+     *
+     * @param string $template_path Path to template file.
+     * @param array $args Array of arguments that should be available to this template.
+     */
     public function __construct(string $template_path = "", array $args = [])
     {
         if (!empty($template_path)) {
@@ -23,9 +41,9 @@ class TemplateRender
         }
     }
     /**
-     * Check if template file exists and has right format
+     * Check if template file exists and has right format.
      *
-     * @param string $template_path
+     * @param string $template_path Path to template file.
      * @return void
      */
     protected function isTemplateExists(string $template_path)
@@ -35,10 +53,10 @@ class TemplateRender
         }
     }
     /**
-     * Adds new template for render
+     * Adds new template for render.
      *
-     * @param string $template_path path to template file
-     * @param array $args args that should be available to this template
+     * @param string $template_path Path to template file.
+     * @param array $args args that should be available to this template.
      * @return void
      */
     public function addNewTemplate(string $template_path, array $args = [])
@@ -48,9 +66,9 @@ class TemplateRender
         $this->args = $args;
     }
     /**
-     * Add arguments used in template
+     * Add arguments used in template.
      *
-     * @param array $args arguments that should be used in template
+     * @param array $args arguments that should be used in template.
      * @return void
      */
     public function addArguments(array $args = [])
@@ -59,7 +77,7 @@ class TemplateRender
         return $this;
     }
     /**
-     * Echo rendered content
+     * Echo rendered content.
      *
      * @return void
      */
