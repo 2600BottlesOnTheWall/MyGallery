@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes  from 'prop-types';
-
+/**
+ * Input element.
+ */
 export class Input extends React.Component {
+
     constructor(props) {
         super(props);
         this.state = {
@@ -16,7 +19,12 @@ export class Input extends React.Component {
     blurHandler  ()  {
         this.props.onBlur&&this.props.onBlur(this.state.value,this.props.propName);  
     }
-
+    /**
+     * Lifecycle method. Update state if new value get from props.   
+     * 
+     * @param {misc} prevProps 
+     * @param {misc} prevState 
+     */
     componentDidUpdate(prevProps, prevState) {
         if (prevState.value === this.state.value && prevProps.value !== this.props.value) {
             this.setState({value: this.props.value})

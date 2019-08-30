@@ -1,5 +1,8 @@
 import React from 'react';
-
+import PropTypes  from 'prop-types';
+/**
+ * Tab menu for vertical oriented Tab Panes. 
+ */
 export default function VerticalTabsMenu ({tabsList,onClick,ariaName,className}){
     const tabs=tabsList.map((item,key)=>{
         return (
@@ -8,12 +11,17 @@ export default function VerticalTabsMenu ({tabsList,onClick,ariaName,className})
             </li>
         )
     }
-    
     )
-    console.log(tabsList)
     return(
         <ul className={className} data-aria-name={ariaName} role="tablist">
             {tabs}
         </ul>
     )
 } 
+
+VerticalTabsMenu.propTypes={
+    tabsList:PropTypes.array.isRequired,
+    onClick:PropTypes.func.isRequired,
+    ariaName:PropTypes.string,
+    className:PropTypes.string
+}

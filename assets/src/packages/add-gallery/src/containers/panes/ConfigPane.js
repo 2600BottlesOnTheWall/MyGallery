@@ -3,8 +3,10 @@ import {Switch} from '../../components/elements/Switch';
 import {Select} from '../../components/elements/Select';
 import {connect} from 'react-redux';
 import {updateConfig} from '../../actions/post-data'
-
-
+import PropTypes  from 'prop-types';
+/**
+ * Gallery config pane.
+ */
 export class ConfigPane extends React.Component{
     constructor(props){
         super(props)
@@ -84,3 +86,15 @@ function mapDispatchToProps(dispatch){
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(ConfigPane)
+
+ConfigPane.propTypes={
+    selectedShortcode:PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.bool
+    ]).isRequired,
+    config:PropTypes.oneOfType([
+        PropTypes.object,
+        PropTypes.bool
+    ]).isRequired,
+    updateConfig:PropTypes.func.isRequired
+}

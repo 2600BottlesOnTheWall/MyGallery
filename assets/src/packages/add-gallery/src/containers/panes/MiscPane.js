@@ -1,9 +1,11 @@
 import React from 'react';
 import {Input} from '../../components/elements/Input'
-import {TextAria} from '../../components/elements/TextAria';
 import {connect} from 'react-redux';
 import {updateMisc} from '../../actions/post-data'
-import { shortcode } from '../../../../helpers/src';
+import PropTypes  from 'prop-types';
+/**
+ * Image Pane. Reorder gallery images.
+ */
 export class MiscPane extends React.Component{
     constructor(props){
         super(props);
@@ -54,3 +56,15 @@ function mapDispatchToProps(dispatch){
     }
 }
 export default connect(mapStateToProps,mapDispatchToProps)(MiscPane);
+
+MiscPane.propTypes={
+    selectedShortcode:PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.bool
+    ]).isRequired,
+    misc:PropTypes.oneOfType([
+        PropTypes.object,
+        PropTypes.bool
+    ]).isRequired,
+    updateMisc:PropTypes.func.isRequired
+}

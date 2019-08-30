@@ -5,7 +5,10 @@ import {Code} from '../components/elements/Code';
 import { connect } from 'react-redux';
 import config from '@my-gallery/config';
 import {selectShortcode,unselectShortcode,stopEditingShortcode,deleteShortcode,deleteUnsavedShortcode} from '../actions/post-data'
-
+import PropTypes  from 'prop-types';
+/**
+ * Card for shortcode representation.
+ */
 export class ShortCodeCard extends React.Component{
     constructor(props){
         super(props);
@@ -114,3 +117,20 @@ function mapDispatchToProps(dispatch){
 
 
 export default connect(mapStateToProps,mapDispatchToProps)(ShortCodeCard);
+
+ShortCodeCard.propTypes={
+    id:PropTypes.number.isRequired,
+    isSelected:PropTypes.bool.isRequired,
+    postId:PropTypes.string.isRequired,
+    status:PropTypes.oneOf([
+        "draft",
+        "changed",
+        "saved"
+    ]),
+    shortcode:PropTypes.object.isRequired,
+    selectShortcode:PropTypes.func.isRequired,
+    unselectShortcode:PropTypes.func.isRequired,
+    stopEditingShortcode:PropTypes.func.isRequired,
+    deleteShortcode:PropTypes.func.isRequired,
+    deleteUnsavedShortcode:PropTypes.func.isRequired
+}

@@ -4,6 +4,10 @@ import VerticalTabsMenu from './tab-menus/VerticalTabsMenu'
 import ImagesPane from './../containers/panes/ImagesPane';
 import ConfigPane from './../containers/panes/ConfigPane';
 import MiscPane from './../containers/panes/MiscPane'
+
+/**
+ * Vertical oriented Tab Panel.Consist of two parts TabMenu and Panes. 
+ */
 export default class VerticalTabPanel extends TabPanel{
     constructor(props){
         super(props);
@@ -38,7 +42,7 @@ export default class VerticalTabPanel extends TabPanel{
     }
     render(){
         return(
-            <div style={{visibility:(this.props.visibility!==undefined?this.props.visibility:"visible")}} className="mt-5 tab-content vertical-tab-panel p-0 d-block d-sm-block d-md-block d-lg-flex d-xl-flex">
+            <div className="mt-5 tab-content vertical-tab-panel p-0 d-block d-sm-block d-md-block d-lg-flex d-xl-flex">
                 <nav className="flex-row p-0  col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3">
                     <VerticalTabsMenu className="gallery-side-tabs  nav nav-tabs border-0 d-flex d-sm-flex d-md-flex d-lg-block  d-xl-block" tabsList={this.state.tabs} ariaName="GalleryConfig" onClick={this.tabClickHandler} />
                 </nav>
@@ -49,3 +53,4 @@ export default class VerticalTabPanel extends TabPanel{
         )
     }
 }
+

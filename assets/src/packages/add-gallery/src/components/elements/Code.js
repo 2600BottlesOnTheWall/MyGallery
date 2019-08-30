@@ -1,6 +1,12 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
+/**
+ *  Shortcode code container.Copy shortcode to clipboard.
+ * 
+ * @param {string} children Shortcode code. 
+ */
 export class Code extends React.Component{
+
     constructor(props){
         super(props);
         this.copyCodeToClipboard=this.copyCodeToClipboard.bind(this);
@@ -25,3 +31,7 @@ export class Code extends React.Component{
         )
     }
 } 
+
+Code.propTypes={
+    children:PropTypes.string
+}

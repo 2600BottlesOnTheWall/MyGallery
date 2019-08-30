@@ -1,7 +1,9 @@
 import React from 'react';
 import Pane from '../elements/Pane';
-
-export default function ExternalSourcePane({}){
+/**
+ * Pane for creating gallery from external source. Not implemented in current version.
+ */
+export default function ExternalSourcePane(){
     return (
         <Pane>
             <h5>Create dynamic galleries.</h5>

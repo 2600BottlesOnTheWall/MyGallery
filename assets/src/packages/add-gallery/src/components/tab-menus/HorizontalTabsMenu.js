@@ -1,5 +1,8 @@
 import React from 'react';
-
+import PropTypes  from 'prop-types';
+/**
+ * Tab menu for horizontal oriented Tab Panes. 
+ */
 export default function HorizontalTabsMenu ({tabsList,onClick,ariaName,className}){
     const tabs=tabsList.map((item,key)=>{
         return (
@@ -15,3 +18,10 @@ export default function HorizontalTabsMenu ({tabsList,onClick,ariaName,className
         </ul>
     )
 } 
+
+HorizontalTabsMenu.propTypes={
+    tabsList:PropTypes.array.isRequired,
+    onClick:PropTypes.func.isRequired,
+    ariaName:PropTypes.string,
+    className:PropTypes.string
+}

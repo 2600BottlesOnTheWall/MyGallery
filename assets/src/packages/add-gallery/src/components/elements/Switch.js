@@ -1,5 +1,8 @@
 import React from 'react';
-
+import PropTypes  from 'prop-types';
+/**
+ * Switch element.
+ */
 export class Switch extends React.Component{
     constructor(props){
         super(props);
@@ -18,4 +21,9 @@ export class Switch extends React.Component{
             </div>
         )
     }
+}
+
+Switch.propTypes={
+    state:PropTypes.bool,
+    onChange:PropTypes.func.isRequired
 }

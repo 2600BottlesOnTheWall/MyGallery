@@ -1,6 +1,5 @@
 import {types} from '../actions/index';
-import {defaultShortcode,defaultPostsDate} from './index';
-import { generateShortcode } from '../actions/post-data';
+import {defaultPostsDate} from './index';
 import {generateNewIds,generateNewConfig,generateNewMisc,cloneObject} from '@my-gallery/helpers';
 
 const actions=types;

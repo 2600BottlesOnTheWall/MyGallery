@@ -7,7 +7,10 @@ import {createNewShortcode,updatePostData} from '../actions/post-data';
 import { connect } from 'react-redux';
 import {getNonce} from '@my-gallery/helpers';
 import config from '@my-gallery/config';
-
+import PropTypes  from 'prop-types';
+/**
+ * Card elements controller.Manage shortcode cards.
+ */
 
 export class SideBar extends React.Component{
     constructor(props){
@@ -17,7 +20,7 @@ export class SideBar extends React.Component{
         this.updatePostData=this.updatePostData.bind(this);
     }
     renderCards(){
-        switch(!(!this.props.selectedPost)){
+        switch(!(!this.props.postId)){
             case true:
                 if(this.props.shortcodes.length>0){
                     var key=99999;
@@ -54,13 +57,13 @@ export class SideBar extends React.Component{
                 _originalCode:item._originalCode
             }
         })
-        this.props.updatePostData(this.props.selectedPost,shortcodesBrief)
+        this.props.updatePostData(this.props.postId,shortcodesBrief)
     }
     createNewGallery(){
         if(this.isSelectedDraft()){
             this.showMessage({status:"warning",text:"Save or cancel unsaved gallery first."});
         }else{
-            this.props.createNewGallery(this.props.selectedPost)
+            this.props.createNewGallery(this.props.postId)
         }
     }
     showMessage(status,text){
@@ -88,12 +91,12 @@ export class SideBar extends React.Component{
 
 function mapStateToProps(state){
     const shortcodes=state.postData?state.postData.shortcodes:[],
-          selectedPost=state.postData?state.postData.id:false,
+          postId=state.postData?state.postData.id:false,
           selectedShortcode=state.postData?state.postData.selectedShortcode:false;
     return{
         isFetching:state.main.isFetching,
         needToSave:state.main.needToSave,
-        selectedPost,
+        postId,
         selectedShortcode,
         shortcodes
     }
@@ -115,3 +118,20 @@ function mapDispatchToProps(dispatch){
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(SideBar)
+
+SideBar.propTypes={
+    postId:PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.bool
+    ]).isRequired,
+    isFetching:PropTypes.bool.isRequired,
+    needToSave:PropTypes.bool.isRequired,
+    selectedShortcode:PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.bool
+    ]).isRequired,
+    shortcodes:PropTypes.array.isRequired,
+    createNewGallery:PropTypes.func.isRequired,
+    showMessage:PropTypes.func.isRequired,
+    updatePostData:PropTypes.func.isRequired
+}

@@ -1,6 +1,7 @@
 import React from 'react';
-
-
+/**
+ * this class is parent for TabPanels.It uses to provide methods to child classes.
+ */
 export default class TabPanel extends React.Component{
     constructor(props){
         super(props)

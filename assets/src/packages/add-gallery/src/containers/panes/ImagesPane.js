@@ -3,7 +3,11 @@ import ImageItem from '../../components/elements/ImageIten'
 import GallerySortable from '../../components/GallerySortable';
 import {connect} from 'react-redux';
 import arrayMove from 'array-move';
-import {setNewImagesOrder} from '../../actions/post-data'
+import {setNewImagesOrder} from '../../actions/post-data';
+import PropTypes  from 'prop-types';
+/**
+ * Image Pane. Reorder gallery images.
+ */
 
 export  class ImagesPane extends React.Component{
     constructor(props){
@@ -52,3 +56,15 @@ function mapDispatchToProps(dispatch){
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(ImagesPane)
+
+ImagesPane.propTypes={
+    selectedShortcode:PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.bool
+    ]).isRequired,
+    images:PropTypes.oneOfType([
+        PropTypes.array,
+        PropTypes.bool
+    ]).isRequired,
+    reorderImages:PropTypes.func.isRequired
+}

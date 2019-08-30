@@ -17,7 +17,6 @@ export const defaultPostsState=[
 
 export const defaultShortcode={   
     status:"draft",
-    hash:"",
     code:{
         ids:'',
         config:'',

@@ -3,8 +3,11 @@ import  MediaFrameBase from '@my-gallery/media-frame';
 import Button from '../components/elements/Button';
 import {wp} from 'globals';
 import {connect} from 'react-redux';
-import {updateShortcodeImages,createNewShortcode} from '../actions/post-data'
-
+import {updateShortcodeImages,createNewShortcode} from '../actions/post-data';
+import PropTypes  from 'prop-types';
+/**
+ * Modal frame to select,remove,reorder or download images.
+ */
 
 export class MediaFrame extends MediaFrameBase{
     constructor(props){
@@ -37,7 +40,7 @@ export class MediaFrame extends MediaFrameBase{
     }
 
     getNewImages(models){
-        var needToUpdate=false;
+        let needToUpdate=false;
         const oldImages=this.props.shortcodes[this.props.selectedShortcode].images;
         const newImages=models.map((item,key)=>{
             if (!needToUpdate&&!(oldImages[key]&&oldImages[key].id==item.id)) needToUpdate=true;
@@ -51,15 +54,15 @@ export class MediaFrame extends MediaFrameBase{
     onClick(){
         const shortcodeId=this.props.selectedShortcode;
         if(shortcodeId===false){
-            this.props.createNewGallery(this.props.post_id);
+            this.props.createNewGallery(this.props.postId);
         }
         this.frame.open();
     }
     componentDidUpdate(prevProps){
-        if(prevProps.post_id!==this.props.post_id)        
+        if(prevProps.postId!==this.props.postId)        
           {
     //settings post id for media-frame global variable so that attached to this post images could be selected
-          wp.media.model.settings.post.id=Number(this.props.post_id);
+          wp.media.model.settings.post.id=Number(this.props.postId);
           }
     }
     render(){
@@ -72,13 +75,13 @@ export class MediaFrame extends MediaFrameBase{
 
 function mapStateToProps(state){
     const shortcodes=state.postData?state.postData.shortcodes:[],
-          post_id=state.postData?state.postData.id:false,
+          postId=state.postData?state.postData.id:false,
           selectedShortcode=state.postData?state.postData.selectedShortcode:false;
     return {
         shortcodes,
         selectedShortcode,
-        //need for parent class
-        post_id
+        //need for parent class. 
+        postId
     }
 }
 function mapDispatchToProps(dispatch){
@@ -93,3 +96,17 @@ function mapDispatchToProps(dispatch){
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(MediaFrame);
+
+MediaFrame.propTypes={
+    shortcodes:PropTypes.array.isRequired,
+    selectedShortcode:PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.bool
+    ]).isRequired,
+    postId:PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.bool
+    ]).isRequired,
+    updateShortcodeImages:PropTypes.func.isRequired,
+    createNewGallery:PropTypes.func.isRequired
+}

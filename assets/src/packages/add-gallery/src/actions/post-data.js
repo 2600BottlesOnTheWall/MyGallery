@@ -1,7 +1,7 @@
 import {types} from './index';
 import config from '@my-gallery/config';
-import {oldServerData,newServerData, hashCode} from '@my-gallery/helpers';
-import {requestDataFromServer,errorFetching,showMessage,receiveDataFromServer} from "./main";
+
+import {requestDataFromServer,errorFetching,showMessage} from "./main";
 
 
 const post=types;

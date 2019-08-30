@@ -1,5 +1,10 @@
 import React from 'react';
 import config from "@my-gallery/config";
+import PropTypes from 'prop-types';
+/**
+ * Image element with lazy load
+ * 
+ */
 
 export default class ImageItem extends React.Component{
     constructor(props){
@@ -25,3 +30,7 @@ export default class ImageItem extends React.Component{
         )
     }
 } 
+
+ImageItem.propTypes={
+    src:PropTypes.string
+}

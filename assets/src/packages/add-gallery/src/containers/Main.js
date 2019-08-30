@@ -1,5 +1,5 @@
 import React from 'react';
-import {SelectGroup} from './SelectGroup';
+import {SelectGroup} from '../components/SelectGroup';
 import HorizontalTabPanel from '../components/HorizontalTabPanel';
 
 import VerticalTabPanel from '../components/VerticalTabPanel'

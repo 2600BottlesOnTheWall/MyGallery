@@ -4,6 +4,9 @@ import HorizontalTabsMenu from './tab-menus/HorizontalTabsMenu'
 import SelectImagePane from './panes/SelectImagePane';
 import ExternalSourcePane from './panes/ExternalSourcePane';
 
+/**
+ * Horizontal oriented Tab Panel.Consist of two parts TabMenu and Panes.  
+ */
 export default class HorizontalTabPanel extends TabPanel{
     constructor(props){
         super(props)
@@ -19,7 +22,6 @@ export default class HorizontalTabPanel extends TabPanel{
         ]}
     }
     paneRender({paneName}){
-        console.log(paneName)
         switch(paneName){
             case 'Select Image':
             return <SelectImagePane />
@@ -30,7 +32,7 @@ export default class HorizontalTabPanel extends TabPanel{
  
     render(){
         return (
-            <div style={{visibility:(this.props.visibility!==undefined?this.props.visibility:"visible")}}>
+            <div>
                 <div className="mt-2 mt-md-2">
                     <HorizontalTabsMenu className="nav nav-tabs" tabsList={this.state.tabs} ariaName="ImageSelect" onClick={this.tabClickHandler} />
                 </div>
@@ -42,3 +44,4 @@ export default class HorizontalTabPanel extends TabPanel{
         )
     }
 }
+

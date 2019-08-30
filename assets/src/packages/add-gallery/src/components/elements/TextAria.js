@@ -1,6 +1,9 @@
 import React from 'react';
 import {Input} from './Input';
-
+import PropTypes  from 'prop-types';
+/**
+ * TextAria element
+ */
 export class TextAria extends Input{
     constructor(props) {
         super(props);
@@ -29,3 +32,8 @@ export class TextAria extends Input{
         )
     }
 } 
+
+TextAria.propTypes={
+    value:PropTypes.string,
+    onBlur:PropTypes.func.isRequired
+}

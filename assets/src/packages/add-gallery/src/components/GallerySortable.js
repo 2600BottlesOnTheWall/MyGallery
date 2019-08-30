@@ -1,6 +1,9 @@
 import React from 'react';
 import SortableImageList from './elements/SortableImageList';
-
+import PropTypes  from 'prop-types';
+/**
+ * Container for sortable list elements.
+ */
 export default class GallerySortable extends React.Component{
     constructor(props){
         super(props);
@@ -14,4 +17,8 @@ export default class GallerySortable extends React.Component{
       render() {
         return <SortableImageList axis="xy" items={this.props.items} onSortEnd={this.onSortEnd} />;
       }
+}
+
+GallerySortable.propTypes={
+    items:PropTypes.node
 }

@@ -1,12 +1,16 @@
 import React from 'react';
-
-
+import PropTypes  from 'prop-types';
+/**
+ * Select list element.
+ */
 export class Select extends React.Component{
+
     constructor(props){
         super(props);
         this.options=this.options.bind(this);
         this.onChange=this.onChange.bind(this);
     }
+
     onChange(event){    
         this.props.onChange(event.currentTarget.selectedOptions[0].value,this.props.propName)
     }
@@ -29,4 +33,10 @@ export class Select extends React.Component{
             </select>
         )
     }
+}
+
+Select.propTypes={
+    options:PropTypes.array,
+    selected:PropTypes.string,
+    onChange:PropTypes.func.isRequired
 }

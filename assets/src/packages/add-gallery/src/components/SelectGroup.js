@@ -1,13 +1,16 @@
 import React from 'react';
-import {Button} from '../components/elements/Button';
-import {Select} from '../components/elements/Select';
-
+import {Button} from './elements/Button';
+import {Select} from './elements/Select';
+import PropTypes  from 'prop-types';
+/**
+ * Like form tag select element with submit button..
+ */
 export class SelectGroup extends React.Component{
     constructor(props){
         super(props);
         this.selectHandler=this.selectHandler.bind(this);
         this.onChange=this.onChange.bind(this);
-        var selected=this.props.selected?this.props.selected:-1;
+        let selected=this.props.selected?this.props.selected:-1;
         this.state={selected}
     }
     onChange(id){
@@ -28,3 +31,8 @@ export class SelectGroup extends React.Component{
     }
 }
 
+
+SelectGroup.propTypes={
+    selected:PropTypes.string,
+    onSelect:PropTypes.func.isRequired,
+}

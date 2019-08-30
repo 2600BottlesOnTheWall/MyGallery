@@ -41,7 +41,11 @@ const getGalleryDetailsMediaFrame = () => {
             }
         });
 };
-
+/**
+ * Modal frame that allow select or upload image.
+ * Inspired by Gutenberg editors:
+ * https://github.com/WordPress/gutenberg/blob/5920ab8620e0a5ea6ed810e399dc42fd94d99abd/packages/media-utils/src/components/media-upload/index.js
+ */
 class MediaFrame extends React.Component {
     constructor(props) {
         super(props);

@@ -1,7 +1,13 @@
 import React from 'react';
 import {Card} from '../elements/Card';
 import {Button} from '../elements/Button';
-
+import PropTypes from 'prop-types';
+/**
+ * Card that allow user create new shortcode gallery or save existent changes. 
+ * 
+ * @param {function} createNewGallery Callback that creates new gallery shortcode.
+ * @param {function} updatePostData Callback sends changes in post shortcodes to the server. 
+ */
 export function SavePostCard({createNewGallery,updatePostData}){
     return (
         <Card title="Save to Post">
@@ -16,3 +22,8 @@ export function SavePostCard({createNewGallery,updatePostData}){
         </Card>
     )
 } 
+
+SavePostCard.propTypes={
+    createNewGallery:PropTypes.func.isRequired,
+    updatePostData:PropTypes.func.isRequired
+}

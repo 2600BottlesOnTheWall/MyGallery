@@ -1,8 +1,9 @@
 import React from 'react';
 import Pane from '../elements/Pane';
-import Button from '../elements/Button';
 import MediaFrame from '../../containers/MediaFrame';
-
+/**
+ * Pane that allow select or upload images with help of Media-Frame. 
+ */
 export default function SelectImagePane (){
     return (
         <Pane>
