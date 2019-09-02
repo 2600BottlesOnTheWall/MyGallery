@@ -24,13 +24,13 @@ class MenuPage implements MenuPageInterface
     /**
      * Object of menu configuration class that holds menu configs.
      *
-     * @var MenuConfig
+     * @var object
      */
     protected $config;
     /**
      * Init function.
      *
-     * @param object $config Object stdClass that holds menu configs.
+     * @param MenuConfig $config Object stdClass that holds menu configs.
      */
     public function __construct(MenuConfig $config)
     {
