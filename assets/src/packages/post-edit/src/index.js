@@ -12,7 +12,7 @@ export {myGalleryClassic} from './App';
 export {myGalleryGutenberg} from './App';
 
 
-window.addEventListener('load', ()=>{
+window.addEventListener('DOMContentLoaded', ()=>{
     myGalleryGlobalConfig.editor = getEditorType();
     switch (myGalleryGlobalConfig.editor) {
         case 'gutenberg':

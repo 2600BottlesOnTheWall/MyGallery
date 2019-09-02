@@ -4,20 +4,21 @@ import {myGalleryPlugin} from 'globals';
 import {wp} from 'globals';
 
 function shortcodeGutenberg(text) {
-    const editorWindow = document.querySelector('.block-library-rich-text__tinymce'),
-        clientsId = editorWindow
-            .id
-            .replace('editor-', ''),
         /*
         * Gutenberg Editor dependencies
         * https://github.com/WordPress/gutenberg/tree/master/packages/data
         * activate save post button
         */
-        {dispatch, select} = wp.data,
-        post = select('core/editor').getCurrentPost();
-    dispatch('core/editor').updateBlockAttributes(clientsId, {
-        content: post.content + '<br> ' + text
-    });
+    const {dispatch} = wp.data,
+        /**
+         * Gutenberg createBlock 
+         * https://github.com/WordPress/gutenberg/blob/master/packages/blocks/src/api/factory.js
+         * List of Gutenberg core blok names 
+         * https://gist.github.com/DavidPeralvarez/37c8c148f890d946fadb2c25589baf00
+         */
+          {createBlock} = wp.blocks,
+          shortcodeBlock = createBlock('core/shortcode',{text})
+    dispatch( 'core/block-editor' ).insertBlock(shortcodeBlock);
     return editorWindow;
 }
 
