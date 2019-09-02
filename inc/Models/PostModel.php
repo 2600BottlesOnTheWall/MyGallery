@@ -166,7 +166,7 @@ class PostModel
      * ShortcodeFactory facade.
      *
      * @param string $code shortcode.
-     * @return void
+     * @return ShortcodeFactory
      */
     protected function getShotcodeModel(string $code)
     {

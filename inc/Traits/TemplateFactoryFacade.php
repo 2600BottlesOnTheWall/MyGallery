@@ -20,10 +20,11 @@ trait TemplateFactoryFacade
      * Facade for templateFactory return TemplateRenderer class.
      *
      * @param string $templatePath Path to template.
-     * @return TemplateRender;
+     * @return TemplateRender                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
      */
     protected function getTemplate(string $templatePath)
     {
         return TemplateFactory::get($templatePath);
     }
 }
+                                                                                                                                                                                                                                                                                                                                                                                                                                
