@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## 2.0.2 - 2019-09-02
+
+### Added
+
+*   Gutenberg editor add shortcode block to the new post
+*   Gutenberg editor add shortcode block in post edit mode
+
+
 ## 2.0.1 - 2019-08-21
 
 ### Changed
