@@ -1,6 +1,6 @@
 import {types} from './index';
 import config from '@my-gallery/config';
-import {oldServerData,newServerData} from '@my-gallery/helpers';
+
 
 const action=types;
 

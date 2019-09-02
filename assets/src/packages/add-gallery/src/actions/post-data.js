@@ -1,6 +1,5 @@
 import {types} from './index';
 import config from '@my-gallery/config';
-
 import {requestDataFromServer,errorFetching,showMessage} from "./main";
 
 

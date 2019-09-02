@@ -16,6 +16,9 @@ button:focus{
 .screen-reader-text{
     display: none !important;
 }
+.my-slider-gallery-add-page{
+    min-width:375px;
+}
 
 .tabs-big{
     width:50%;
@@ -202,5 +205,11 @@ content: "";
 @media screen and (max-width: 782px){
     .wp-responsive-open #wpbody{
         right:-11.9em !important;
+    }
+}
+@media screen and (max-width: 400px){
+    .my-gallery-header-banner img{
+       position:relative;
+       left:-144px;
     }
 }
