@@ -84,7 +84,7 @@ class PostModel
      * Get array of shortcodes.
      *
      * @param integer $index Shortcode index in array.
-     * @return boolean|array|object
+     * @return array
      */
 
     public function getShortcode(int $index = -1)
@@ -97,7 +97,7 @@ class PostModel
             return $this->shortcodes;
         }
 
-        return isset($this->shortcodes[$index]) ? $this->shortcodes[$index] : false;
+        return isset($this->shortcodes[$index]) ? array($this->shortcodes[$index]) : array();
     }
     /**
      * Parse shorcodes from post content.Not using  do_shortcode( $content ) because

@@ -2,6 +2,7 @@
 namespace MyGallery\Traits;
 
 use MyGallery\Factories\TemplateFactory;
+use MyGallery\View\TemplateRender;
 
 /**
  * Trait for include facade method for Template Factory.
@@ -19,7 +20,7 @@ trait TemplateFactoryFacade
      * Facade for templateFactory return TemplateRenderer class.
      *
      * @param string $templatePath Path to template.
-     * @return MyGallery\View\TemplateRender;
+     * @return TemplateRender;
      */
     protected function getTemplate(string $templatePath)
     {

@@ -30,7 +30,7 @@ class MenuPage implements MenuPageInterface
     /**
      * Init function.
      *
-     * @param MenuConfig $config Object of menu configuration class that holds menu configs.
+     * @param object $config Object stdClass that holds menu configs.
      */
     public function __construct(MenuConfig $config)
     {
