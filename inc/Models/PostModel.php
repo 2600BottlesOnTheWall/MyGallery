@@ -104,12 +104,12 @@ class PostModel
      * it is not flexible no filters that allow to change regexp patterns.
      *
      *
-     * @return array|bool
+     * @return array
      */
     protected function parseShortcodes()
     {
         if (!isset($this->postBody)) {
-            return false;
+            return array();
         }
 
         preg_match_all($this->shortcode_pattern, $this->postBody, $matches);
