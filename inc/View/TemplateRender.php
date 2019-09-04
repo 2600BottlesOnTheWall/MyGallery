@@ -6,7 +6,7 @@ namespace MyGallery\View;
  * Class loading template file and render it with args.
  *
  * PHP version 7.0
- * 
+ *
  * @package View
  * @author  Evgeniy S.Zalevskiy <2600@ukr.net>
  * @license MIT https://opensource.org/licenses/MIT
@@ -17,7 +17,7 @@ class TemplateRender
     /**
      * Path to template file.
      *
-     * @var string 
+     * @var string
      */
     protected $path;
     /**

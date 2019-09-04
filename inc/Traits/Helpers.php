@@ -5,7 +5,7 @@ namespace MyGallery\Traits;
  * Misc helpers function s
  *
  * PHP version 7.0
- * 
+ *
  * @package Models
  * @author  Evgeniy S.Zalevskiy <2600@ukr.net>
  * @license MIT

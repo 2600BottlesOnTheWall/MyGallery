@@ -6,7 +6,7 @@ use MyGallery\Traits\TemplateFactoryFacade;
 
 /**
  * Render media button for classic editor
- * 
+ *
  * PHP version 7.0
  *
  * @package View

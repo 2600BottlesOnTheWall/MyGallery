@@ -6,7 +6,7 @@ use MyGallery\Factories\ShortcodeFactory;
 
 /**
  * Operates with WP post content.
- * 
+ *
  * PHP version 7.0
  *
  * @package Models

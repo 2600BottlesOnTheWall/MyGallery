@@ -10,7 +10,7 @@ use MyGallery\Traits\TemplateFactoryFacade;
 
 /**
  * Render template for slider and gallery.
- * 
+ *
  * PHP version 7.0
  *
  * @package View
@@ -84,8 +84,9 @@ class Slider
      * @param array $attr Array of shortcode attributes.
      * @return  string
      */
-    protected function getTitle(array $attr){
-        if(isset($attr['title'])){
+    protected function getTitle(array $attr)
+    {
+        if (isset($attr['title'])) {
             return $attr['title'];
         } else {
             return '';
@@ -97,8 +98,9 @@ class Slider
      * @param array $attr Array of shortcode attributes.
      * @return object Object of stdClass with default configs.
      */
-    protected function getConfig(array $attr){
-        if(isset($attr['config'])){
+    protected function getConfig(array $attr)
+    {
+        if (isset($attr['config'])) {
             return $this->setConfig((int) $attr['config']);
         } else {
             return (ShortcodeFactory::$defaultSettings)->config;
@@ -109,11 +111,11 @@ class Slider
      * Some time shortcode was saved with &qoute; instead of quotes.It confuses WP regexp.
      * and $attr array instead param name contains parts of title with digital key.
      * This function solves this problem.It finds and glue params with keys == digits in one string.
-     * Вo not throw Exceptions because this is not a critical error. 
+     * Вo not throw Exceptions because this is not a critical error.
      * And Exceptions adversely affect performance.
      *
      * @param array $attr Array with parsed shortcode attributes.
-     * 
+     *
      * @return array
      */
 

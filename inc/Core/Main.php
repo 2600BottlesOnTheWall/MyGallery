@@ -8,7 +8,7 @@ use MyGallery\Utils\MenuConfig;
  * Initialize scripts and styles.
  *
  * PHP version 7.0
- * 
+ *
  * @package Core
  * @author  Evgeniy S.Zalevskiy <2600@ukr.net>
  * @license MIT https://opensource.org/licenses/MIT
@@ -81,7 +81,6 @@ class Main
         $style_path = apply_filters('my_gallery_style', $default_style_path);
         wp_enqueue_style(MYGALLERY_PLUGIN_SLUG . '-slider-style', MYGALLERY_PLUGIN_URL . '/public/css/slider.css');
         wp_enqueue_style(MYGALLERY_PLUGIN_SLUG . '-additional-slider-style', $style_path);
- 
     }
 
     /**

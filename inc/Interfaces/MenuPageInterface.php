@@ -6,8 +6,8 @@ use MyGallery\Utils\MenuConfig;
 /**
  * Interface for Menu pages class.
  *
- * PHP version 7.0 
- * 
+ * PHP version 7.0
+ *
  * @package  Menu
  * @author   Evgeniy S.Zalevskiy <2600@ukr.net>
  * @license  MIT

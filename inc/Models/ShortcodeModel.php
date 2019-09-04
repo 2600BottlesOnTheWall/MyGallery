@@ -7,7 +7,7 @@ use MyGallery\Traits\Images;
 
 /**
  * Operates with shortcode object.
- * 
+ *
  * PHP version 7.0
  *
  * @package Models
@@ -126,7 +126,6 @@ class ShortcodeModel
         $this->parseTitle($attr);
         //parsing gallery config
         $this->parseConfig($attr);
-        
     }
     /**
      * Parse gallery images ids and create array of image objects with image properties.
@@ -134,8 +133,9 @@ class ShortcodeModel
      * @param array $attr Array of shortcode attribute.
      * @return array
      */
-    protected function parseImageIds(array $attr){
-     
+    protected function parseImageIds(array $attr)
+    {
+        $ids='';
         if (isset($attr['ids'])) {
             $ids = $this->removeBrackets($attr['ids']);
             $this->images = $this->setImage(explode(',', $ids));
@@ -145,12 +145,13 @@ class ShortcodeModel
         return  explode(',', $ids);
     }
     /**
-     * Parse gallery title. 
+     * Parse gallery title.
      *
      * @param array $attr Array of shortcode attribute.
      * @return string
      */
-    protected function parseTitle(array $attr){
+    protected function parseTitle(array $attr)
+    {
         if (isset($attr['title'])) {
             $title = $this->removeBrackets($attr['title']);
             $this->title = esc_html($title);
@@ -165,19 +166,20 @@ class ShortcodeModel
      * @param array $attr Array of shortcode attribute.
      * @return string
      */
-    protected function parseConfig(array $attr){
+    protected function parseConfig(array $attr)
+    {
         $config='';
         if (isset($attr['config'])) {
             $config = $this->removeBrackets($attr['config']);
             $this->settings->config = $this->setConfig($config);
-            $this->code->misc .= ' config=' . (int) $config; 
-        } 
+            $this->code->misc .= ' config=' . (int) $config;
+        }
         return $config;
     }
     /**
      * Facade function for Images Trait function
      *
-     * @param array $ids Image ids. 
+     * @param array $ids Image ids.
      * @return array
      */
     protected function setImage(array $ids)

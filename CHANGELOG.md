@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## 2.0.2 - 2019-09-04
+
+### Changed
+
+*  fixed gutenberg editor shortcode delete and add.
+*  fixed some bugs. 
+
 ## 2.0.2 - 2019-09-02
 
 ### Added

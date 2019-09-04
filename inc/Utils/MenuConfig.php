@@ -4,7 +4,7 @@ namespace MyGallery\Utils;
 
 /**
  * Class load menu config file.
- * 
+ *
  * PHP version 7.0
  *
  * @package Utils
@@ -12,10 +12,11 @@ namespace MyGallery\Utils;
  * @license MIT https://opensource.org/licenses/MIT
  */
 class MenuConfig
-{   
+{
+
     /**
      * Array with configs that need to create WP admin menu.
-     * 
+     *
      *  @var array
      */
     protected $config;

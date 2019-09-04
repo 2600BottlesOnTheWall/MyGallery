@@ -5,7 +5,7 @@ namespace MyGallery\Traits;
  * Parsing config parameters from
  *
  * PHP version 7.0
- * 
+ *
  * @package Models
  * @author  Evgeniy S.Zalevskiy <2600@ukr.net>
  * @license MIT

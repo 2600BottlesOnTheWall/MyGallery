@@ -6,7 +6,7 @@ use MyGallery\Message\Errors;
 /**
  * Rest controller
  * GET /my-gallery/v1/post-list/{order_by}/{order} return list of posts (titles & post_id)
- * 
+ *
  * PHP version 7.0
  *
  * @package Models
