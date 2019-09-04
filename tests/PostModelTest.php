@@ -48,7 +48,7 @@ class PostModelTest extends \WP_UnitTestCase
             [(object) array(
                 'code' => $newShortcode,
                 'status' => 'draft',
-            ), '<!-- wp:paragraph -->' . PHP_EOL . $newShortcode . PHP_EOL . '<!-- /wp:paragraph -->'],
+            ), '<!-- wp:shortcode -->' . PHP_EOL . $newShortcode . PHP_EOL . '<!-- /wp:shortcode -->'],
             [(object) array(
                 'code' => $shortcode,
                 'status' => 'deleted',
