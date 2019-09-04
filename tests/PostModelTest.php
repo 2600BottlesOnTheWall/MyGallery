@@ -19,7 +19,7 @@ class PostModelTest extends \WP_UnitTestCase
     }
     public function testGetShortcodes()
     {
-        $shortcode = $this->getNewPost()->getShortcode();
+        $shortcode = $this->getNewPost($this->shortcode)->getShortcode();
         $this->assertCount(1, $shortcode);
         $this->assertInstanceOf(stdClass::class, $shortcode[0]);
     }
@@ -29,7 +29,7 @@ class PostModelTest extends \WP_UnitTestCase
     public function testUpdatePostShortcodes($code,$expected)
     {
 
-        $postInstance = $this->getNewPost();
+        $postInstance = 'draft'===$code->status?$this->getNewPost():$this->getNewPost($this->shortcode);
 
       
         $postInstance->updatePostShortcodes(array($code));
@@ -48,7 +48,7 @@ class PostModelTest extends \WP_UnitTestCase
             [(object) array(
                 'code' => $newShortcode,
                 'status' => 'draft',
-            ), $shortcode . '<p>' . $newShortcode . '</p>'],
+            ), '<!-- wp:paragraph -->' . PHP_EOL . $newShortcode . PHP_EOL . '<!-- /wp:paragraph -->'],
             [(object) array(
                 'code' => $shortcode,
                 'status' => 'deleted',
@@ -56,9 +56,9 @@ class PostModelTest extends \WP_UnitTestCase
         ];
     }
 
-    protected function getNewPost()
+    protected function getNewPost($post_content='')
     {
-        $postId = $this->factory()->post->create(['post_title' => 'Test post', 'post_content' => $this->shortcode]);
+        $postId = $this->factory()->post->create(['post_title' => 'Test post', 'post_content' => $post_content]);
         return new PostModel($postId);
     }
     public function tearDown()
