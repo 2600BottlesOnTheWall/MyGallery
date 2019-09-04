@@ -69,15 +69,40 @@ class Slider
         $imageIds = explode(',', $attr['ids']);
         //Variables that need to be included in template.
         $args = array(
-            'title' => isset($attr['title']) ? $attr['title'] : '',
-            'classes' => isset($attr['classes']) ? str_replace(',', ' ', $attr['classes']) : '',
-            'config' => isset($attr['config']) ? $this->setConfig((int) $attr['config']) : (ShortcodeFactory::$defaultSettings)->config,
+            'title' => $this->getTitle($attr),
+            'config' => $this->getConfig($attr),
             'images' => $this->createImageObject($imageIds, array('full', 'thumbnail')),
             'boolToString' => array($this, 'boolToString'),
         );
         
         $content = $this->template->addArguments($args)->render();
         return $content;
+    }
+    /**
+     * Get title from array of attributes.
+     *
+     * @param array $attr Array of shortcode attributes.
+     * @return  string
+     */
+    protected function getTitle(array $attr){
+        if(isset($attr['title'])){
+            return $attr['title'];
+        } else {
+            return '';
+        }
+    }
+    /**
+     * Get config from array of attributes.
+     *
+     * @param array $attr Array of shortcode attributes.
+     * @return object Object of stdClass with default configs.
+     */
+    protected function getConfig(array $attr){
+        if(isset($attr['config'])){
+            return $this->setConfig((int) $attr['config']);
+        } else {
+            return (ShortcodeFactory::$defaultSettings)->config;
+        }
     }
     /**
      * Solve problem with parsing shortcode parameters.
