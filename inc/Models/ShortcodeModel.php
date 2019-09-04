@@ -118,35 +118,64 @@ class ShortcodeModel
      */
     protected function parseCode()
     {
-        //parse image ids
-
+       
         $attr = \shortcode_parse_atts($this->originalCode);
-
+         //parse image ids
+        $this->parseImageIds($attr);
+        //parsing and escaping gallery title
+        $this->parseTitle($attr);
+        //parsing gallery config
+        $this->parseConfig($attr);
+        
+    }
+    /**
+     * Parse gallery images ids and create array of image objects with image properties.
+     *
+     * @param array $attr Array of shortcode attribute.
+     * @return array
+     */
+    protected function parseImageIds(array $attr){
+     
         if (isset($attr['ids'])) {
             $ids = $this->removeBrackets($attr['ids']);
             $this->images = $this->setImage(explode(',', $ids));
+            $this->code->ids = 'ids=' . $ids;
         }
-        $this->code->ids = isset($ids) ? 'ids=' . $ids : '';
-        //parsing and escaping gallery title
 
+        return  explode(',', $ids);
+    }
+    /**
+     * Parse gallery title. 
+     *
+     * @param array $attr Array of shortcode attribute.
+     * @return string
+     */
+    protected function parseTitle(array $attr){
         if (isset($attr['title'])) {
             $title = $this->removeBrackets($attr['title']);
             $this->title = esc_html($title);
             $this->settings->misc->title = $this->title;
+            $this->code->misc .= 'title="' . $this->title . '"';
         }
-        $this->code->misc .= !empty($this->title) ? 'title="' . $this->title . '"' : '';
-
-        //parsing gallery config
+        return $this->title;
+    }
+    /**
+     * Parse gallery config.
+     *
+     * @param array $attr Array of shortcode attribute.
+     * @return string
+     */
+    protected function parseConfig(array $attr){
         $config='';
         if (isset($attr['config'])) {
             $config = $this->removeBrackets($attr['config']);
             $this->settings->config = $this->setConfig($config);
-        }
-        $this->code->misc .= isset($attr['config']) ? ' config=' . (int) $config : '';
+            $this->code->misc .= ' config=' . (int) $config; 
+        } 
+        return $config;
     }
-
     /**
-     * Facfde function for Images Trait function
+     * Facade function for Images Trait function
      *
      * @param array $ids Image ids. 
      * @return array
