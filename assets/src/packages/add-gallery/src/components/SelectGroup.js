@@ -3,9 +3,17 @@ import {Button} from './elements/Button';
 import {Select} from './elements/Select';
 import PropTypes  from 'prop-types';
 /**
- * Like form tag select element with submit button..
+ * Like form tag select element with submit button.
+ * 
+ * @param {number} selected
+ * @param {func} onSelect
  */
 export class SelectGroup extends React.Component{
+    /**
+     * Init function.
+     * 
+     * @param {object} props 
+     */
     constructor(props){
         super(props);
         this.selectHandler=this.selectHandler.bind(this);
@@ -13,9 +21,17 @@ export class SelectGroup extends React.Component{
         let selected=this.props.selected?this.props.selected:-1;
         this.state={selected}
     }
+    /**
+     * Change state when new option of select tag selected.
+     * 
+     * @param {int} id Options of select tag id. 
+     */
     onChange(id){
         this.setState({selected:id})
     }
+    /**
+     * Call onSelect function passed in the props with selected option id as argument. 
+     */
     selectHandler(){
        
         this.props.onSelect(this.state.selected)
@@ -33,6 +49,6 @@ export class SelectGroup extends React.Component{
 
 
 SelectGroup.propTypes={
-    selected:PropTypes.string,
+    selected:PropTypes.number,
     onSelect:PropTypes.func.isRequired,
 }

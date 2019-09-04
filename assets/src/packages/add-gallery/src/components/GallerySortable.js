@@ -5,11 +5,17 @@ import PropTypes  from 'prop-types';
  * Container for sortable list elements.
  */
 export default class GallerySortable extends React.Component{
+  /**
+   * Init function.
+   * 
+   * @param {object} props 
+   */
     constructor(props){
         super(props);
      
         this.onSortEnd=this.onSortEnd.bind(this);
     }
+  
     onSortEnd ({oldIndex, newIndex}) {
   
         this.props.onChange&&this.props.onChange({oldIndex, newIndex})

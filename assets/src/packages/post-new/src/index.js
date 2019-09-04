@@ -3,7 +3,7 @@ import {getEditorType} from '@my-gallery/helpers';
 import {myGalleryPlugin} from 'globals';
 
 if(!myGalleryPlugin){
-    myGalleryPlugin=window.myGalleryPlugin={}
+    myGalleryPlugin=window.myGalleryPlugin={}   
  }
  export const myGalleryGlobalConfig = myGalleryPlugin;
 window.addEventListener('load', ()=>{

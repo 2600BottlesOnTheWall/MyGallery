@@ -6,11 +6,20 @@ import PropTypes from 'prop-types';
  * @param {string} children Shortcode code. 
  */
 export class Code extends React.Component{
-
+    /**
+     * Init function. 
+     * 
+     * @param {object} props 
+     */
     constructor(props){
         super(props);
         this.copyCodeToClipboard=this.copyCodeToClipboard.bind(this);
     }
+    /**
+     * Copy shortcode to clipboard on icon click.
+     * 
+     * @param {object} event Click event object.
+     */
     copyCodeToClipboard(event){
         event.preventDefault();
         const textArea = document.createElement('textarea');

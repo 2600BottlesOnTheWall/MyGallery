@@ -69,7 +69,7 @@ module.exports = {
 		alias: {
 				"@my-gallery/media-frame": path.resolve(__dirname,"src/packages/media-frame/src/index.js"),
 				"@my-gallery/helpers": path.resolve(__dirname,"src/packages/helpers/src/index.js"),
-				"@my-gallery/post-edit": path.resolve(__dirname,"src/packages/post-edit/src/App.js"),
+				"@my-gallery/post-edit": path.resolve(__dirname,"src/packages/post-edit/src/index.js"),
 				"@my-gallery/config":path.resolve(__dirname,"src/packages/config/src/index.js"),
 				"@my-gallery/message":path.resolve(__dirname,"src/packages/message/src/index.js"),
 				"@my-gallery/post-new":path.resolve(__dirname,"src/packages/post-new/src/index.js"),

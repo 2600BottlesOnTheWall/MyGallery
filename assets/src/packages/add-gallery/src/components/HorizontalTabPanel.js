@@ -8,6 +8,11 @@ import ExternalSourcePane from './panes/ExternalSourcePane';
  * Horizontal oriented Tab Panel.Consist of two parts TabMenu and Panes.  
  */
 export default class HorizontalTabPanel extends TabPanel{
+    /**
+     * Init function.
+     * 
+     * @param {object} props 
+     */
     constructor(props){
         super(props)
         this.state={tabs:[
@@ -21,6 +26,11 @@ export default class HorizontalTabPanel extends TabPanel{
             }
         ]}
     }
+    /**
+     * Render selected pane. 
+     * 
+     * @param {object} paneName Name of Pane.  
+     */
     paneRender({paneName}){
         switch(paneName){
             case 'Select Image':

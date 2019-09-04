@@ -1,7 +1,8 @@
 import React from 'react';
-import {shortcode} from '@my-gallery/helpers';
+
 import {defaults} from 'lodash';
 import {wp} from 'globals';
+import PropTypes  from 'prop-types';
 
 const getGalleryDetailsMediaFrame = () => {
 
@@ -59,12 +60,10 @@ class MediaFrame extends React.Component {
     }
     onUpdate(selection) {
         const attachment = this.getIds(selection.models);
-        this.addShortcode(attachment);
+        this.props.onUpdate&&this.props.onUpdate(attachment);
 
     }
-    addShortcode(inputValue) {
-        shortcode(inputValue);
-    }
+    
     getIds(models) {
         return models.map(model => {
             return model.id;
@@ -86,3 +85,8 @@ class MediaFrame extends React.Component {
 }
 
 export default MediaFrame;
+
+MediaFrame.PropTypes={
+    onUpdate:PropTypes.func,
+    button:PropTypes.node.isRequired
+}

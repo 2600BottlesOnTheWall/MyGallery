@@ -21,7 +21,7 @@ class PostModel
      *
      * @var string
      */
-    protected $shortcode_pattern = "/(?<shortcodes>\[my\-gallery.*\])/U";
+    protected $shortcodePattern = "/(?<shortcodes>\[my\-gallery.*\])/U";
     /**
      * Id of post.
      *
@@ -112,7 +112,7 @@ class PostModel
             return array();
         }
 
-        preg_match_all($this->shortcode_pattern, $this->postBody, $matches);
+        preg_match_all($this->shortcodePattern, $this->postBody, $matches);
         if (count($matches['shortcodes']) == 0) {
             return array();
         }
@@ -133,17 +133,18 @@ class PostModel
      */
     public function updatePostShortcodes(array $shortcodes)
     {
-        preg_match_all($this->shortcode_pattern, $this->postBody, $matches);
+        preg_match_all($this->shortcodePattern, $this->postBody, $matches);
         foreach ($shortcodes as $key => $shortcode) {
             switch ($shortcode->status) {
                 case 'changed':
                     $this->postBody = str_replace($matches['shortcodes'][$key], $shortcode->code, $this->postBody);
                     break;
                 case 'draft':
-                    $this->postBody .= '<p>' . $shortcode->code . '</p>';
+                    $this->postBody .=  '<!-- wp:shortcode -->'.PHP_EOL.$shortcode->code.PHP_EOL.'<!-- /wp:shortcode -->';
                     break;
                 case 'deleted':
                     $this->postBody = str_replace($matches['shortcodes'][$key], '', $this->postBody);
+                    $this->postBody = str_replace('<!-- wp:shortcode -->'.PHP_EOL.PHP_EOL.'<!-- /wp:shortcode -->', '', $this->postBody);
                     break;
             }
         }

@@ -19,7 +19,7 @@ function shortcodeGutenberg(text) {
           {createBlock} = wp.blocks,
           shortcodeBlock = createBlock('core/shortcode',{text})
     dispatch( 'core/block-editor' ).insertBlock(shortcodeBlock);
-    return editorWindow;
+  
 }
 
 function shortcodeClassic(text) {

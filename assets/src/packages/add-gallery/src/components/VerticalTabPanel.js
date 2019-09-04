@@ -9,6 +9,11 @@ import MiscPane from './../containers/panes/MiscPane'
  * Vertical oriented Tab Panel.Consist of two parts TabMenu and Panes. 
  */
 export default class VerticalTabPanel extends TabPanel{
+    /**
+     * Init function.
+     * 
+     * @param {object} props 
+     */
     constructor(props){
         super(props);
         this.state={tabs:
@@ -28,6 +33,11 @@ export default class VerticalTabPanel extends TabPanel{
             ]
         }
     }
+     /**
+     * Render selected pane. 
+     * 
+     * @param {object} paneName Name of Pane.  
+     */
     paneRender({paneName}){
         switch(paneName){
             case 'Images':

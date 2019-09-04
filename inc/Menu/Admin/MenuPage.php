@@ -44,7 +44,7 @@ class MenuPage implements MenuPageInterface
     public function init(MenuConfig $config)
     {
         $configObject=$config->get();
-        if(!is_object($config)) throw new Exception ('Wrong config data format.Should be instance of stdClass');
+        if(!is_object($configObject)) throw new Exception ('Wrong config data format.Should be instance of stdClass');
         $this->config = $configObject;
         \add_action('admin_menu', array($this, 'addMainMenu'));
     }

@@ -2,9 +2,18 @@ import React from 'react';
 import PropTypes  from 'prop-types';
 /**
  * Input element.
+ * 
+ * @param {string} value Value that will be set to the input.
+ * @param {func} onBlur Function that handles blur event of input tag. 
+     
+ }} 
  */
 export class Input extends React.Component {
-
+    /**
+     * Init function.
+     * 
+     * @param {object} props 
+     */
     constructor(props) {
         super(props);
         this.state = {
@@ -13,6 +22,11 @@ export class Input extends React.Component {
         this.blurHandler=this.blurHandler.bind(this);
         this.handleChange=this.handleChange.bind(this);
     }
+    /**
+     * Update state of Input element as input tag state was changed. 
+     * 
+     * @param {object} event Change event object.
+     */
     handleChange  (event)  {
         this.setState({value: event.target.value});
     }
