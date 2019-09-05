@@ -57,6 +57,12 @@ class Main
                 wp_enqueue_media(array('id' => $post_id));
             }
             wp_enqueue_script(MYGALLERY_PLUGIN_SLUG . '-add-gallery');
+            $api_endpoints=array(
+                'getPostsList'=>rest_url('/my-gallery/v1/posts-list/date/desc/'),
+                'getPostData'=>rest_url('/my-gallery/v1/post/'),
+                'patchPostData'=>rest_url('/my-gallery/v1/post/')
+            );
+            wp_localize_script(MYGALLERY_PLUGIN_SLUG . '-add-gallery','apiEndpoints',$api_endpoints);
         }
     }
 

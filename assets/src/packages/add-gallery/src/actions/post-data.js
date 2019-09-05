@@ -99,7 +99,7 @@ export function postWasUpdated(){
 export function getPostDataFromServer ({dispatch,nonce,postId}){
     dispatch(requestDataFromServer());
     return dispatch=>{ 
-        return fetch(config.api.getPostData+ postId+"/",{
+        return fetch(apiEndpoints.getPostData+ postId+"/",{
             method:"GET",
             headers:{
                 'X-WP-Nonce':nonce
@@ -121,7 +121,7 @@ export function updatePostData ({dispatch,nonce,postId,shortcodes}){
     const body='shortcodes='+encodeURIComponent(JSON.stringify(shortcodes))
     dispatch(requestDataFromServer());
     return dispatch=>{ 
-        return fetch(config.api.updatePostDataApi+ postId+"/",{
+        return fetch(apiEndpoints.patchPostData+ postId+"/",{
             method:"PATCH",
             headers:{
                 'X-WP-Nonce':nonce,

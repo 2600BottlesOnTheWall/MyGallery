@@ -39,7 +39,7 @@ export function showMessage({status,text}){
 export function getPostsListFromServer ({dispatch,nonce}){
     dispatch(requestDataFromServer());
     return dispatch=>{ 
-        return fetch(config.api.getPostsList,{
+        return fetch(apiEndpoints.getPostsList,{
             method:"GET",
             headers:{
                 'X-WP-Nonce':nonce

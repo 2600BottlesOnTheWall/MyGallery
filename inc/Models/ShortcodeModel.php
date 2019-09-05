@@ -74,7 +74,12 @@ class ShortcodeModel
      * @var \stdClass
      */
     public $settings;
-
+    /**
+     * Init function 
+     *
+     *  @param string $code
+     *  @param \stdClass $default_settings
+     */
     public function __construct($code, $default_settings)
     {
         $replace_quotes_code=preg_replace('/(&quot;)/i', '"', $code);
