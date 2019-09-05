@@ -75,7 +75,7 @@ class ShortcodeModel
      */
     public $settings;
     /**
-     * Init function 
+     * Init function
      *
      *  @param string $code
      *  @param \stdClass $default_settings
