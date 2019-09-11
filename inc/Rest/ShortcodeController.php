@@ -173,7 +173,7 @@ class ShortcodeController
         return $response;
     }
     /**
-     * Saves shortcode to the post body
+     * Saves shortcode to the post body.
      *
      * @param WP_REST_Request $request
      * @return void

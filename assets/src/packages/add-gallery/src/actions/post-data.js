@@ -1,5 +1,4 @@
 import {types} from './index';
-import config from '@my-gallery/config';
 import {requestDataFromServer,errorFetching,showMessage} from "./main";
 
 
@@ -15,7 +14,7 @@ export function receivePostData(postData,postId){
 }
 
 
-export function createNewShortcode(post_id){
+export function createNewShortcode(){
     return {
         type:post.CREATE_NEW_SHORTCODE,
     }
