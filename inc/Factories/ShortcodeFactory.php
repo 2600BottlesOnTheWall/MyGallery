@@ -14,16 +14,16 @@ use MyGallery\Models\ShortcodeModel;
  */
 class ShortcodeFactory
 {
-    public static $defaultSettings;
+    public $defaultSettings;
     /**
-     * Set default settings for shortcode parameters.
+     * Init function.Set default settings for shortcode parameters.
      *
      * @param \stdClass $settings default settings for gallery.
      * @return void
      */
-    public static function setDefaultSettings(\stdClass $settings)
+    public function __construct(\stdClass $settings)
     {
-        static::$defaultSettings = $settings;
+        $this->defaultSettings = $settings;
     }
     /**
      * Getter for creating new instance.
@@ -31,10 +31,10 @@ class ShortcodeFactory
      * @param string $code shortcode.
      * @return ShortcodeModel
      */
-    public static function get(string $code)
+    public function get(string $code)
     {
-        if (static::$defaultSettings) {
-            return new ShortcodeModel($code, static::$defaultSettings);
+        if ($this->defaultSettings) {
+            return new ShortcodeModel($code, $this->defaultSettings);
         }
     }
 }

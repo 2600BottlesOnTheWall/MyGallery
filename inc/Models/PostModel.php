@@ -47,13 +47,21 @@ class PostModel
      */
     protected $shortcodes;
     /**
+     * Shortcode factory.
+     *
+     * @var ShortcodeFactory
+     */
+    protected $factory;
+    /**
      * Init function.
      *
      * @param integer $postId Id of post.
      */
-    public function __construct(int $postId)
+    
+    public function __construct(int $postId,ShortcodeFactory $factory)
     {
         $this->postId = $postId;
+        $this->factory=$factory;
         $this->init();
     }
     /**
@@ -172,6 +180,6 @@ class PostModel
     protected function getShotcodeModel(string $code)
     {
 
-        return ShortcodeFactory::get($code);
+        return $this->factory->get($code);
     }
 }

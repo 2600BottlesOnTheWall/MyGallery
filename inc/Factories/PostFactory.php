@@ -1,6 +1,6 @@
 <?php
 namespace MyGallery\Factories;
-
+use MyGallery\Factories\ShortcodeFactory;
 use MyGallery\Models\PostModel;
 
 /**
@@ -14,8 +14,19 @@ use MyGallery\Models\PostModel;
  */
 
 class PostFactory
-{
-
+{   
+    /**
+     * Shortcode factory.
+     *
+     * @var ShortcodeFactory
+     */
+    protected $factory;
+    /**
+     * Init function.
+     */
+    public function __construct(ShortcodeFactory $factory){
+        $this->factory=$factory;
+    }
     /**
      * Getter for creating new instance.
      *
@@ -23,8 +34,8 @@ class PostFactory
      * @return PostModel
      */
 
-    public static function get($postId)
+    public function get($postId)
     {
-        return new PostModel($postId);
+        return new PostModel($postId,$this->factory);
     }
 }

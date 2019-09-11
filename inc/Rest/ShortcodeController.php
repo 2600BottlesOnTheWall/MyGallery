@@ -30,10 +30,17 @@ class ShortcodeController
      */
     protected $resource_name = "post";
     /**
+     * Post factory
+     *
+     * @var PostFactory
+     */
+    protected $factory;
+    /**
      * Init function.
      */
-    public function __construct()
+    public function __construct(PostFactory $factory)
     {
+        $this->factory=$factory;
         $this->init();
     }
     /**
@@ -225,7 +232,7 @@ class ShortcodeController
      */
     protected function getPost(int $post_id)
     {
-        return PostFactory::get($post_id);
+        return $this->factory->get($post_id);
     }
     /**
      * Decode response to json.
