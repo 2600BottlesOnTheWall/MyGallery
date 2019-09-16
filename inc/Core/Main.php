@@ -45,7 +45,7 @@ class Main
         }
 
         if ('post-new.php' == $hook) {
-            wp_enqueue_script(MYGALLERY_PLUGIN_SLUG . '-post-new-script');
+            wp_enqueue_script(MYGALLERY_PLUGIN_SLUG . '-post-edit-script');
         }
 
         if (strrpos($hook, $this->configMenu->menu->subs[0]->menu_slug) !== false) {

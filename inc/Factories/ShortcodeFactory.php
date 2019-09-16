@@ -14,7 +14,7 @@ use MyGallery\Models\ShortcodeModel;
  */
 class ShortcodeFactory
 {
-    public $defaultSettings;
+    public static $defaultSettings;
     /**
      * Init function.Set default settings for shortcode parameters.
      *
@@ -23,7 +23,7 @@ class ShortcodeFactory
      */
     public function __construct(\stdClass $settings)
     {
-        $this->defaultSettings = $settings;
+        self::$defaultSettings = $settings;
     }
     /**
      * Getter for creating new instance.
@@ -33,8 +33,8 @@ class ShortcodeFactory
      */
     public function get(string $code)
     {
-        if ($this->defaultSettings) {
-            return new ShortcodeModel($code, $this->defaultSettings);
+        if (self::$defaultSettings) {
+            return new ShortcodeModel($code, self::$defaultSettings);
         }
     }
 }
