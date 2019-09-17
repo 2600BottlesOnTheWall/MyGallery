@@ -1,6 +1,6 @@
 <?php
 use MyGallery\Models\PostModel;
-
+use MyGallery\Factories\ShortcodeFactory;
 /**
  * Class PostModelTest
  *
@@ -59,10 +59,8 @@ class PostModelTest extends \WP_UnitTestCase
     protected function getNewPost($post_content='')
     {
         $postId = $this->factory()->post->create(['post_title' => 'Test post', 'post_content' => $post_content]);
-        return new PostModel($postId);
+        $shortcodeFactory= new ShortcodeFactory(require MYGALLERY_PLUGIN_DIR.'defaultGallerySettings.php');
+        return new PostModel($postId,$shortcodeFactory);
     }
-    public function tearDown()
-    {
-        parent::tearDown();
-    }
+   
 }

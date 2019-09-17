@@ -19,7 +19,7 @@ class ShortcodeFactory
      * Init function.Set default settings for shortcode parameters.
      *
      * @param \stdClass $settings default settings for gallery.
-     * @return void
+     * 
      */
     public function __construct(\stdClass $settings)
     {
