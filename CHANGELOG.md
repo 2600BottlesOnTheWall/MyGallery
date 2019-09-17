@@ -2,7 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
-## 2.0.2 - 2019-09-04
+## 2.0.4 - 2019-09-17
+
+### Changed
+
+*  fixed mobile devices scroll in gallery.
+*  fixed some bugs. 
+
+## 2.0.3 - 2019-09-04
 
 ### Changed
 
