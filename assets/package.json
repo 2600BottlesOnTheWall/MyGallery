@@ -3,7 +3,7 @@
   "version": "2.0.3",
   "private": true,
   "dependencies": {
-    "baguettebox.js":"1.11.0",
+    "baguettebox.js":"zalevsk1y/baguetteBox.js#touch-event",
     "lightslider": "1.1.6",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
