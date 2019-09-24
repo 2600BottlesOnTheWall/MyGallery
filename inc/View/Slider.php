@@ -87,7 +87,7 @@ class Slider
     protected function getTitle(array $attr)
     {
         if (isset($attr['title'])) {
-            return $attr['title'];
+            return $this->removeProblemSymbols($attr['title']);
         } else {
             return '';
         }
