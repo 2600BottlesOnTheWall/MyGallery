@@ -27,7 +27,8 @@ trait Images
             if ($image_url) {
                 $image[]=(object)array(
                     'id'=>$image_id,
-                    'url'=>$image_url
+                    'url'=>$image_url,
+                    'imageAlt'=>$this->getImageMeta($image_id)
                 );
             }
         }
@@ -53,5 +54,15 @@ trait Images
             return (object)$image;
         }
          return false;
+    }
+    /**
+     * Get image alt meta.
+     *
+     * @param integer $id Image attachment id.
+     * @return string
+     */
+    protected function getImageMeta(int $id){
+        $image_alt=get_post_meta($id, '_wp_attachment_image_alt', true);
+        return esc_html($image_alt);
     }
 }

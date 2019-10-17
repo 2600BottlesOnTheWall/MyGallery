@@ -74,7 +74,7 @@ class Slider
             'images' => $this->createImageObject($imageIds, array('full', 'thumbnail')),
             'boolToString' => array($this, 'boolToString'),
         );
-        
+  
         $content = $this->template->addArguments($args)->render();
         return $content;
     }
