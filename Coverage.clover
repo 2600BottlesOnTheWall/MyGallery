@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1568703857">
-  <project timestamp="1568703857">
+<coverage generated="1571308344">
+  <project timestamp="1571308344">
     <package name="MyGallery\Menu\Admin">
       <file name="/var/www/html/wpblog1/wp-content/plugins/my-gallery/inc/Menu/Admin/MenuPage.php">
         <class name="MyGallery\Menu\Admin\MenuPage" namespace="MyGallery\Menu\Admin">
@@ -305,16 +305,16 @@
         <line num="34" type="stmt" count="11"/>
         <line num="35" type="stmt" count="11"/>
         <line num="36" type="stmt" count="11"/>
-        <line num="44" type="method" name="removeProblemSymbols" visibility="protected" complexity="1" crap="1" count="1"/>
-        <line num="46" type="stmt" count="1"/>
-        <line num="47" type="stmt" count="1"/>
+        <line num="44" type="method" name="removeProblemSymbols" visibility="protected" complexity="1" crap="1" count="2"/>
+        <line num="46" type="stmt" count="2"/>
+        <line num="47" type="stmt" count="2"/>
         <metrics loc="49" ncloc="22" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="10" coveredelements="10"/>
       </file>
       <file name="/var/www/html/wpblog1/wp-content/plugins/my-gallery/inc/Traits/Images.php">
         <class name="Images" namespace="MyGallery\Traits" fullPackage="Models" package="Models">
-          <metrics complexity="7" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="17" coveredstatements="9" elements="19" coveredelements="9"/>
+          <metrics complexity="8" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="20" coveredstatements="9" elements="23" coveredelements="9"/>
         </class>
-        <line num="22" type="method" name="createImageObject" visibility="protected" complexity="3" crap="3.47" count="11"/>
+        <line num="22" type="method" name="createImageObject" visibility="protected" complexity="3" crap="3.79" count="11"/>
         <line num="24" type="stmt" count="11"/>
         <line num="25" type="stmt" count="11"/>
         <line num="26" type="stmt" count="11"/>
@@ -322,18 +322,22 @@
         <line num="28" type="stmt" count="0"/>
         <line num="29" type="stmt" count="0"/>
         <line num="30" type="stmt" count="0"/>
-        <line num="34" type="stmt" count="11"/>
-        <line num="43" type="method" name="getImageUrl" visibility="protected" complexity="4" crap="6.74" count="11"/>
-        <line num="45" type="stmt" count="11"/>
+        <line num="31" type="stmt" count="0"/>
+        <line num="35" type="stmt" count="11"/>
+        <line num="44" type="method" name="getImageUrl" visibility="protected" complexity="4" crap="6.74" count="11"/>
         <line num="46" type="stmt" count="11"/>
         <line num="47" type="stmt" count="11"/>
         <line num="48" type="stmt" count="11"/>
-        <line num="49" type="stmt" count="0"/>
+        <line num="49" type="stmt" count="11"/>
         <line num="50" type="stmt" count="0"/>
         <line num="51" type="stmt" count="0"/>
-        <line num="53" type="stmt" count="0"/>
-        <line num="55" type="stmt" count="0"/>
-        <metrics loc="57" ncloc="34" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="17" coveredstatements="9" elements="19" coveredelements="9"/>
+        <line num="52" type="stmt" count="0"/>
+        <line num="54" type="stmt" count="0"/>
+        <line num="56" type="stmt" count="0"/>
+        <line num="64" type="method" name="getImageMeta" visibility="protected" complexity="1" crap="2.00" count="0"/>
+        <line num="65" type="stmt" count="0"/>
+        <line num="66" type="stmt" count="0"/>
+        <metrics loc="68" ncloc="39" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="20" coveredstatements="9" elements="23" coveredelements="9"/>
       </file>
       <file name="/var/www/html/wpblog1/wp-content/plugins/my-gallery/inc/Traits/TemplateFactoryFacade.php">
         <class name="TemplateFactoryFacade" namespace="MyGallery\Traits">
@@ -504,6 +508,6 @@
     <file name="/var/www/html/wpblog1/wp-content/plugins/my-gallery/inc/index.php">
       <metrics loc="2" ncloc="0" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
-    <metrics files="14" loc="1513" ncloc="851" classes="13" methods="67" coveredmethods="40" conditionals="0" coveredconditionals="0" statements="343" coveredstatements="276" elements="410" coveredelements="316"/>
+    <metrics files="14" loc="1524" ncloc="856" classes="13" methods="68" coveredmethods="40" conditionals="0" coveredconditionals="0" statements="346" coveredstatements="276" elements="414" coveredelements="316"/>
   </project>
 </coverage>

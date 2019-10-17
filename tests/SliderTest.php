@@ -22,7 +22,8 @@ class SliderForTest extends Slider{
                         '1920',
                         '1080'
                     )
-                )
+                    ),
+                'imageAlt'=>"test image"
                 
             );
         }
