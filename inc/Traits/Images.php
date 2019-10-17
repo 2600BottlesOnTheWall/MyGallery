@@ -28,7 +28,8 @@ trait Images
                 $image[]=(object)array(
                     'id'=>$image_id,
                     'url'=>$image_url,
-                    'imageAlt'=>$this->getImageMeta($image_id)
+                    'alt'=>$this->getImageMeta($image_id),
+                    'title'=>$this->getImageTitle($image_id)
                 );
             }
         }
@@ -63,6 +64,16 @@ trait Images
      */
     protected function getImageMeta(int $id){
         $image_alt=get_post_meta($id, '_wp_attachment_image_alt', true);
-        return esc_html($image_alt);
+        return $image_alt;
+    }
+    /**
+     * Gets image title.
+     *
+     * @param integer $id Image attachment id.
+     * @return string
+     */
+    protected function getImageTitle(int $id){
+        $image_title=get_the_title($id);
+        return $image_title;
     }
 }

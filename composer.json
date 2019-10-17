@@ -7,6 +7,7 @@
     "wp-coding-standards/wpcs":"2.1.1"
 },
   "scripts": {
-    "test": "phpunit --coverage-clover Coverage.clover"
+    "test": "phpunit --coverage-clover Coverage.clover",
+    "updateSnapshot": "phpunit -d --update-snapshots"
   }
 }
