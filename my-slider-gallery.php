@@ -1,10 +1,10 @@
 <?php
 
 /*
-Plugin Name: MySliderGallery
+Plugin Name: MySliderGallery1
 Plugin URI: https://github.com/zalevsk1y/my-slider-gallery
 Description: Plugin was renamed. MyGallery become MySliderGallery. Add slider and gallery to your post fast and easy.
-Version: 2.0.5
+Version: 2.0.4
 Author: Evgeny S.Zalevskiy <2600@ukr.net>
 Author URI: https://github.com/zalevsk1y/
 License: MIT

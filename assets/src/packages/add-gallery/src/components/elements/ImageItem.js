@@ -29,11 +29,12 @@ export default class ImageItem extends React.Component{
         }.bind(this);
     }
     render(){
+        let title=this.props.title?this.props.title.length>15?this.props.title.substr(0,14)+'...':this.props.title:'no title...';
         return(
             <div className="image-card-body">
-                <img src={this.props.src} alt="" />
+                <img src={this.props.src} title={this.props.title}/>
                 <div className="text-center border bg-light">
-                    <span>{"image"+this.props.title}</span>
+                    <span title={this.props.title}>{title}</span>
                 </div>
             </div>
         )

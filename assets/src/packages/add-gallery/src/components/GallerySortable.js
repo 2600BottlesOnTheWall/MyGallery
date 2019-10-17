@@ -21,7 +21,7 @@ export default class GallerySortable extends React.Component{
         this.props.onChange&&this.props.onChange({oldIndex, newIndex})
       };
       render() {
-        return <SortableImageList axis="xy" items={this.props.items} onSortEnd={this.onSortEnd} />;
+        return <SortableImageList axis="xy" items={this.props.items} onSortEnd={this.onSortEnd} helperClass="dragging-cursor"/>;
       }
 }
 

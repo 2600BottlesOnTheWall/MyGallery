@@ -1,5 +1,5 @@
 import React from 'react';
-import ImageItem from '../../components/elements/ImageIten'
+import ImageItem from '../../components/elements/ImageItem'
 import GallerySortable from '../../components/GallerySortable';
 import {connect} from 'react-redux';
 import arrayMove from 'array-move';
@@ -22,7 +22,7 @@ export  class ImagesPane extends React.Component{
         const images=this.props.images;
         if (!images&&!(images.length>0)) return [];
        const imgArr=images.map((item,key)=>{
-           return <ImageItem title={(item.title?itemTitle:key)} key={key.toString()} data-id={item.id} src={item.url}/>
+           return <ImageItem title={(item.title||key)} key={key.toString()} data-id={item.id} src={item.url}/>
 
        })            
         return imgArr;
