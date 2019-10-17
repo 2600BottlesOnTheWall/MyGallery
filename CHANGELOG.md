@@ -1,6 +1,11 @@
 # Changelog
 
 All notable changes to this project will be documented in this file.
+## 2.0.5 - 2019-10-17
+
+### Added
+
+*   Image title and "alt' attribute to image tag
 
 ## 2.0.4 - 2019-09-17
 
