@@ -25,11 +25,12 @@ trait Images
         foreach ($imageIds as $image_id) {
             $image_url=$this->getImageUrl((int)$image_id, $size);
             if ($image_url) {
+
                 $image[]=(object)array(
-                    'id'=>$image_id,
+                    'id'=>(int)$image_id,
                     'url'=>$image_url,
-                    'alt'=>$this->getImageMeta($image_id),
-                    'title'=>$this->getImageTitle($image_id)
+                    'alt'=>$this->getImageMeta((int)$image_id),
+                    'title'=>$this->getImageTitle((int)$image_id)
                 );
             }
         }
