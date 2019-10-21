@@ -28,8 +28,7 @@
                                 height="1080" 
                                 width="1920" 
                                                                     alt="test image" 
-                                                             
-                            >
+                                                            >
                             </a>
                         </li>
                                             <li data-thumb="http://www.testMyPlugin.com/thumbnail-image2jpg"  data-src="http://www.testMyPlugin.com/full-image2jpg" >
@@ -42,8 +41,7 @@
                                 height="1080" 
                                 width="1920" 
                                                                     alt="test image" 
-                                                             
-                            >
+                                                            >
                             </a>
                         </li>
                                             <li data-thumb="http://www.testMyPlugin.com/thumbnail-image3jpg"  data-src="http://www.testMyPlugin.com/full-image3jpg" >
@@ -56,8 +54,7 @@
                                 height="1080" 
                                 width="1920" 
                                                                     alt="test image" 
-                                                             
-                            >
+                                                            >
                             </a>
                         </li>
                                             <li data-thumb="http://www.testMyPlugin.com/thumbnail-image4jpg"  data-src="http://www.testMyPlugin.com/full-image4jpg" >
@@ -70,8 +67,7 @@
                                 height="1080" 
                                 width="1920" 
                                                                     alt="test image" 
-                                                             
-                            >
+                                                            >
                             </a>
                         </li>
                                             <li data-thumb="http://www.testMyPlugin.com/thumbnail-image5jpg"  data-src="http://www.testMyPlugin.com/full-image5jpg" >
@@ -84,8 +80,7 @@
                                 height="1080" 
                                 width="1920" 
                                                                     alt="test image" 
-                                                             
-                            >
+                                                            >
                             </a>
                         </li>
                                             <li data-thumb="http://www.testMyPlugin.com/thumbnail-image6jpg"  data-src="http://www.testMyPlugin.com/full-image6jpg" >
@@ -98,8 +93,7 @@
                                 height="1080" 
                                 width="1920" 
                                                                     alt="test image" 
-                                                             
-                            >
+                                                            >
                             </a>
                         </li>
                                     </ul>
