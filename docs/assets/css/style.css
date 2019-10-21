@@ -48,4 +48,20 @@ html,body{
     height: auto;
 }
 
-
+.lightSlider li a{
+    display: block;
+    position: relative;
+}
+.lightSlider .image-cation{
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    line-height: 1.8;
+    white-space: normal;
+    color: #ccc;
+    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.6);
+    font-family: sans-serif;
+}
