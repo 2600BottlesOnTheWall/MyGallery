@@ -1,6 +1,28 @@
 # Changelog
 
 All notable changes to this project will be documented in this file.
+
+## 2.0.7 - 2019-10-21
+
+### Added
+
+*   Add image caption when gallery is opened.
+
+### Changed
+
+*   fixed some bugs. 
+
+
+## 2.0.6 - 2019-10-17
+
+### Added
+
+*   Grab cursor icon on drag.
+
+### Changed
+
+*   fixed some bugs. 
+
 ## 2.0.5 - 2019-10-17
 
 ### Added

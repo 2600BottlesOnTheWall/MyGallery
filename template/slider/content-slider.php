@@ -36,7 +36,6 @@
                                 <?php if($image->alt):?>
                                     alt="<?php echo esc_html($image->alt);?>" 
                                 <?php endif;?>
-                             
                             >
                             </a>
                         </li>

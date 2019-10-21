@@ -63,7 +63,6 @@ class Main
                 'patchPostData'=>rest_url('/my-gallery/v1/post/')
             );
             wp_localize_script(MYGALLERY_PLUGIN_SLUG . '-add-gallery', 'apiEndpoints', $api_endpoints);
-           
         }
     }
 
