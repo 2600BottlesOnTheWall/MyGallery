@@ -37,6 +37,11 @@
                                     alt="<?php echo esc_html($image->alt);?>" 
                                 <?php endif;?>
                             >
+                            <?php if($image->title): ?> 
+                                <div class='image-cation'>
+                                    <span><?php echo esc_html($image->title); ?></span>
+                                </div>
+                            <?php endif ?>
                             </a>
                         </li>
                     <?php endforeach; ?>

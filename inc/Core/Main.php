@@ -39,7 +39,7 @@ class Main
      */
     public function enqueueAdminScripts($hook)
     {
-        wp_enqueue_style(MYGALLERY_PLUGIN_SLUG . '-main-style', MYGALLERY_PLUGIN_URL . '/public/css/my-gallery.css');
+        wp_enqueue_style(MYGALLERY_PLUGIN_SLUG . '-main-style', MYGALLERY_PLUGIN_URL . '/public/css/my-gallery.css',array(), MYGALLERY_PLUGIN_VERSION);
         if ('post.php' == $hook) {
             wp_enqueue_script(MYGALLERY_PLUGIN_SLUG . '-post-edit-script');
         }
@@ -49,8 +49,8 @@ class Main
         }
 
         if (strrpos($hook, $this->configMenu->menu->subs[0]->menu_slug) !== false) {
-            \wp_enqueue_style(MYGALLERY_PLUGIN_SLUG . '-add-gallery-style', MYGALLERY_PLUGIN_URL . '/public/css/add-gallery.css');
-            \wp_enqueue_style(MYGALLERY_PLUGIN_SLUG . '-add-gallery-font', MYGALLERY_PLUGIN_URL . '/public/css/font.css');
+            \wp_enqueue_style(MYGALLERY_PLUGIN_SLUG . '-add-gallery-style', MYGALLERY_PLUGIN_URL . '/public/css/add-gallery.css',array(), MYGALLERY_PLUGIN_VERSION);
+            \wp_enqueue_style(MYGALLERY_PLUGIN_SLUG . '-add-gallery-font', MYGALLERY_PLUGIN_URL . '/public/css/font.css',array(), MYGALLERY_PLUGIN_VERSION);
             \wp_enqueue_style(MYGALLERY_PLUGIN_SLUG . '-bootstrap', MYGALLERY_PLUGIN_URL . '/public/css/bootstrap.css');
             $post_id = $this->getCustomQueryVar('post');
             if ($post_id) {
@@ -85,8 +85,8 @@ class Main
     {
         $default_style_path = MYGALLERY_PLUGIN_URL . '/public/css/my-gallery-slider.css';
         $style_path = apply_filters('my_gallery_style', $default_style_path);
-        wp_enqueue_style(MYGALLERY_PLUGIN_SLUG . '-slider-style', MYGALLERY_PLUGIN_URL . '/public/css/slider.css');
-        wp_enqueue_style(MYGALLERY_PLUGIN_SLUG . '-additional-slider-style', $style_path);
+        wp_enqueue_style(MYGALLERY_PLUGIN_SLUG . '-slider-style', MYGALLERY_PLUGIN_URL . '/public/css/slider.css',array(), MYGALLERY_PLUGIN_VERSION);
+        wp_enqueue_style(MYGALLERY_PLUGIN_SLUG . '-additional-slider-style', $style_path,array(), MYGALLERY_PLUGIN_VERSION);
     }
 
     /**
@@ -125,9 +125,9 @@ class Main
         switch ($var) {
             case 'post':
                 if (isset($_GET['post'])) {
-                    $post = $_GET['post'];
-                    $filtered_post = preg_filter('/[\d]/', '$0', $post);
-                    return (int) $filtered_post;
+                    $post = intval($_GET['post']);
+
+                    return  $post;
                 }
                 return false;
         }

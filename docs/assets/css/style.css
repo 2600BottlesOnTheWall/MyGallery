@@ -48,10 +48,11 @@ html,body{
     height: auto;
 }
 
-.lightSlider li a{
+.lightSlider li a,img{
     display: block;
     position: relative;
 }
+
 .lightSlider .image-cation{
     display: block;
     position: absolute;
