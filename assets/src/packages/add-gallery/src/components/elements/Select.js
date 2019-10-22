@@ -55,6 +55,6 @@ export class Select extends React.Component{
 
 Select.propTypes={
     options:PropTypes.array,
-    selected:PropTypes.number,
+    selected:PropTypes.string,
     onChange:PropTypes.func.isRequired
 }

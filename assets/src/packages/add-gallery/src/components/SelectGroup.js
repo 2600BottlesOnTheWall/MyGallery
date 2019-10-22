@@ -49,6 +49,6 @@ export class SelectGroup extends React.Component{
 
 
 SelectGroup.propTypes={
-    selected:PropTypes.number,
+    selected:PropTypes.string,
     onSelect:PropTypes.func.isRequired,
 }

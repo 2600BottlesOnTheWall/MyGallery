@@ -86,7 +86,7 @@ class MediaFrame extends React.Component {
 
 export default MediaFrame;
 
-MediaFrame.PropTypes={
+MediaFrame.propTypes={
     onUpdate:PropTypes.func,
     button:PropTypes.node.isRequired
 }

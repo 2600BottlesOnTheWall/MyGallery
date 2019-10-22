@@ -1,6 +1,6 @@
 {
   "name": "my-slider-gallery",
-  "version": "2.0.3",
+  "version": "2.0.8",
   "private": true,
   "dependencies": {
     "baguettebox.js":"zalevsk1y/baguetteBox.js#touch-event",

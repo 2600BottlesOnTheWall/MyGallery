@@ -16,7 +16,7 @@ Demo - [My Slider Gallery](https://zalevsk1y.github.io/my-slider-gallery/)
 
 *   Clean Design.
 *   Supports guttenberg editor and classic editor.
-*   Easy customizable
+*   Easy customizable.
 *   Shortcode support.
 
 ### Installing

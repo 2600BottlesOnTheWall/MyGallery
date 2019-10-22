@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## 2.0.8 - 2019-10-22
+
+### Added
+
+*   Added image caption to slider.
+
+### Changed
+
+*   fixed some bugs. 
+
 ## 2.0.7 - 2019-10-21
 
 ### Added

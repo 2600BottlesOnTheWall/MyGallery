@@ -30,7 +30,11 @@
                                 width="1920" 
                                                                     alt="test image" 
                                                             >
-                            </a>
+                             
+                                <div class=\'image-cation\'>
+                                    <span>image title</span>
+                                </div>
+                                                        </a>
                         </li>
                                             <li data-thumb="http://www.testMyPlugin.com/thumbnail-image2jpg"  data-src="http://www.testMyPlugin.com/full-image2jpg" >
                         <a href="http://www.testMyPlugin.com/full-image2jpg" 
@@ -43,7 +47,11 @@
                                 width="1920" 
                                                                     alt="test image" 
                                                             >
-                            </a>
+                             
+                                <div class=\'image-cation\'>
+                                    <span>image title</span>
+                                </div>
+                                                        </a>
                         </li>
                                             <li data-thumb="http://www.testMyPlugin.com/thumbnail-image3jpg"  data-src="http://www.testMyPlugin.com/full-image3jpg" >
                         <a href="http://www.testMyPlugin.com/full-image3jpg" 
@@ -56,7 +64,11 @@
                                 width="1920" 
                                                                     alt="test image" 
                                                             >
-                            </a>
+                             
+                                <div class=\'image-cation\'>
+                                    <span>image title</span>
+                                </div>
+                                                        </a>
                         </li>
                                             <li data-thumb="http://www.testMyPlugin.com/thumbnail-image4jpg"  data-src="http://www.testMyPlugin.com/full-image4jpg" >
                         <a href="http://www.testMyPlugin.com/full-image4jpg" 
@@ -69,7 +81,11 @@
                                 width="1920" 
                                                                     alt="test image" 
                                                             >
-                            </a>
+                             
+                                <div class=\'image-cation\'>
+                                    <span>image title</span>
+                                </div>
+                                                        </a>
                         </li>
                                             <li data-thumb="http://www.testMyPlugin.com/thumbnail-image5jpg"  data-src="http://www.testMyPlugin.com/full-image5jpg" >
                         <a href="http://www.testMyPlugin.com/full-image5jpg" 
@@ -82,7 +98,11 @@
                                 width="1920" 
                                                                     alt="test image" 
                                                             >
-                            </a>
+                             
+                                <div class=\'image-cation\'>
+                                    <span>image title</span>
+                                </div>
+                                                        </a>
                         </li>
                                             <li data-thumb="http://www.testMyPlugin.com/thumbnail-image6jpg"  data-src="http://www.testMyPlugin.com/full-image6jpg" >
                         <a href="http://www.testMyPlugin.com/full-image6jpg" 
@@ -95,7 +115,11 @@
                                 width="1920" 
                                                                     alt="test image" 
                                                             >
-                            </a>
+                             
+                                <div class=\'image-cation\'>
+                                    <span>image title</span>
+                                </div>
+                                                        </a>
                         </li>
                                     </ul>
        

@@ -22,7 +22,7 @@ export  class ImagesPane extends React.Component{
         const images=this.props.images;
         if (!images&&!(images.length>0)) return [];
        const imgArr=images.map((item,key)=>{
-           return <ImageItem title={(item.title||key)} key={key.toString()} data-id={item.id} src={item.url}/>
+           return <ImageItem title={(item.title)} key={key.toString()} data-id={item.id} src={item.url}/>
 
        })            
         return imgArr;
