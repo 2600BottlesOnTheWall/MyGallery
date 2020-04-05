@@ -85,7 +85,7 @@ class Main
     {
         $default_style_path = MYGALLERY_PLUGIN_URL . '/public/css/my-gallery-slider.css';
         $style_path = apply_filters('my_gallery_style', $default_style_path);
-        wp_enqueue_style(MYGALLERY_PLUGIN_SLUG . '-slider-style', MYGALLERY_PLUGIN_URL . '/public/css/slider.css',array(), MYGALLERY_PLUGIN_VERSION);
+        wp_enqueue_style(MYGALLERY_PLUGIN_SLUG . '-slider-style', MYGALLERY_PLUGIN_URL . '/public/css/slider-'.MYGALLERY_PLUGIN_VERSION.'.css',array(), MYGALLERY_PLUGIN_VERSION);
         wp_enqueue_style(MYGALLERY_PLUGIN_SLUG . '-additional-slider-style', $style_path,array(), MYGALLERY_PLUGIN_VERSION);
     }
 
@@ -96,10 +96,9 @@ class Main
      */
     public function registerScripts()
     {
-        wp_register_script(MYGALLERY_PLUGIN_SLUG . '-post-edit-script', MYGALLERY_PLUGIN_URL . '/public/js/post-edit.bundle.js', array('react', 'react-dom', 'lodash', 'media-models'), MYGALLERY_PLUGIN_VERSION);
-        wp_register_script(MYGALLERY_PLUGIN_SLUG . '-post-new-script', MYGALLERY_PLUGIN_URL . '/public/js/post-new.bundle.js', array('react', 'react-dom', 'lodash', 'media-models'), MYGALLERY_PLUGIN_VERSION);
-        wp_register_script(MYGALLERY_PLUGIN_SLUG . '-add-gallery', MYGALLERY_PLUGIN_URL . '/public/js/add-gallery.bundle.js', array('react', 'react-dom', 'lodash', 'underscore', 'backbone', 'jquery', 'media-models'), MYGALLERY_PLUGIN_VERSION);
-        wp_register_script(MYGALLERY_PLUGIN_SLUG . '-slider-script', MYGALLERY_PLUGIN_URL . '/public/js/slider.bundle.js', array('jquery'), MYGALLERY_PLUGIN_VERSION);
+        wp_register_script(MYGALLERY_PLUGIN_SLUG . '-post-edit-script', MYGALLERY_PLUGIN_URL . '/public/js/post-edit-'.MYGALLERY_PLUGIN_VERSION.'.bundle.js', array('react', 'react-dom', 'lodash', 'media-models'), MYGALLERY_PLUGIN_VERSION);
+        wp_register_script(MYGALLERY_PLUGIN_SLUG . '-add-gallery', MYGALLERY_PLUGIN_URL . '/public/js/add-gallery-'.MYGALLERY_PLUGIN_VERSION.'.bundle.js', array('react', 'react-dom', 'lodash', 'underscore', 'backbone', 'jquery', 'media-models'), MYGALLERY_PLUGIN_VERSION);
+        wp_register_script(MYGALLERY_PLUGIN_SLUG . '-slider-script', MYGALLERY_PLUGIN_URL . '/public/js/slider-'.MYGALLERY_PLUGIN_VERSION.'.bundle.js', array('jquery'), MYGALLERY_PLUGIN_VERSION);
     }
 
     /**

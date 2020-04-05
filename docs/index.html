@@ -1,124 +1,130 @@
 <html>
-    <head>
-        <link rel='stylesheet' href='assets/css/style.css'>
-        <link rel='stylesheet' href='assets/css/slider.css'>
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-        <script src='assets/js/slider.bundle.js'></script>
-    </head>
-    <body>
-        
-        <div class="header">
-            <img class='header-banner' src='assets/images/banner_top.png'>
-        </div>
-        <div class='container'>
-            <div class='content-main'>
-                <h1>My Slider Gallery plugin demo</h1>
-                <div class='demo-testimonials'>
-                    <p>My Slider Gallery uses <a href='https://github.com/sachinchoolur/lightslider'>lightslider</a> to create a slider and <a href='https://github.com/feimosi/baguetteBox.js/'>baguetteBox.js</a>
-                    for the gallery.This demo was created using standard settings. </p>
-                    <p>Photos taken from the article <a href ='https://www.slashgear.com/new-porsche-911-carrera-coupe-and-cabriolet-are-looking-sexy-30585661/'>“New Porsche 911 Carrera Coupe and Cabriolet are looking sexy
-                    “</a></p>
-                    <p>posted on <a href='https://www.slashgear.com'>slashgear.com</a> and presented only for the purpose of demonstrating the work of the slider and gallery</p>
-                </div>
 
-                <div class="my-gallery-plugin-container">
-                        <script>
-                      
-                            window.myGalleryPluginSettings={
-                                gallery: true,
-                                item: 1,
-                                loop: false,
-                                thumbItem: 6,
-                                enableDrag: true,
-                                enableTouch:true,
-                                adaptiveHeight: false,
-                                galleryMargin: 5,
-                                thumbMargin: 5,
-                                vertical:false,
-                            }
-                      
-                        </script>
-                            <div class="photo-thumb-gallery">
-                                         
-                                            <div class="lSSlideOuter">
-                                    <ul id="imageGallery" class="my-gallery-list" >
-                                                                <li data-thumb="./assets/images/911-carrera-002-1280x720-6-150x150.jpg"  data-src="./assets/images/911-carrera-002-1280x720-6.jpg" >
-                                            <a href="./assets/images/911-carrera-002-1280x720-6.jpg" title="2020 911 Carrera Cabriolet">
-                                                <img src="./assets/images/911-carrera-002-1280x720-6-150x150.jpg" height="721" width="1280" alt="2020 911 Carrera Cabriolet">
-                                                <div class='image-cation'>
-                                                    <span>2020 911 Carrera Cabriolet</span>
-                                                </div>
-                                                </a>
-                                            </li>
-                                                                <li data-thumb="./assets/images/911-carrera-004-5-150x150.jpg"  data-src="./assets/images/911-carrera-004-5.jpg" >
-                                            <a href="./assets/images/911-carrera-004-5.jpg" title="2020 911 Carrera Cabriolet">
-                                                <img src="./assets/images/911-carrera-004-5-150x150.jpg" height="721" width="1280" alt="2020 911 Carrera Cabriolet">
-                                                <div class='image-cation'>
-                                                    <span>2020 911 Carrera Cabriolet</span>
-                                                </div>
-                                                </a>
-                                            </li>
-                                                                <li data-thumb="./assets/images/911-carrera-005-5-150x150.jpg"  data-src="./assets/images/911-carrera-005-5.jpg" >
-                                            <a href="./assets/images/911-carrera-005-5.jpg" title="2020 911 Carrera Cabriolet">
-                                                <img src="./assets/images/911-carrera-005-5-150x150.jpg" height="721" width="1280" alt="2020 911 Carrera Cabriolet">
-                                                <div class='image-cation'>
-                                                    <span>2020 911 Carrera Cabriolet</span>
-                                                </div>
-                                                </a>
-                                            </li>
-                                                                <li data-thumb="./assets/images/911-carrera-006-5-150x150.jpg"  data-src="./assets/images/911-carrera-006-5.jpg" >
-                                            <a href="./assets/images/911-carrera-006-5.jpg" title="2020 911 Carrera Cabriolet">
-                                                <img src="./assets/images/911-carrera-006-5-150x150.jpg" height="721" width="1280" alt="2020 911 Carrera Cabriolet">
-                                                <div class='image-cation'>
-                                                    <span>2020 911 Carrera Cabriolet</span>
-                                                </div>
-                                                </a>
-                                            </li>
-                                                                <li data-thumb="./assets/images/911-carrera-007-5-150x150.jpg"  data-src="./assets/images/911-carrera-007-5.jpg" >
-                                            <a href="./assets/images/911-carrera-007-5.jpg" title="2020 911 Carrera Cabriolet">
-                                                <img src="./assets/images/911-carrera-007-5-150x150.jpg" height="721" width="1280" alt="2020 911 Carrera Cabriolet">
-                                                <div class='image-cation'>
-                                                    <span>2020 911 Carrera Cabriolet</span>
-                                                </div>
-                                                </a>
-                                            </li>
-                                                                <li data-thumb="./assets/images/911-carrera-008-4-150x150.jpg"  data-src="./assets/images/911-carrera-008-4.jpg" >
-                                            <a href="./assets/images/911-carrera-008-4.jpg" title="2020 911 Carrera Cabriolet">
-                                                <img src="./assets/images/911-carrera-008-4-150x150.jpg" height="721" width="1280" alt="2020 911 Carrera Cabriolet">
-                                                <div class='image-cation'>
-                                                    <span>2020 911 Carrera Cabriolet</span>
-                                                </div>
-                                                </a>
-                                            </li>
-                                                                <li data-thumb="./assets/images/911-carrera-009-4-150x150.jpg"  data-src="./assets/images/911-carrera-009-4.jpg" >
-                                            <a href="./assets/images/911-carrera-009-4.jpg" title="2020 911 Carrera Cabriolet">
-                                                <img src="./assets/images/911-carrera-009-4-150x150.jpg" height="721" width="1280" alt="2020 911 Carrera Cabriolet">
-                                                <div class='image-cation'>
-                                                    <span>2020 911 Carrera Cabriolet</span>
-                                                </div>
-                                                </a>
-                                            </li>
-                                                                <li data-thumb="./assets/images/911-carrera-010-4-150x150.jpg"  data-src="./assets/images/911-carrera-010-4.jpg" >
-                                            <a href="./assets/images/911-carrera-010-4.jpg" title="2020 911 Carrera Cabriolet">
-                                                <img src="./assets/images/911-carrera-010-4-150x150.jpg" height="721" width="1280" alt="2020 911 Carrera Cabriolet">
-                                                <span>2020 911 Carrera Cabriolet</span>
-                                                </a>
-                                            </li>
-                                                                <li data-thumb="./assets/images/911-carrera-011-4-150x150.jpg"  data-src="./assets/images/911-carrera-011-4.jpg" >
-                                            <a href="./assets/images/911-carrera-011-4.jpg" title="2020 911 Carrera Cabriolet">
-                                                <img src="./assets/images/911-carrera-011-4-150x150.jpg" height="721" width="1280" alt="2020 911 Carrera Cabriolet">
-                                                <div class='image-cation'>
-                                                    <span>2020 911 Carrera Cabriolet</span>
-                                                </div>
-                                                </a>
-                                            </li>
-                                               
-                                                        </ul>
-                                </div> <!--  photo-thumb-gallery -->
-                            </div> <!--  gallery-tittle -->
-                        </div> <!--  gallery -->
-            </div><!--content-main-->        
-        </div><!--container-->
-      
-    </body>
+<head>
+    <link rel='stylesheet' href='assets/css/style.css'>
+    <link rel='stylesheet' href='assets/css/slider-2.0.9.css'>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src='assets/js/slider-2.0.9.bundle.js'></script>
+</head>
+
+<body>
+
+    <div class="header">
+        <img class='header-banner' src='assets/images/banner_top.png'>
+    </div>
+    <div class='container'>
+        <div class='content-main'>
+            <h1>My Slider Gallery plugin demo</h1>
+            <div class='demo-testimonials'>
+                <p>My Slider Gallery uses <a href='https://github.com/sachinchoolur/lightslider'>lightslider</a> to create a slider and <a href='https://github.com/feimosi/baguetteBox.js/'>baguetteBox.js</a> for the gallery.This demo was created using standard
+                    settings. </p>
+                <p>Photos taken from the article <a href='https://www.slashgear.com/new-porsche-911-carrera-coupe-and-cabriolet-are-looking-sexy-30585661/'>“New Porsche 911 Carrera Coupe and Cabriolet are looking sexy
+                    “</a></p>
+                <p>posted on <a href='https://www.slashgear.com'>slashgear.com</a> and presented only for the purpose of demonstrating the work of the slider and gallery</p>
+            </div>
+
+            <div class="my-gallery-plugin-container">
+                <script>
+                    window.myGalleryPluginSettings = {
+                        gallery: true,
+                        item: 1,
+                        loop: false,
+                        thumbItem: 6,
+                        enableDrag: true,
+                        enableTouch: true,
+                        adaptiveHeight: false,
+                        galleryMargin: 5,
+                        thumbMargin: 5,
+                        vertical: false,
+                    }
+                </script>
+                <div class="photo-thumb-gallery">
+
+                    <div class="lSSlideOuter">
+                        <ul id="imageGallery" class="my-gallery-list">
+                            <li data-thumb="./assets/images/911-carrera-002-1280x720-6-150x150.jpg" data-src="./assets/images/911-carrera-002-1280x720-6.jpg">
+                                <a href="./assets/images/911-carrera-002-1280x720-6.jpg" title="2020 911 Carrera Cabriolet">
+                                    <img src="./assets/images/911-carrera-002-1280x720-6-150x150.jpg" height="721" width="1280" alt="2020 911 Carrera Cabriolet">
+                                    <div class='image-cation'>
+                                        <span>2020 911 Carrera Cabriolet</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li data-thumb="./assets/images/911-carrera-004-5-150x150.jpg" data-src="./assets/images/911-carrera-004-5.jpg">
+                                <a href="./assets/images/911-carrera-004-5.jpg" title="2020 911 Carrera Cabriolet">
+                                    <img src="./assets/images/911-carrera-004-5-150x150.jpg" height="721" width="1280" alt="2020 911 Carrera Cabriolet">
+                                    <div class='image-cation'>
+                                        <span>2020 911 Carrera Cabriolet</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li data-thumb="./assets/images/911-carrera-005-5-150x150.jpg" data-src="./assets/images/911-carrera-005-5.jpg">
+                                <a href="./assets/images/911-carrera-005-5.jpg" title="2020 911 Carrera Cabriolet">
+                                    <img src="./assets/images/911-carrera-005-5-150x150.jpg" height="721" width="1280" alt="2020 911 Carrera Cabriolet">
+                                    <div class='image-cation'>
+                                        <span>2020 911 Carrera Cabriolet</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li data-thumb="./assets/images/911-carrera-006-5-150x150.jpg" data-src="./assets/images/911-carrera-006-5.jpg">
+                                <a href="./assets/images/911-carrera-006-5.jpg" title="2020 911 Carrera Cabriolet">
+                                    <img src="./assets/images/911-carrera-006-5-150x150.jpg" height="721" width="1280" alt="2020 911 Carrera Cabriolet">
+                                    <div class='image-cation'>
+                                        <span>2020 911 Carrera Cabriolet</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li data-thumb="./assets/images/911-carrera-007-5-150x150.jpg" data-src="./assets/images/911-carrera-007-5.jpg">
+                                <a href="./assets/images/911-carrera-007-5.jpg" title="2020 911 Carrera Cabriolet">
+                                    <img src="./assets/images/911-carrera-007-5-150x150.jpg" height="721" width="1280" alt="2020 911 Carrera Cabriolet">
+                                    <div class='image-cation'>
+                                        <span>2020 911 Carrera Cabriolet</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li data-thumb="./assets/images/911-carrera-008-4-150x150.jpg" data-src="./assets/images/911-carrera-008-4.jpg">
+                                <a href="./assets/images/911-carrera-008-4.jpg" title="2020 911 Carrera Cabriolet">
+                                    <img src="./assets/images/911-carrera-008-4-150x150.jpg" height="721" width="1280" alt="2020 911 Carrera Cabriolet">
+                                    <div class='image-cation'>
+                                        <span>2020 911 Carrera Cabriolet</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li data-thumb="./assets/images/911-carrera-009-4-150x150.jpg" data-src="./assets/images/911-carrera-009-4.jpg">
+                                <a href="./assets/images/911-carrera-009-4.jpg" title="2020 911 Carrera Cabriolet">
+                                    <img src="./assets/images/911-carrera-009-4-150x150.jpg" height="721" width="1280" alt="2020 911 Carrera Cabriolet">
+                                    <div class='image-cation'>
+                                        <span>2020 911 Carrera Cabriolet</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li data-thumb="./assets/images/911-carrera-010-4-150x150.jpg" data-src="./assets/images/911-carrera-010-4.jpg">
+                                <a href="./assets/images/911-carrera-010-4.jpg" title="2020 911 Carrera Cabriolet">
+                                    <img src="./assets/images/911-carrera-010-4-150x150.jpg" height="721" width="1280" alt="2020 911 Carrera Cabriolet">
+                                    <span>2020 911 Carrera Cabriolet</span>
+                                </a>
+                            </li>
+                            <li data-thumb="./assets/images/911-carrera-011-4-150x150.jpg" data-src="./assets/images/911-carrera-011-4.jpg">
+                                <a href="./assets/images/911-carrera-011-4.jpg" title="2020 911 Carrera Cabriolet">
+                                    <img src="./assets/images/911-carrera-011-4-150x150.jpg" height="721" width="1280" alt="2020 911 Carrera Cabriolet">
+                                    <div class='image-cation'>
+                                        <span>2020 911 Carrera Cabriolet</span>
+                                    </div>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <!--  photo-thumb-gallery -->
+                </div>
+                <!--  gallery-tittle -->
+            </div>
+            <!--  gallery -->
+        </div>
+        <!--content-main-->
+    </div>
+    <!--container-->
+
+</body>
+
 </html>

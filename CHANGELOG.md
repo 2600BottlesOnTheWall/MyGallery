@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## 2.0.9 - 2020-04-05
+
+### Changed
+
+*   New version of baguetteBox.
+*   Fixed some bugs.
+
 ## 2.0.8 - 2019-10-22
 
 ### Added
